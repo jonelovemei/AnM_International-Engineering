@@ -4,100 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A&M INTERNATIONAL ENGINEERING PTE LTD</title>
-    <style> /* 设置背景图像样式 */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            /* 使用本地背景图片 */
-            background: url('.Image/23.jpg') no-repeat center center fixed;
-            background-size: cover; /* 让图片适应屏幕大小 */
-            /* 添加一个半透明的覆盖层 */
-            position: relative;
-            z-index: 0;
-        }
-        /* 添加背景透明层 */
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.7); /* 透视度设置为 30% */
-            z-index: -1; /* 确保文字在背景上方 */
-        }
-
-        /* 页面文字样式 */
-        .content {
-            position: relative;
-            z-index: 1; /* 让文字显示在透明层之上 */
-            text-align: center;
-            color: #2E7D32; /* 深绿色文字 */
-            padding: 50px;
-        }
-         body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-    }
-    /* 修改 header 背景颜色 */
-    header {
-        background: linear-gradient(90deg, #32CD32, #7CFC00); /* 亮绿渐变 */
-        color: white;
-        padding: 20px 10px;
-        text-align: center;
-    }
-    /* 修改导航栏背景颜色 */
-    nav {
-        background: #72A2c0; /* 浅蓝 */
-        overflow: hidden;
-    }
-    nav a {
-        color: white;
-        padding: 14px 20px;
-        text-decoration: none;
-        float: left;
-    }
-    nav a:hover {
-        background-color: #78D6ac; /* 亮绿悬停效果 */
-    }
-    section {
-        padding: 20px;
-    }
-    /* 修改 hero 区域背景颜色 */
-    .hero {
-        text-align: center;
-        padding: 40px;
-        background: #0Abda0; /* 没有渐变 */
-        color: white;
-    }
-    .hero h1 {
-        font-size: 2em;
-        margin: 0;
-    }
-    /* 修改服务框的边框颜色 */
-    .services {
-        display: flex;
-        justify-content: space-around;
-        margin: 20px 0;
-    }
-    .service {
-        text-align: center;
-        flex: 1;
-        margin: 0 10px;
-        padding: 20px;
-        border: 2px solid #32CD32; /* 亮绿边框 */
-        border-radius: 8px;
-    }
-    footer {
-        background: linear-gradient(90deg, #32CD32, #7CFC00); /* 亮绿渐变 */
-        color: white;
-        text-align: center;
-        padding: 10px 0;
-        margin-top: 20px;
-    }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -105,54 +12,18 @@
         <p>A professional integration solution provider</p>
     </header>
     <nav>
-        <a href="#about">About Us</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
     </nav>
     <section class="hero">
         <h1>Innovative Solutions for Modern Engineering</h1>
-        <p>We deliver world-class engineering and design services. Provide Professional Industry Process Engineering company, A system integration solution provider, An AI Automation solution great partner.</p>
-    </section>
-    <section id="about">
-        <h2>About Us</h2>
-        <p>A Professional Industry Process Engineering company, A system integration solution provider, A AI Automation solution great partner.</p>
-    </section>
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="services">
-            <div class="service">
-                <h3>Process Design</h3>
-                <p>Creating efficient, innovative processes for your industry.</p>
-            </div>
-            <div class="service">
-                <h3>3D Modeling</h3>
-                <p>Detailed and accurate models to visualize your projects.</p>
-            </div>
-            <div class="service">
-                <h3>Steel Structure Design</h3>
-                <p>Reliable and robust designs for your structural needs.</p>
-             </div>
-            <div class="service">
-                <h4>Bioengineering</h4>
-                <p>Reliable and robust designs for your structural needs.</p>
-            </div>
-        </div>
-    </section>
-    <section id="projects">
-        <h2>Our Projects</h2>
-        <p>We have successfully delivered over 200 projects, including industrial plants, high-performance facilities, and cutting-edge designs.</p>
-  
-    </section>
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: anm_info@anmie.com.sg </p>
-        <p>Phone: +65-8588 9506 </p>
-        <p>Address: #14-08, BLK13,Anchovarl percent, (S) 544650</p>
+        <p>We deliver world-class engineering and design services.</p>
     </section>
     <footer>
         <p>&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. All rights reserved.</p>
     </footer>
 </body>
 </html>
-
