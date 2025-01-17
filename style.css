@@ -1,33 +1,10 @@
-/* 样式文件：style.css */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: url('./images/23.jpg') no-repeat center center fixed;
-    background-size: cover;
-}
-
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.7);
-    z-index: -1;
-}
-
-header {
-    background: linear-gradient(90deg, #32CD32, #7CFC00);
-    color: white;
-    padding: 20px 10px;
-    text-align: center;
-}
-
+/* 导航栏样式 */
 nav {
-    background: #72A2c0;
+    background: #72A2c0; /* 浅蓝 */
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 10px;
 }
 
 nav a {
@@ -38,45 +15,38 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #78D6ac;
+    background-color: #78D6ac; /* 亮绿悬停效果 */
 }
 
-section {
-    padding: 20px;
-}
-
-.hero {
-    text-align: center;
-    padding: 40px;
-    background: #0Abda0;
-    color: white;
-}
-
-.hero h1 {
-    font-size: 2em;
-    margin: 0;
-}
-
-.services {
+/* 搜索框容器样式 */
+.search-container {
+    margin-left: auto; /* 将搜索框推到右侧 */
     display: flex;
-    justify-content: space-around;
-    margin: 20px 0;
+    align-items: center;
+    position: relative;
 }
 
-.service {
-    text-align: center;
-    flex: 1;
-    margin: 0 10px;
-    padding: 20px;
-    border: 2px solid #32CD32;
-    border-radius: 8px;
+/* 搜索框样式 */
+.search-container input {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
 }
 
-footer {
-    background: linear-gradient(90deg, #32CD32, #7CFC00);
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
+/* 搜索按钮样式 */
+.search-container button {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
+.search-container .search-icon {
+    width: 16px;
+    height: 16px;
+}
