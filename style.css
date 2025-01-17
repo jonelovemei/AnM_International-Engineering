@@ -43,7 +43,8 @@ nav a:hover {
     margin-left: -30px; /* 让按钮重叠到输入框的右边 */
 }
 
-.search-container .Image/search-icon.png {
+.search-container .search-icon {
     width: 16px;
     height: 16px;
 }
+
