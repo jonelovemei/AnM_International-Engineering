@@ -1,1 +1,82 @@
+/* 样式文件：style.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('./images/23.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: -1;
+}
+
+header {
+    background: linear-gradient(90deg, #32CD32, #7CFC00);
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+}
+
+nav {
+    background: #72A2c0;
+    overflow: hidden;
+}
+
+nav a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    float: left;
+}
+
+nav a:hover {
+    background-color: #78D6ac;
+}
+
+section {
+    padding: 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 40px;
+    background: #0Abda0;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+.services {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.service {
+    text-align: center;
+    flex: 1;
+    margin: 0 10px;
+    padding: 20px;
+    border: 2px solid #32CD32;
+    border-radius: 8px;
+}
+
+footer {
+    background: linear-gradient(90deg, #32CD32, #7CFC00);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
 
