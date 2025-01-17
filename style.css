@@ -1,17 +1,16 @@
 /* 导航栏样式 */
 nav {
     background: #72A2c0; /* 浅蓝 */
-    overflow: hidden;
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 10px 20px;
 }
 
+/* 导航链接样式 */
 nav a {
     color: white;
-    padding: 14px 20px;
+    padding: 10px 15px;
     text-decoration: none;
-    float: left;
 }
 
 nav a:hover {
@@ -20,30 +19,28 @@ nav a:hover {
 
 /* 搜索框容器样式 */
 .search-container {
-    margin-left: auto; /* 将搜索框推到右侧 */
+    margin-left: auto; /* 将搜索框推到最右边 */
     display: flex;
     align-items: center;
     position: relative;
 }
 
-/* 搜索框样式 */
+/* 搜索框输入框样式 */
 .search-container input {
-    padding: 8px;
+    padding: 8px 10px;
     border: none;
     border-radius: 4px;
     outline: none;
+    width: 180px; /* 可调整宽度 */
 }
 
 /* 搜索按钮样式 */
 .search-container button {
     background: none;
     border: none;
-    padding: 5px;
     cursor: pointer;
-    position: absolute;
-    right: 5px;
-    top: 50%;
-    transform: translateY(-50%);
+    padding: 5px;
+    margin-left: -30px; /* 让按钮重叠到输入框的右边 */
 }
 
 .search-container .search-icon {
