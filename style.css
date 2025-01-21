@@ -3,7 +3,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url('Image/bagroud.jpg');
+    background-image: url('./Image/bagroud.jpg');
     background-size: cover; /* 确保背景图片覆盖整个页面 */
     background-repeat: no-repeat; /* 不重复背景图片 */
     background-position: center; /* 背景图片居中 */
@@ -38,7 +38,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #78D6ac; /* 亮绿悬停效果 */
+    background-color: #78D6ac; /* 亮蓝悬停效果 */
 }
 
 /* 搜索框容器样式 */
