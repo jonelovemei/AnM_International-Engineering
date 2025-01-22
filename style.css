@@ -119,6 +119,9 @@ footer {
     text-align: center; /* 文字居中 */
     padding: 10px 0; /* 上下内边距 */
     color: #fff; /* 文字颜色 */
+    font-weight: bold; /* 文字加粗 */
+    font-size: 14px; /* 调整文字大小 */
+    line-height: 50px; /* 垂直居中：与高度一致 */
     z-index: 1000; /* 确保层级高于其他内容 */
 }
 
