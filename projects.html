@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - A&M INTERNATIONAL ENGINEERING PTE LTD</title>
-    <link rel="stylesheet" href="style.css">
-</head>
 <body>
+    <div id="header-placeholder"></div> <!-- 占位符 -->
+    <script>
+        // 动态加载 header.html
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-placeholder').innerHTML = data)
+            .catch(error => console.error('Error loading header:', error));
+    </script>
+    
     <header>
         <h1>Our Projects</h1>
     </header>
