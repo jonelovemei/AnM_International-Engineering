@@ -16,7 +16,7 @@ body {
 }
 
 header {
-    background-image: url('Image/-Pngtree-yellow green background stock images_1461657.jpg'); /* 背景图片 */
+    background-image: url('Image/24_01.jpg'); /* 背景图片 */
     background-size: cover; /* 确保图片覆盖整个 header */
     background-repeat: no-repeat; /* 不重复背景图片 */
     background-position: center; /* 背景图片居中 */
