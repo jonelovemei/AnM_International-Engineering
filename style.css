@@ -144,7 +144,7 @@ body {
 
 /* 设置文字容器样式 */
 .about-description {
-    background: rgba(0, 0, 0, 0.6); /* 添加半透明黑色背景 */
+    background: rgba(255, 255, 255, 0.7); /* 添加半透明黑色背景 */
     padding: 20px; /* 内边距，增加视觉空间 */
     border-radius: 8px; /* 圆角边框 */
     display: inline-block; /* 让文字区域不占满整行 */
