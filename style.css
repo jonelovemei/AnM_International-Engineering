@@ -131,3 +131,33 @@ body {
     padding: 0 0 80px 0; /* 为内容区底部预留空间，避免被 footer 遮挡 */
     font-family: Arial, sans-serif;
 }
+
+/* 设置 section 的背景样式 */
+#about {
+    background-image: url('Image/background-about.jpg'); /* 替换为实际背景图片路径 */
+    background-size: cover; /* 背景覆盖整个区域 */
+    background-position: center; /* 背景居中显示 */
+    color: #fff; /* 文字颜色为白色，提升对比度 */
+    padding: 40px 20px; /* 内边距，增加文字与边框的距离 */
+    text-align: center; /* 文字居中 */
+}
+
+/* 设置文字容器样式 */
+.about-description {
+    background: rgba(0, 0, 0, 0.6); /* 添加半透明黑色背景 */
+    padding: 20px; /* 内边距，增加视觉空间 */
+    border-radius: 8px; /* 圆角边框 */
+    display: inline-block; /* 让文字区域不占满整行 */
+}
+
+/* 调整标题和段落的文字样式 */
+#about h2 {
+    font-size: 28px; /* 标题字体大小 */
+    margin-bottom: 10px; /* 标题与段落的间距 */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* 添加文字阴影 */
+}
+
+#about p {
+    font-size: 16px; /* 段落字体大小 */
+    line-height: 1.5; /* 行间距 */
+}
