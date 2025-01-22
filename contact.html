@@ -9,19 +9,47 @@
             .then(data => document.getElementById('header-placeholder').innerHTML = data)
             .catch(error => console.error('Error loading header:', error));
     </script>
-
+    
+    <body>
     <header>
         <h1>Contact Us</h1>
     </header>
   
     <section id="contact">
         <h2>Contact Information</h2>
-        <p>Email: anm_info@anmie.com.sg</p>
-        <p>Phone: +65-8588 9506</p>
+        <p>Email: <a href="mailto:anm_info@anmie.com.sg">anm_info@anmie.com.sg</a></p>
+        <p>Phone: <a href="tel:+6585889506">+65-8588 9506</a></p>
         <p>Address: #14-08, BLK13, Anchovarl Crescent, (S) 544650</p>
     </section>
+
+    <!-- Feedback Form -->
+    <section id="feedback">
+        <h2>Feedback Form</h2>
+        <form action="submit_feedback.php" method="post">
+            <!-- Customer Name -->
+            <label for="name">Your Name:</label><br>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required><br><br>
+
+            <!-- Contact Details -->
+            <label for="contact">Contact Method:</label><br>
+            <input type="text" id="contact" name="contact" placeholder="Phone or other contact method" required><br><br>
+
+            <!-- Email Address -->
+            <label for="email">Email Address:</label><br>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required><br><br>
+
+            <!-- Feedback Message -->
+            <label for="message">Your Feedback:</label><br>
+            <textarea id="message" name="message" rows="6" maxlength="500" placeholder="Enter your feedback (max 500 characters)" required></textarea><br><br>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </section>
+
     <footer>
         <p>&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. All rights reserved.</p>
     </footer>
 </body>
 </html>
+
