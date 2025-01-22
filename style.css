@@ -15,17 +15,38 @@ body {
     background-blend-mode: overlay; /* 叠加模式 */
 }
 
-header { 
-    background-image: url('Image/24_01.jpg'); /* 设置背景图片 */
+header {
+    background-image: url('Image/-Pngtree-yellow green background stock images_1461657.jpg'); /* 背景图片 */
     background-size: cover; /* 确保图片覆盖整个 header */
     background-repeat: no-repeat; /* 不重复背景图片 */
     background-position: center; /* 背景图片居中 */
-    color: white; /* 确保文字颜色与背景对比清晰 */
-    padding: 20px 10px; /* 内边距调整 */
-    text-align: center; /* 文本居中 */
-    font-size: 20px; /* 调整字体大小以适应 header 样式 */
+    display: flex; /* 使用 Flexbox 对齐内容 */
+    align-items: center; /* 垂直居中 */
+    justify-content: space-between; /* 左右对齐 */
+    padding: 10px 20px; /* 内边距调整 */
+    color: white; /* 文字颜色 */
+    font-size: 19px; /* 调整文字大小 */
     font-family: Arial, sans-serif; /* 设置字体 */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); /* 添加文字阴影 */
 }
+
+header img {
+    height: 50px; /* 设置 Logo 高度 */
+    margin-right: 10px; /* 给 Logo 和文字留一些间距 */
+}
+
+header h1 {
+    margin: 0; /* 移除默认外边距 */
+    flex-grow: 1; /* 让标题占据最大空间 */
+    text-align: left; /* 标题左对齐 */
+}
+
+header p {
+    margin: 0; /* 移除默认外边距 */
+    font-size: 16px; /* 设置副标题字体大小 */
+    opacity: 0.9; /* 增加一点透明度 */
+}
+
 
 
 nav {
