@@ -23,7 +23,7 @@ header {
     color: white; /* 确保文字颜色与背景对比清晰 */
     padding: 20px 10px; /* 内边距调整 */
     text-align: center; /* 文本居中 */
-    font-size: 24px; /* 调整字体大小以适应 header 样式 */
+    font-size: 20px; /* 调整字体大小以适应 header 样式 */
     font-family: Arial, sans-serif; /* 设置字体 */
 }
 
