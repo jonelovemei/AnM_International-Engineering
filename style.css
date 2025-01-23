@@ -56,7 +56,7 @@ nav {
 /* 搜索按钮图片样式 */
 .search-container {
     display: flex;
-    align-items: center; /* 垂直居中 */
+    align-items: right; /* 右边对齐 */
     justify-content: center; /* 水平居中 */
     gap: 10px; /* 输入框和按钮之间的间距 */
 }
@@ -100,7 +100,7 @@ footer {
     bottom: 0; /* 与底边对齐 */
     left: 0;
     width: 100%; /* 占满整个页面宽度 */
-    height: 50px; /* 减少高度为原来的 50% */
+    height: 10px; /* 减少高度为原来的 50% */
     background-image: url('Image/24_01.jpg'); /* 背景图片 */
     background-size: 100% 50%; /* 横向固定，垂直方向压缩 */
     background-repeat: no-repeat; /* 不重复背景图片 */
