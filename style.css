@@ -102,7 +102,7 @@ footer {
     width: 100%; /* 占满整个页面宽度 */
     height: 50px; /* 减少高度为原来的 50% */
     background-image: url('Image/24_01.jpg'); /* 背景图片 */
-    background-size: 100% 100%; /* 横向固定，垂直方向压缩 */
+    background-size: 100% 50%; /* 横向固定，垂直方向压缩 */
     background-repeat: no-repeat; /* 不重复背景图片 */
     background-attachment: fixed; /* 背景固定在页面 */
     background-position: center; /* 背景图片居中 */
