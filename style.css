@@ -74,7 +74,7 @@ nav {
     padding: 0; /* 移除多余内边距 */
     cursor: pointer; /* 鼠标悬停效果 */
     display: flex;
-    align-items: center; /* 垂直居中 */
+    align-items: right; /* 垂直居中_靠右对齐 */
     justify-content: center; /* 水平居中 */
 }
 
