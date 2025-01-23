@@ -107,7 +107,7 @@ footer {
     background-attachment: fixed; /* 背景固定在页面 */
     background-position: center; /* 背景图片居中 */
     text-align: center; /* 文字居中 */
-    padding: 5px 0; /* 上下内边距 */
+    padding: 100px 0; /* 上下内边距 */
     color: #fff; /* 文字颜色 */
     font-weight: bold; /* 文字加粗 */
     font-size: 12px; /* 调整文字大小 */
