@@ -56,10 +56,10 @@ nav {
 /* 搜索按钮图片样式 */
 .search-container {
     display: flex;
-    align-items: right; /* 右边对齐 */
-    justify-content: center; /* 水平居中 */
-    gap: 10px; /* 输入框和按钮之间的间距 */
+    justify-content: flex-end; /* 父级容器内按钮向右对齐 */
+    width: 100%;
 }
+    ‘gap: 10px; /* 输入框和按钮之间的间距 */
 
 .search-container input {
     padding: 8px; /* 输入框内边距 */
