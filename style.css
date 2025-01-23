@@ -25,7 +25,7 @@ header {
     justify-content: space-between; /* 左右对齐 */
     padding: 10px 20px; /* 内边距调整 */
     color: white; /* 文字颜色 */
-    font-size: 19px; /* 调整文字大小 */
+    font-size: 14px; /* 调整文字大小 */
     font-family: Arial, sans-serif; /* 设置字体 */
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); /* 添加文字阴影 */
     height: 150px; /* 调整 header 的高度 */
