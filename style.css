@@ -108,31 +108,33 @@ nav a:hover {
     height: 30px; /* 控制图片高度 */
 }
 
-/* 设置 footer 样式 */
 footer {
     position: fixed; /* 固定在页面底部 */
     bottom: 0; /* 与底边对齐 */
     left: 0;
     width: 100%; /* 占满整个页面宽度 */
-    background-image: url('Image/24_01.jpg');
-    background-size: cover; /* 背景图片覆盖整个 footer */
+    height: 50px; /* 减少高度为原来的 50% */
+    background-image: url('Image/24_01.jpg'); /* 背景图片 */
+    background-size: 100% 100%; /* 横向固定，垂直方向压缩 */
     background-repeat: no-repeat; /* 不重复背景图片 */
+    background-attachment: fixed; /* 背景固定在页面 */
     background-position: center; /* 背景图片居中 */
     text-align: center; /* 文字居中 */
-    padding: 2px 0; /* 上下内边距 */
+    padding: 5px 0; /* 上下内边距 */
     color: #fff; /* 文字颜色 */
     font-weight: bold; /* 文字加粗 */
-    font-size: 14px; /* 调整文字大小 */
-    line-height: 50px; /* 垂直居中：与高度一致 */
+    font-size: 12px; /* 调整文字大小 */
+    line-height: 50px; /* 垂直居中 */
     z-index: 1000; /* 确保层级高于其他内容 */
 }
 
 /* 解决 footer 覆盖内容的问题 */
 body {
     margin: 0;
-    padding: 0 0 80px 0; /* 为内容区底部预留空间，避免被 footer 遮挡 */
+    padding: 0 0 50px 0; /* 为内容区底部预留空间，避免被 footer 遮挡 */
     font-family: Arial, sans-serif;
 }
+
 
 /* 设置 section 的背景样式 */
 #about {
