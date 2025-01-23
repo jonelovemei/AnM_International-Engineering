@@ -17,7 +17,7 @@ body {
 
 header {
     background-image: url('Image/24_01.jpg'); /* 背景图片 */
-    background-size: cover; /* 确保图片覆盖整个 header */
+    background-size: 100% 70%; /* 宽度 100%，高度缩减为原来的 70% */
     background-repeat: no-repeat; /* 不重复背景图片 */
     background-position: center; /* 背景图片居中 */
     display: flex; /* 使用 Flexbox 对齐内容 */
@@ -28,7 +28,9 @@ header {
     font-size: 19px; /* 调整文字大小 */
     font-family: Arial, sans-serif; /* 设置字体 */
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); /* 添加文字阴影 */
+    height: 150px; /* 调整 header 的高度 */
 }
+
 
 header img {
     height: 50px; /* 设置 Logo 高度 */
