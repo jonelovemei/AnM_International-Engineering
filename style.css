@@ -100,18 +100,18 @@ footer {
     bottom: 0; /* 与底边对齐 */
     left: 0;
     width: 100%; /* 占满整个页面宽度 */
-    height: 10px; /* 减少高度为原来的 50% */
+    height: 50px; /* 减少高度为原来的 50% */
     background-image: url('Image/24_01.jpg'); /* 背景图片 */
-    background-size: 100% 50%; /* 横向固定，垂直方向压缩 */
+    background-size: 100% 100%; /* 横向固定，垂直方向压缩 */
     background-repeat: no-repeat; /* 不重复背景图片 */
     background-attachment: fixed; /* 背景固定在页面 */
     background-position: center; /* 背景图片居中 */
     text-align: center; /* 文字居中 */
-    padding: 100px 0; /* 上下内边距 */
+    padding: 5px 0; /* 上下内边距 */
     color: #fff; /* 文字颜色 */
     font-weight: bold; /* 文字加粗 */
     font-size: 12px; /* 调整文字大小 */
-    line-height: 10px; /* 垂直居中 */
+    line-height: 50px; /* 垂直居中 */
     z-index: 1000; /* 确保层级高于其他内容 */
 }
 
