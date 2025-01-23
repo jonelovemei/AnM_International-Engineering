@@ -11,7 +11,7 @@ body {
     color: #fff; /* 默认文字颜色 */
 
      /* 半透明覆盖色 */
-    background-color: rgba(255,255,255,0.5); /* 使用50%透明黑色 */
+    background-color: rgba(255,255,255,0.45); /* 使用45%透明黑色 */
     background-blend-mode: overlay; /* 叠加模式 */
 }
 
