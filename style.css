@@ -119,7 +119,7 @@ footer {
     background-repeat: no-repeat; /* 不重复背景图片 */
     background-position: center; /* 背景图片居中 */
     text-align: center; /* 文字居中 */
-    padding: 10px 0; /* 上下内边距 */
+    padding: 2px 0; /* 上下内边距 */
     color: #fff; /* 文字颜色 */
     font-weight: bold; /* 文字加粗 */
     font-size: 14px; /* 调整文字大小 */
