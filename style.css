@@ -74,8 +74,8 @@ nav {
     padding: 0; /* 移除多余内边距 */
     cursor: pointer; /* 鼠标悬停效果 */
     display: flex;
-    align-items: right; /* 垂直居中_靠右对齐 */
-    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中_靠右对齐 */
+    justify-content: flex-end; /* 水平靠右对齐 */
 }
 
 /* 包裹搜索图标的白色背景 */
