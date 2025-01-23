@@ -49,8 +49,6 @@ header p {
     opacity: 0.9; /* 增加一点透明度 */
 }
 
-
-
 nav {
     background: #72A2c0;
     overflow: hidden;
@@ -92,8 +90,8 @@ nav {
 }
 
 .search-container .search-icon {
-    width: 20px; /* 控制图片宽度 */
-    height: 20px; /* 控制图片高度 */
+    width: 25px; /* 控制图片宽度 */
+    height: 25px; /* 控制图片高度 */
 }
 
 
