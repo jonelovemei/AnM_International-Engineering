@@ -176,7 +176,8 @@ body {
     font-size: 16px; /* 段落字体大小 */
     line-height: 1.5; /* 行间距 */
 }
-main {
+
+#contact main {
     display: flex;
     justify-content: space-between; /* 两部分左右分布 */
     align-items: flex-start; /* 垂直顶部对齐 */
