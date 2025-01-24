@@ -176,3 +176,36 @@ body {
     font-size: 16px; /* 段落字体大小 */
     line-height: 1.5; /* 行间距 */
 }
+main {
+    display: flex;
+    justify-content: space-between; /* 两部分左右分布 */
+    align-items: flex-start; /* 垂直顶部对齐 */
+    padding: 20px;
+}
+
+/* Contact Information 样式 */
+#contact {
+    flex: 1; /* 左侧占据剩余空间 */
+    max-width: 40%; /* 限制最大宽度 */
+}
+
+#contact h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+/* Feedback Form 样式 */
+#feedback {
+    flex: 0 0 40%; /* 右侧固定占 40% */
+    text-align: right; /* 文本右对齐 */
+}
+
+#feedback form {
+    display: inline-block; /* 表单宽度根据内容调整 */
+    text-align: left; /* 表单内部内容左对齐 */
+}
+
+#feedback h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
