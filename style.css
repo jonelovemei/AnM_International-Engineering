@@ -58,6 +58,21 @@ nav {
     padding: 10px 20px; /* 内边距调整 */
 }
 
+/* 导航链接样式 */
+nav a {
+    color: white; /* 导航文字颜色 */
+    text-decoration: none; /* 移除下划线 */
+    padding: 10px 15px; /* 增加点击区域 */
+    border-radius: 5px; /* 增加圆角，方便鼠标悬停时视觉效果 */
+    transition: background-color 0.3s ease; /* 平滑过渡效果 */
+}
+
+/* 鼠标悬停时 */
+nav a:hover {
+    background-color: #b3e6b3; /* 浅绿色背景 */
+    color: #000; /* 悬停时文字颜色变为黑色 */
+}
+
 /* 搜索容器样式 */
 .search-container {
     display: flex; /* 使用 Flexbox 布局 */
