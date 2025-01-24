@@ -1,1 +1,25 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div id="header-placeholder"></div> <!-- 占位符 -->
+    <script>
+        // 动态加载 header.html
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-placeholder').innerHTML = data)
+            .catch(error => console.error('Error loading header:', error));
+    </script>
+    
+    <section id="Support">
+        <h2>Our Support</h2>
+        <p>  Technical Support
+            Documents & Downloads
+            Training Center 
+          Customer Portal 
+        </p>
+    </section>
+    <footer>
+        <p>&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. All rights reserved.</p>
+    </footer>
+</body>
+</html>
