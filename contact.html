@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
     <div id="header-placeholder"></div> <!-- 占位符 -->
     <script>
@@ -9,44 +15,39 @@
             .then(data => document.getElementById('header-placeholder').innerHTML = data)
             .catch(error => console.error('Error loading header:', error));
     </script>
-    
-    <body>
-  
-    <section id="contact">
-        <h2>Contact Information</h2>
-        <p>Email: <a href="mailto:anm_info@anmie.com.sg">anm_info@anmie.com.sg</a></p>
-        <p>Phone: <a href="tel:+6585889506">+65-8588 9506</a></p>
-        <p>Address: #14-08, BLK13, Anchovarl Crescent, (S) 544650</p>
-    </section>
 
-    <!-- Feedback Form -->
-    <section id="feedback">
-        <h2>Feedback Form</h2>
-        <form action="submit_feedback.php" method="post">
-            <!-- Customer Name -->
-            <label for="name">Your Name:</label><br>
-            <input type="text" id="name" name="name" placeholder="Enter your full name" required><br><br>
+    <main>
+        <!-- Contact Information -->
+        <section id="contact">
+            <h2>Contact Information</h2>
+            <p>Email: <a href="mailto:anm_info@anmie.com.sg">anm_info@anmie.com.sg</a></p>
+            <p>Phone: <a href="tel:+6585889506">+65-8588 9506</a></p>
+            <p>Address: #14-08, BLK13, Anchovarl Crescent, (S) 544650</p>
+        </section>
 
-            <!-- Contact Details -->
-            <label for="contact">Contact Method:</label><br>
-            <input type="text" id="contact" name="contact" placeholder="Phone or other contact method" required><br><br>
+        <!-- Feedback Form -->
+        <section id="feedback">
+            <h2>Feedback Form</h2>
+            <form action="submit_feedback.php" method="post">
+                <label for="name">Your Name:</label><br>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required><br><br>
 
-            <!-- Email Address -->
-            <label for="email">Email Address:</label><br>
-            <input type="email" id="email" name="email" placeholder="Enter your email address" required><br><br>
+                <label for="contact">Contact Method:</label><br>
+                <input type="text" id="contact" name="contact" placeholder="Phone or other contact method" required><br><br>
 
-            <!-- Feedback Message -->
-            <label for="message">Your Feedback:</label><br>
-            <textarea id="message" name="message" rows="6" maxlength="500" placeholder="Enter your feedback (max 500 characters)" required></textarea><br><br>
+                <label for="email">Email Address:</label><br>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required><br><br>
 
-            <!-- Submit Button -->
-            <button type="submit">Submit Feedback</button>
-        </form>
-    </section>
+                <label for="message">Your Feedback:</label><br>
+                <textarea id="message" name="message" rows="6" maxlength="500" placeholder="Enter your feedback (max 500 characters)" required></textarea><br><br>
+
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. All rights reserved.</p>
     </footer>
 </body>
 </html>
-
