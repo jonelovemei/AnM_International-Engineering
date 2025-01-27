@@ -21,13 +21,15 @@
             background-color: rgba(255, 255, 255, 0.4); /* 半透明白色背景 */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
             border-radius: 8px; /* 圆角边框 */
+            table-layout: fixed; /* 固定表格布局 */
         }
-        .contact-table td, .contact-table th {
+        .contact-table th, .contact-table td {
             padding: 15px; /* 单元格内边距 */
             text-align: left; /* 单元格文字左对齐 */
             font-size: 14px; /* 字体大小 */
             line-height: 1.5; /* 行高 */
             color: #00aaff; /* 天蓝色文字 */
+            word-wrap: break-word; /* 自动换行 */
         }
         .contact-table th {
             text-align: center; /* 标题居中 */
@@ -35,6 +37,11 @@
         }
         .contact-table tr:nth-child(odd) {
             background-color: rgba(255, 255, 255, 0.6); /* 奇数行背景颜色稍深 */
+        }
+
+        /* 表格列宽设置 */
+        .contact-table colgroup col {
+            width: 16.67%; /* 将所有列宽设置为表格宽度的 16.67% */
         }
 
         /* 页脚样式 */
@@ -60,6 +67,14 @@
     <main>
         <h2 style="text-align: center; color: #333;">联系我们</h2>
         <table class="contact-table">
+            <colgroup>
+                <col> <!-- 第一列 -->
+                <col> <!-- 第二列 -->
+                <col> <!-- 第三列 -->
+                <col> <!-- 第四列 -->
+                <col> <!-- 第五列 -->
+                <col> <!-- 第六列 -->
+            </colgroup>
             <thead>
                 <tr>
                     <th>序号</th>
