@@ -29,6 +29,9 @@ header {
     font-size: 19px; /* 调整文字大小 */
    
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); /* 添加文字阴影 */
+
+    position: sticky; /* 使页头固定 */
+        top: 0; /* 距离顶部为 0 */
 }
 
 
