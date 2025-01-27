@@ -177,48 +177,57 @@ body {
     line-height: 1.5; /* 行间距 */
 }
 
- /* 通用样式 */
-#contact body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    min-height: 100vh; /* 确保页面有足够高度 */
-    display: flex;
-    flex-direction: column;
-}
-
-/* 主体内容区域 */
+/* Contact 页面新增样式 */
 #contact main {
-    display: flex; /* 设置左右布局 */
-    justify-content: space-between; /* 左右分布 */
-    align-items: flex-start; /* 垂直顶部对齐 */
-    padding: 20px;
-    flex-grow: 1; /* 让主区域撑满剩余空间 */
+    display: flex; /* 使用 Flexbox 实现左右布局 */
+    justify-content: space-around; /* 两块区域平分空间 */
+    align-items: flex-start; /* 垂直方向顶部对齐 */
+    gap: 20px; /* 两块区域间的间距 */
+    margin: 20px; /* 上下左右增加间距 */
 }
 
-/* Contact Information 样式 */
-#contact {
-    flex: 1; /* 左侧占据剩余空间 */
-    max-width: 40%; /* 限制最大宽度 */
+#contact section {
+    background-color: rgba(255, 255, 255, 0.5); /* 半透明白色背景 */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* 添加阴影 */
+    border-radius: 8px; /* 圆角边框 */
+    padding: 20px; /* 内边距 */
+    width: 100%; /* 区域宽度自动适应父容器 */
+    max-width: 400px; /* 限制最大宽度 */
+    box-sizing: border-box; /* 包括内边距在宽度内 */
+    color: #000; /* 设置文字颜色为黑色，提升对比度 */
 }
 
-#contact h2 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
+#contact section h2 {
+    margin-top: 0; /* 移除标题顶部外边距 */
+    font-size: 1.5em; /* 调整标题大小 */
+    text-align: center; /* 标题居中 */
 }
 
-/* Feedback Form 样式 */
-#feedback {
-    flex: 0 0 40%; /* 右侧固定占 40% 页面宽度 */
-    text-align: right; /* 右对齐父容器中的内容 */
+#contact section p, #contact section label, #contact section input, #contact section textarea {
+    font-size: 14px; /* 调整段落和表单元素文字大小 */
+    line-height: 1.5; /* 设置行高 */
 }
 
-#feedback form {
-    display: inline-block; /* 表单宽度根据内容调整 */
-    text-align: left; /* 表单内部内容左对齐 */
+#contact section input, #contact section textarea {
+    width: 100%; /* 表单元素全宽 */
+    margin-bottom: 10px; /* 表单元素之间的间距 */
+    padding: 10px; /* 内边距 */
+    border: 1px solid #ccc; /* 灰色边框 */
+    border-radius: 5px; /* 圆角边框 */
 }
 
-#feedback h2 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
+#contact section button {
+    background-color: #007BFF; /* 按钮背景色 */
+    color: #fff; /* 按钮文字颜色 */
+    border: none; /* 移除边框 */
+    padding: 10px 15px; /* 按钮内边距 */
+    border-radius: 5px; /* 按钮圆角 */
+    cursor: pointer; /* 鼠标悬停时显示手型 */
+    font-size: 14px; /* 按钮文字大小 */
+    display: block; /* 块状元素 */
+    margin: 0 auto; /* 居中对齐 */
+}
+
+#contact section button:hover {
+    background-color: #0056b3; /* 悬停时按钮背景变深 */
 }
