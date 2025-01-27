@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Page</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header-placeholder"></div> <!-- 占位符 -->
+    <script>
+        // 动态加载 header.html
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-placeholder').innerHTML = data)
+            .catch(error => console.error('Error loading header:', error));
+    </script>
+    
     <style>
         /* 表格样式 */
         .contact-table {
@@ -32,13 +43,6 @@
     </style>
 </head>
 <body>
-    <!-- 页头 -->
-    <header>
-        <img src="Image/logo.png" alt="Logo">
-        <h1>Contact Us</h1>
-        <p>Your satisfaction is our priority</p>
-    </header>
-
     <!-- 内容 -->
     <main>
         <h2 style="text-align: center; color: #333;">联系我们</h2>
@@ -88,7 +92,8 @@
 
     <!-- 页脚 -->
     <footer>
-        <p>版权所有 &copy; 2025 | 公司名称</p>
+        <p>&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. All rights reserved.</p>
     </footer>
 </body>
 </html>
+
