@@ -5,18 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Page</title>
     <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div id="header-placeholder"></div> <!-- 占位符 -->
-    <script>
-        // 动态加载 header.html
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('header-placeholder').innerHTML = data)
-            .catch(error => console.error('Error loading header:', error));
-    </script>
-    
     <style>
+        /* 页头样式 */
+        header {
+            position: sticky; /* 冻结页头 */
+            top: 0; /* 顶部固定 */
+            background-color: rgba(0, 0, 0, 0.8); /* 背景色，半透明黑色 */
+            color: white;
+            font-size: 19px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px 0;
+            z-index: 1000; /* 确保页头在最上层 */
+            width: 100%; /* 宽度占满 */
+        }
+
+        /* 页头内部内容样式 */
+        header img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        header h1 {
+            margin: 0;
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 20px;
+            opacity: 0.9;
+        }
+
         /* 表格样式 */
         .contact-table {
             width: 80%;
@@ -40,11 +61,26 @@
         .contact-table tr:nth-child(odd) {
             background-color: rgba(255, 255, 255, 0.6); /* 奇数行背景颜色稍深 */
         }
+
+        /* 页脚样式 */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #333;
+            color: white;
+        }
     </style>
 </head>
 <body>
+    <!-- 页头 -->
+    <header>
+        <img src="Image/logo.png" alt="Logo">
+        <h1>Contact Us</h1>
+        <p>Your satisfaction is our priority</p>
+    </header>
+
     <!-- 内容 -->
-   <main>
+    <main>
         <h2 style="text-align: center; color: #333;">联系我们</h2>
         <table class="contact-table">
             <thead>
@@ -94,10 +130,10 @@
             </tbody>
         </table>
     </main>
+
     <!-- 页脚 -->
     <footer>
         <p>&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. All rights reserved.</p>
     </footer>
 </body>
 </html>
-
