@@ -6,36 +6,11 @@
     <title>Contact Page</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* 页头样式 */
-        header {
-            position: sticky; /* 冻结页头 */
-            top: 0; /* 顶部固定 */
-            background-color: rgba(0, 0, 0, 0.8); /* 背景色，半透明黑色 */
-            color: white;
-            font-size: 19px;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px 0;
-            z-index: 1000; /* 确保页头在最上层 */
-            width: 100%; /* 宽度占满 */
-        }
-
-        /* 页头内部内容样式 */
-        header img {
-            height: 50px;
-            margin-right: 10px;
-        }
-
-        header h1 {
-            margin: 0;
-            flex-grow: 1;
-            text-align: left;
-        }
-
-        header p {
-            margin: 0;
-            font-size: 20px;
-            opacity: 0.9;
+        /* 页头固定样式 */
+        #header-placeholder {
+            position: sticky; /* 使页头固定 */
+            top: 0; /* 距离页面顶部为 0 */
+            z-index: 1000; /* 确保页头在内容之上 */
         }
 
         /* 表格样式 */
@@ -72,12 +47,14 @@
     </style>
 </head>
 <body>
-    <!-- 页头 -->
-    <header>
-        <img src="Image/logo.png" alt="Logo">
-        <h1>Contact Us</h1>
-        <p>Your satisfaction is our priority</p>
-    </header>
+    <div id="header-placeholder"></div> <!-- 页头占位符 -->
+    <script>
+        // 动态加载 header.html
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-placeholder').innerHTML = data)
+            .catch(error => console.error('Error loading header:', error));
+    </script>
 
     <!-- 内容 -->
     <main>
