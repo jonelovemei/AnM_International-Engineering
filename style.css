@@ -139,10 +139,10 @@ footer {
 }
 
 /* 解决 footer 覆盖内容的问题 */
-body {
+#footer body {
     margin: 0;
     padding: 0 0 50px 0; /* 为内容区底部预留空间，避免被 footer 遮挡 */
-    font-family: Arial, sans-serif;
+   ;
 }
 
 
