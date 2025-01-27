@@ -1,52 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 表格样式 */
+        .contact-table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse; /* 合并表格边框 */
+            background-color: #fff; /* 表格背景填充为白色 */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+            border-radius: 8px; /* 圆角边框 */
+        }
+        .contact-table td {
+            padding: 15px; /* 单元格内边距 */
+            text-align: left; /* 单元格文字左对齐 */
+            font-size: 14px; /* 字体大小 */
+            line-height: 1.5; /* 行高 */
+        }
+        .contact-table td:first-child {
+            font-weight: bold; /* 第一列加粗 */
+        }
+    </style>
 </head>
 <body>
-    <div id="header-placeholder"></div> <!-- 占位符 -->
-    <script>
-        // 动态加载 header.html
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('header-placeholder').innerHTML = data)
-            .catch(error => console.error('Error loading header:', error));
-    </script>
+    <!-- 页头 -->
+    <header>
+        <img src="Image/logo.png" alt="Logo">
+        <h1>Contact Us</h1>
+        <p>Your satisfaction is our priority</p>
+    </header>
 
+    <!-- 内容 -->
     <main>
-    <section id="contact">
-        <h2>Contact Information</h2>
-        <p>Email: <a href="mailto:anm_info@anmie.com.sg">anm_info@anmie.com.sg</a></p>
-        <p>Phone: <a href="tel:+6585889506">+65-8588 9506</a></p>
-        <p>Address: #14-08, BLK13, Anchovarl Crescent, (S) 544650</p>
-    </section>
-
-    <section id="feedback">
-        <h2>Feedback Form</h2>
-            <form action="submit_feedback.php" method="post">
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-
-                <label for="contact">Contact Method:</label>
-                <input type="text" id="contact" name="contact" placeholder="Phone or other contact method" required>
-
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-
-                <label for="message">Your Feedback:</label>
-                <textarea id="message" name="message" rows="6" maxlength="500" placeholder="Enter your feedback (max 500 characters)" required></textarea>
-
-                <button type="submit">Submit Feedback</button>
-            </form>
-        </section>
+        <h2 style="text-align: center; color: #333;">联系我们</h2>
+        <table class="contact-table">
+            <tr>
+                <td>姓名:</td>
+                <td>张三</td>
+            </tr>
+            <tr>
+                <td>电子邮件:</td>
+                <td>zhangsan@example.com</td>
+            </tr>
+            <tr>
+                <td>联系电话:</td>
+                <td>+86 123 4567 8901</td>
+            </tr>
+            <tr>
+                <td>地址:</td>
+                <td>北京市海淀区中关村</td>
+            </tr>
+            <tr>
+                <td>备注:</td>
+                <td>欢迎通过邮件或电话联系！</td>
+            </tr>
+        </table>
     </main>
 
-
+    <!-- 页脚 -->
     <footer>
-        <p>&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. All rights reserved.</p>
+        <p>版权所有 &copy; 2025 | 公司名称</p>
     </footer>
 </body>
 </html>
