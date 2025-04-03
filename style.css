@@ -330,11 +330,11 @@ footer {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     }
 
-.hero h1 {
-    font-size: 24px; /* 调整为更合适的大小，如 24px */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 2px 阴影 */
-    margin-bottom: 14px; /* 与背景留有 14px 间距 */
-}
+    .hero h1 {
+         font-size: 24px; /* 调整为更合适的大小，如 24px */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 2px 阴影 */
+        margin-bottom: 14px; /* 与背景留有 14px 间距 */
+    }
 
 
 /* 添加传统格式回退 */
