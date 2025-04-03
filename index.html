@@ -4,56 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A&M INTERNATIONAL ENGINEERING PTE LTD</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        /* 强制重置默认样式 */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        /* 保障背景图加载的核心样式 */
+        /* 更新背景图路径 */
         .automation-bg {
-            background-image: url('Image/IAI.jpg');
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+            background: url('Image/IAI.jpg') center/cover;
         }
 
         .solutions-bg {
-            background-image: url('Image/ETE.jpg');
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+            background: url('Image/ETE.jpg') center/cover;
         }
 
         .security-bg {
-            background-image: url('Image/SC.jpg');
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+            background: url('Image/SC.jpg') center/cover;
+        }
+
+        /* 其他原有样式保持不变 */
+        .business-concept {
+            padding: 4rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .concept-card {
             position: relative;
+            margin: 2rem 0;
+            padding: 2.5rem;
+            border-radius: 15px;
+            overflow: hidden;
+            color: #fff;
             min-height: 300px;
-            margin: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: transform 0.3s ease;
         }
 
-        /* 临时禁用遮罩层 */
-        /* .concept-card::before {
+        .concept-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.6);
             z-index: 1;
-        } */
+        }
 
-        /* 强制显示测试边框 */
-        .concept-card {
-            border: 3px solid red !important;
+        .concept-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .concept-card h2 {
+            position: relative;
+            z-index: 2;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #00b4d8;
+            padding-left: 1rem;
+        }
+
+        .concept-card p {
+            position: relative;
+            z-index: 2;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 800px;
+        }
+
+        @media (max-width: 768px) {
+            .concept-card {
+                min-height: 250px;
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="concept-card automation-bg"></div>
-</body
+    <!-- 保持原有body结构不变 -->
+    <div id="header-placeholder"></div>
+
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-placeholder').innerHTML = data)
+            .catch(error => console.error('Error loading header:', error));
+    </script>
+
+    <section class="business-concept">
+        <div class="concept-card automation-bg">
+            <h2>Intelligent & Automated Integration</h2>
+            <p>Leverage IIoT, AI, and cloud computing to optimize efficiency, reduce manual intervention, and lower costs.</p>
+        </div>
+
+        <div class="concept-card solutions-bg">
+            <h2>End-to-End Solutions</h2>
+            <p>Provide full lifecycle services: from design and implementation to maintenance, ensuring reliable and customized solutions across various industries.</p>
+        </div>
+
+        <div class="concept-card security-bg">
+            <h2>Security & Compliance</h2>
+            <p>Ensure systems meet international standards (ASME, ATMS, AGA, LR) for optimal security, stability, and regulatory compliance.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. All rights reserved.</p>
+    </footer>
+</body>
+</html>
