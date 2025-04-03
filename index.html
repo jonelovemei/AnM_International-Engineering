@@ -47,7 +47,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(255, 255, 255, 0.3); /* 调亮背景 */
             z-index: 1;
         }
 
@@ -92,7 +92,9 @@
             .then(data => document.getElementById('header-placeholder').innerHTML = data)
             .catch(error => console.error('Error loading header:', error));
     </script>
-
+<section class="hero">
+        <h1>Business Concept</h1>  
+</section>
     <section class="business-concept">
         <div class="concept-card automation-bg">
             <h2>Intelligent & Automated Integration</h2>
