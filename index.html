@@ -4,10 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A&M INTERNATIONAL ENGINEERING PTE LTD</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="header-placeholder"></div> <!-- 占位符 -->
+    <div id="header-placeholder"></div>
+
+    <section class="hero">
+        <h1>Innovative Solutions for Modern Engineering</h1>
+        <p>We deliver world-class engineering and design services.</p>
+    </section>
+
+    <!-- 新增业务概念部分 -->
+    <section class="business-concepts">
+        <div class="concept-card">
+            <i class="fas fa-robot concept-icon"></i>
+            <h2>Business Concept</h2>
+            <h3>Intelligent & Automated Integration</h3>
+            <p>Leverage IIoT, AI, and cloud computing to optimize efficiency, reduce manual intervention, and lower costs.</p>
+        </div>
+
+        <div class="concept-card">
+            <i class="fas fa-project-diagram concept-icon"></i>
+            <h3>End-to-End Solutions</h3>
+            <p>Provide full lifecycle services: from design and implementation to maintenance, ensuring reliable and customized solutions across various industries.</p>
+        </div>
+
+        <div class="concept-card">
+            <i class="fas fa-shield-alt concept-icon"></i>
+            <h3>Security & Compliance</h3>
+            <p>Ensure systems meet international standards (ASME, ATMS, AGA, LR) for optimal security, stability, and regulatory compliance.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. All rights reserved.</p>
+    </footer>
+
     <script>
         // 动态加载 header.html
         fetch('header.html')
@@ -15,13 +48,5 @@
             .then(data => document.getElementById('header-placeholder').innerHTML = data)
             .catch(error => console.error('Error loading header:', error));
     </script>
-    
-    <section class="hero">
-        <h1>Innovative Solutions for Modern Engineering</h1>
-        <p>We deliver world-class engineering and design services.</p>
-    </section>
-    <footer>
-        <p>&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. All rights reserved.</p>
-    </footer>
 </body>
 </html>
