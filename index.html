@@ -6,7 +6,20 @@
     <title>A&M INTERNATIONAL ENGINEERING PTE LTD</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* 新增Business Concept样式 */
+        /* 更新背景图路径 */
+        .automation-bg {
+            background: url('Image/IAI.jpg') center/cover;
+        }
+
+        .solutions-bg {
+            background: url('Image/ETE.jpg') center/cover;
+        }
+
+        .security-bg {
+            background: url('Image/SC.jpg') center/cover;
+        }
+
+        /* 其他原有样式保持不变 */
         .business-concept {
             padding: 4rem 1rem;
             max-width: 1200px;
@@ -24,6 +37,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            transition: transform 0.3s ease;
         }
 
         .concept-card::before {
@@ -37,11 +51,17 @@
             z-index: 1;
         }
 
+        .concept-card:hover {
+            transform: translateY(-5px);
+        }
+
         .concept-card h2 {
             position: relative;
             z-index: 2;
             font-size: 2rem;
             margin-bottom: 1.5rem;
+            border-left: 4px solid #00b4d8;
+            padding-left: 1rem;
         }
 
         .concept-card p {
@@ -52,21 +72,16 @@
             max-width: 800px;
         }
 
-        /* 不同分类背景图 */
-        .automation-bg {
-            background: url('automation-bg.jpg') center/cover;
-        }
-
-        .solutions-bg {
-            background: url('solutions-bg.jpg') center/cover;
-        }
-
-        .security-bg {
-            background: url('security-bg.jpg') center/cover;
+        @media (max-width: 768px) {
+            .concept-card {
+                min-height: 250px;
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- 保持原有body结构不变 -->
     <div id="header-placeholder"></div>
 
     <script>
@@ -81,7 +96,6 @@
         <p>We deliver world-class engineering and design services.</p>
     </section>
 
-    <!-- 新增Business Concept模块 -->
     <section class="business-concept">
         <div class="concept-card automation-bg">
             <h2>Intelligent & Automated Integration</h2>
