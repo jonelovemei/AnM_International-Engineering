@@ -32,7 +32,7 @@
             padding: 2.5rem;
             border-radius: 15px;
             overflow: hidden;
-            color: #fff;
+            color: #fff; /* 确保所有文字为白色 */
             min-height: 300px;
             display: flex;
             flex-direction: column;
@@ -92,9 +92,7 @@
             .then(data => document.getElementById('header-placeholder').innerHTML = data)
             .catch(error => console.error('Error loading header:', error));
     </script>
-<section class="hero">
-        <h1>Business Concept</h1>  
-</section>
+
     <section class="business-concept">
         <div class="concept-card automation-bg">
             <h2>Intelligent & Automated Integration</h2>
