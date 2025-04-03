@@ -314,7 +314,7 @@ footer {
 }
 /* 使用现代图片格式提升性能 */
 .automation-bg {
-    background: url('Image/IAI.webp') center/cover;
+    background: url(Image/ETE.jpg) center/cover;
 }
 /* 添加传统格式回退 */
 @supports not (background: url('*.webp')) {
