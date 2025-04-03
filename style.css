@@ -292,3 +292,23 @@ footer {
         flex: 1 1 auto;
     }
 }
+/* 在现有样式中添加以下效果 */
+.concept-card {
+    transition: transform 0.3s ease;
+}
+
+.concept-card:hover {
+    transform: translateY(-5px);
+}
+
+.concept-card h2 {
+    border-left: 4px solid #00b4d8;
+    padding-left: 1rem;
+}
+
+@media (max-width: 768px) {
+    .concept-card {
+        min-height: 250px;
+        padding: 1.5rem;
+    }
+}
