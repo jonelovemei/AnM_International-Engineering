@@ -312,3 +312,11 @@ footer {
         padding: 1.5rem;
     }
 }
+/* 使用现代图片格式提升性能 */
+.automation-bg {
+    background: url('Image/IAI.webp') center/cover;
+}
+/* 添加传统格式回退 */
+@supports not (background: url('*.webp')) {
+    .automation-bg { background-image: url('Image/IAI.jpg'); }
+}
