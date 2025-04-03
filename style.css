@@ -323,18 +323,13 @@ footer {
     background: url('Image/SC.jpg') center/cover;
         }
 /*改变背景上浮现的文字上的颜色*/
-    .automation-bg h2, .automation-bg p {
-        color: white;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    }
-    .solutions-bg h2, .solutions-bg p {
-        color: white;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    }
+      .automation-bg h2, .automation-bg p, 
+    .solutions-bg h2, .solutions-bg p, 
     .security-bg h2, .security-bg p {
-        color: white;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     }
+
 
 /* 添加传统格式回退 */
 @supports not (background: url('*.webp')) {
