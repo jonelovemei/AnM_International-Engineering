@@ -4,35 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A&M INTERNATIONAL ENGINEERING PTE LTD</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* 新增Business Concept样式 */
+        .business-concept {
+            padding: 4rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .concept-card {
+            position: relative;
+            margin: 2rem 0;
+            padding: 2.5rem;
+            border-radius: 15px;
+            overflow: hidden;
+            color: #fff;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .concept-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        .concept-card h2 {
+            position: relative;
+            z-index: 2;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .concept-card p {
+            position: relative;
+            z-index: 2;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 800px;
+        }
+
+        /* 不同分类背景图 */
+        .automation-bg {
+            background: url('automation-bg.jpg') center/cover;
+        }
+
+        .solutions-bg {
+            background: url('solutions-bg.jpg') center/cover;
+        }
+
+        .security-bg {
+            background: url('security-bg.jpg') center/cover;
+        }
+    </style>
 </head>
 <body>
     <div id="header-placeholder"></div>
 
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-placeholder').innerHTML = data)
+            .catch(error => console.error('Error loading header:', error));
+    </script>
+    
     <section class="hero">
         <h1>Innovative Solutions for Modern Engineering</h1>
         <p>We deliver world-class engineering and design services.</p>
     </section>
 
-    <!-- 新增业务概念部分 -->
-    <section class="business-concepts">
-        <div class="concept-card">
-            <i class="fas fa-robot concept-icon"></i>
-            <h2>Business Concept</h2>
-            <h3>Intelligent & Automated Integration</h3>
+    <!-- 新增Business Concept模块 -->
+    <section class="business-concept">
+        <div class="concept-card automation-bg">
+            <h2>Intelligent & Automated Integration</h2>
             <p>Leverage IIoT, AI, and cloud computing to optimize efficiency, reduce manual intervention, and lower costs.</p>
         </div>
 
-        <div class="concept-card">
-            <i class="fas fa-project-diagram concept-icon"></i>
-            <h3>End-to-End Solutions</h3>
+        <div class="concept-card solutions-bg">
+            <h2>End-to-End Solutions</h2>
             <p>Provide full lifecycle services: from design and implementation to maintenance, ensuring reliable and customized solutions across various industries.</p>
         </div>
 
-        <div class="concept-card">
-            <i class="fas fa-shield-alt concept-icon"></i>
-            <h3>Security & Compliance</h3>
+        <div class="concept-card security-bg">
+            <h2>Security & Compliance</h2>
             <p>Ensure systems meet international standards (ASME, ATMS, AGA, LR) for optimal security, stability, and regulatory compliance.</p>
         </div>
     </section>
@@ -40,13 +102,5 @@
     <footer>
         <p>&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. All rights reserved.</p>
     </footer>
-
-    <script>
-        // 动态加载 header.html
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('header-placeholder').innerHTML = data)
-            .catch(error => console.error('Error loading header:', error));
-    </script>
 </body>
 </html>
