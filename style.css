@@ -322,7 +322,11 @@ footer {
 .security-bg {
     background: url('Image/SC.jpg') center/cover;
         }
-
+/*改变背景文字上的颜色*/
+.security-bg h2 {
+    color: #ffcc00; /* 亮黄色 */
+    font-weight: bold;
+}
 
 /* 添加传统格式回退 */
 @supports not (background: url('*.webp')) {
