@@ -382,14 +382,3 @@ footer {
   line-height: 1.6;
 }
 
-.concept-card.automation-bg {
-  background-image: url('path/to/your/automation-background.jpg');
-}
-
-.concept-card.security-bg {
-  background-image: url('path/to/your/security-background.jpg');
-}
-
-.concept-card.solutions-bg {
-  background-image: url('path/to/your/solutions-background.jpg');
-}
