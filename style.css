@@ -1,22 +1,5 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-}
-
-section {
-    padding: 20px;
-    height: 1000px; /* 示例用的高度 */
-}
-
-body {
-    margin: 0;
     padding: 0;
     background-image: url('./Image/bagroud.jpg');
     background-size: cover; /* 确保背景图片覆盖整个页面 */
@@ -66,7 +49,17 @@ header p {
     font-size: 20px; /* 设置副标题字体大小 */
     opacity: 0.9; /* 增加一点透明度 */
 }
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
 
+section {
+    padding: 20px;
+    height: 1000px; /* 示例用的高度 */
+}
 /* 导航栏样式 */
 nav {
     display: flex; /* 使用 Flexbox 布局 */
