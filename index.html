@@ -9,14 +9,17 @@
         /* 更新背景图路径 */
         .automation-bg {
             background: url('Image/IAI.jpg') center/cover;
+            background-size: cover; /* 确保背景图铺满区域 */
         }
 
         .solutions-bg {
             background: url('Image/ETE.jpg') center/cover;
+            background-size: cover;
         }
 
         .security-bg {
             background: url('Image/SC.jpg') center/cover;
+            background-size: cover;
         }
 
         /* 其他原有样式保持不变 */
@@ -38,6 +41,7 @@
             flex-direction: column;
             justify-content: flex-start; /* 上边对齐 */
             transition: transform 0.3s ease;
+            z-index: 0; /* 保证背景图不被其他元素遮挡 */
         }
 
         .concept-card::before {
@@ -48,7 +52,7 @@
             right: 0;
             bottom: 0;
             background: rgba(255, 255, 255, 0.3); /* 调亮背景 */
-            z-index: 1;
+            z-index: -1; /* 确保背景图在前面 */
         }
 
         .concept-card:hover {
@@ -92,13 +96,12 @@
             .then(data => document.getElementById('header-placeholder').innerHTML = data)
             .catch(error => console.error('Error loading header:', error));
     </script>
-    
-<section class="hero">
+
+    <section class="hero">
         <h1>Business Concept</h1>
         <P></P>
-</section>
+    </section>
 
-    
     <section class="business-concept">
         <div class="concept-card automation-bg">
             <h2>Intelligent & Automated Integration</h2>
@@ -106,10 +109,9 @@
         </div>
 
         <div class="concept-card solutions-bg">
-          <h2>End-to-End Solutions</h2>
-          <p> We deliver comprehensive end-to-end solutions that span the entire project lifecycle — from concept design and engineering to seamless implementation, commissioning, and ongoing maintenance. Our approach ensures reliable, efficient, and fully customized systems tailored to meet the specific operational and regulatory requirements of diverse industries. By integrating technical expertise with industry best practices, we empower our clients to achieve sustainable performance and long-term value.</p>
+            <h2>End-to-End Solutions</h2>
+            <p> We deliver comprehensive end-to-end solutions that span the entire project lifecycle — from concept design and engineering to seamless implementation, commissioning, and ongoing maintenance. Our approach ensures reliable, efficient, and fully customized systems tailored to meet the specific operational and regulatory requirements of diverse industries. By integrating technical expertise with industry best practices, we empower our clients to achieve sustainable performance and long-term value.</p>
         </div>
-
 
         <div class="concept-card security-bg">
             <h2>Security & Compliance</h2>
