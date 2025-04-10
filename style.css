@@ -263,7 +263,7 @@ footer {
 .business-concepts {
     max-width: 1200px;
     margin: 4rem auto;
-    padding: 0 20px;
+    padding: 0 5px;
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
@@ -374,7 +374,7 @@ footer {
 
 /* Hero 标题区域样式调整 */
      .hero {
-    padding: 100px 1rem 5px;  /* 上方 60px 避免被 header 遮挡，底部 20px 拉近下一段 */
+    padding: 100px 1rem 5px;  /* 上方 100px 避免被 header 遮挡，底部 20px 拉近下一段 */
     text-align: center;
 }
 
