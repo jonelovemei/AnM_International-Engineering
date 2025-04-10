@@ -57,7 +57,7 @@ header {
 }
 
 /* 锁定 header */
-header-placeholder {
+#header-placeholder {
     position: fixed;
     top: 0;
     left: 0;
