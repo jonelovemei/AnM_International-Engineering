@@ -1,21 +1,36 @@
-body {
-    margin: 0;
-    padding: 0;
-    background-image: url('./Image/bagroud.jpg');
-    background-size: cover; /* 确保背景图片覆盖整个页面 */
-    background-repeat: no-repeat; /* 不重复背景图片 */
-    background-position: center; /* 背景图片居中 */
-    font-family: Arial, sans-serif; /* 设置默认字体 */
-    color: #fff; /* 默认文字颜色 */
+*/body {
+    /*margin: 0;
+   /* padding: 0;
+    /*background-image: url('./Image/bagroud.jpg');
+    /*background-size: cover; /* 确保背景图片覆盖整个页面 */
+   /* background-repeat: no-repeat; /* 不重复背景图片 */
+    /*background-position: center; /* 背景图片居中 */
+    /*font-family: Arial, sans-serif; /* 设置默认字体 */
+    /*color: #fff; /* 默认文字颜色 */
 
      /* 半透明覆盖色 */
-    background-color: rgba(255,255,255,0.45); /* 使用45%透明黑色 */
-    background-blend-mode: overlay; /* 叠加模式 */
-}
-/* 让内容不被遮住，留出 header 高度 */
+    /*background-color: rgba(255,255,255,0.45); /* 使用45%透明黑色 */
+    /*background-blend-mode: overlay; /* 叠加模式 */
+}*/
+
 body {
-    padding-top: 80px; /* 请根据你 header 实际高度调整 */
+    margin: 0;
+    padding: 100px 0 0 0; /* 顶部预留 header 空间 */
+    background-image: url('./Image/bagroud.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    color: #fff;
+
+    background-color: rgba(255,255,255,0.45); 
+    background-blend-mode: overlay;
 }
+
+/* 让内容不被遮住，留出 header 高度 */
+/*body {
+    /*padding-top: 80px; /* 请根据你 header 实际高度调整 */
+/*}
 header {
     background-image: url('Image/24_01.jpg'); /* 背景图片 */
     background-size: 100% 50%; /* 宽度 100%，高度缩减为原来的 70% */
