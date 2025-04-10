@@ -12,7 +12,10 @@ body {
     background-color: rgba(255,255,255,0.45); /* 使用45%透明黑色 */
     background-blend-mode: overlay; /* 叠加模式 */
 }
-
+/* 让内容不被遮住，留出 header 高度 */
+body {
+    padding-top: 80px; /* 请根据你 header 实际高度调整 */
+}
 header {
     background-image: url('Image/24_01.jpg'); /* 背景图片 */
     background-size: 100% 50%; /* 宽度 100%，高度缩减为原来的 70% */
