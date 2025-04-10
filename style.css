@@ -372,16 +372,18 @@ footer {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     }
 
+  /* Hero 标题区域样式调整 */
     .hero {
-    text-align: left; /* 让整个 hero 内容左对齐 */
-    padding-left: 1rem; /* 根据实际情况调整左侧间距 */
-    margin-bottom: 14px; /* 保持与下方背景的间距 */
+    padding: 60px 1rem 30px;  /* 上方 60px 避免被 header 遮挡，底部 30px 拉近下一段 */
+    text-align: center;
+    background-color: #f5f5f5; /* 可选背景色，视觉分隔 */
 }
 
+/* Hero 标题文字样式优化 */
 .hero h1 {
     font-size: 36px; /* 适合标题的大小 */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 2px 阴影 */
-    margin-bottom: 14px; /* 与背景图案保持 14px 间距 */
+    margin-bottom: 4px; /* 与背景图案保持 14px 间距 */
 }
 
 
