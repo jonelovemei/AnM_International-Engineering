@@ -347,3 +347,29 @@ footer {
 @supports not (background: url('*.webp')) {
     .automation-bg { background-image: url('Image/IAI.jpg'); }
 }
+
+
+.concept-card.solutions-bg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 垂直居中 */
+  align-items: center;     /* 水平居中 */
+  text-align: justify;     /* 两端对齐文本 */
+  padding: 5vw;
+  height: 100vh; /* 根据背景图尺寸调整 */
+  background-size: cover;
+  background-position: center;
+  color: white; /* 根据背景亮度调整文字颜色 */
+}
+
+.concept-card.solutions-bg h2 {
+  font-size: 2.5vw;
+  margin-bottom: 1vw;
+  text-align: center; /* 标题居中 */
+}
+
+.concept-card.solutions-bg p {
+  max-width: 800px;
+  font-size: 1.2vw;
+  line-height: 1.6;
+}
