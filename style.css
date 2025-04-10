@@ -56,6 +56,22 @@ header {
     text-align: center;
 }
 
+/* 锁定 header */
+#header-placeholder {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999; /* 保证在最上层 */
+    background-color: #fff; /* 可根据你导航栏的样式调整背景色 */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* 可选：添加下阴影 */
+}
+
+/* 让内容不被遮住，留出 header 高度 */
+body {
+    padding-top: 80px; /* 请根据你 header 实际高度调整 */
+}
+
 section {
     padding: 20px;
     height: 1000px; /* 示例用的高度 */
