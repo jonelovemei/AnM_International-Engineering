@@ -365,7 +365,7 @@ footer {
     background: url('Image/SC.jpg') center/cover;
         }
 /*改变背景上浮现的文字上的颜色*/
-      .automation-bg h2, .automation-bg p, 
+    .automation-bg h2, .automation-bg p, 
     .solutions-bg h2, .solutions-bg p, 
     .security-bg h2, .security-bg p {
     color: white;
@@ -374,7 +374,7 @@ footer {
 
 /* Hero 标题区域样式调整 */
      .hero {
-    padding: 60px 1rem 20px;  /* 上方 60px 避免被 header 遮挡，底部 20px 拉近下一段 */
+    padding: 65px 1rem 20px;  /* 上方 60px 避免被 header 遮挡，底部 20px 拉近下一段 */
     text-align: center;
 }
 
