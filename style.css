@@ -347,27 +347,39 @@ footer {
 }
 
 
-.concept-card.solutions-bg {
+.concept-card {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* 垂直居中 */
-  align-items: center;     /* 水平居中 */
-  text-align: justify;     /* 两端对齐文本 */
+  justify-content: center; /* Vertically center */
+  align-items: center;     /* Horizontally center */
+  text-align: justify;     /* Justify text alignment */
   padding: 5vw;
-  height: 100vh; /* 根据背景图尺寸调整 */
+  height: 100vh; /* Adjust based on background image size */
   background-size: cover;
   background-position: center;
-  color: white; /* 根据背景亮度调整文字颜色 */
+  color: white; /* Adjust text color based on background brightness */
 }
 
-.concept-card.solutions-bg h2 {
+.concept-card h2 {
   font-size: 2.5vw;
   margin-bottom: 1vw;
-  text-align: center; /* 标题居中 */
+  text-align: center; /* Center align the title */
 }
 
-.concept-card.solutions-bg p {
+.concept-card p {
   max-width: 800px;
   font-size: 1.2vw;
   line-height: 1.6;
-}“
+}
+
+.concept-card.automation-bg {
+  background-image: url('path/to/your/automation-background.jpg');
+}
+
+.concept-card.security-bg {
+  background-image: url('path/to/your/security-background.jpg');
+}
+
+.concept-card.solutions-bg {
+  background-image: url('path/to/your/solutions-background.jpg');
+}
