@@ -67,10 +67,8 @@ header {
     box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* 可选：添加下阴影 */
 }
 
-/* 让内容不被遮住，留出 header 高度 */
-body {
-    padding-top: 80px; /* 请根据你 header 实际高度调整 */
-}
+
+
 
 section {
     padding: 20px;
