@@ -429,3 +429,8 @@ footer {
     background: transparent;
 }
 
+.business-concept {
+    margin-top: 20px; /* 默认已经有 padding, 可再加距离 */
+}
+
+
