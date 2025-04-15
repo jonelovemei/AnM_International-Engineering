@@ -386,7 +386,7 @@ footer {
     font-size: 2.5rem;
     margin: 0;
     color: #fff;  /* 保持一致的白色风格 */
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);  /* 添加2px阴影 */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);  /* 阴影扩大为5px */
 }
 
 
@@ -411,14 +411,15 @@ footer {
 }
 
 .concept-card h2 {
-  font-size: 2.5vw;
-  margin-bottom: 1vw;
+  font-size: 4rem; /* 原来是2rem，放大一倍 */
+    margin-bottom: 1rem;
+    border-left: 4px solid #00b4d8;
   text-align: center; /* Center align the title */
 }
 
 .concept-card p {
   max-width: 800px;
-  font-size: 1.2vw;
+  font-size: 2.2rem;
   line-height: 1.6;
 }
 
