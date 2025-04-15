@@ -421,3 +421,11 @@ footer {
   font-size: 1.2vw;
   line-height: 1.6;
 }
+
+.hero {
+    padding: 60px 20px 20px 20px; /* 可微调上/下间距 */
+    height: auto; /* 移除固定高度 */
+    text-align: center;
+    background: transparent;
+}
+
