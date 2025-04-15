@@ -377,7 +377,7 @@ footer {
 
 /* Hero 标题区域样式调整 */
      .hero {
-    padding: 100px 1rem 5px;  /* 上方 100px 避免被 header 遮挡，底部 20px 拉近下一段 */
+    padding: 150px 1rem 5px;  /* 上方 100px 避免被 header 遮挡，底部 20px 拉近下一段 */
     text-align: center;
 }
 
@@ -430,7 +430,7 @@ footer {
 }
 
 .business-concept {
-    margin-top: 20px; /* 默认已经有 padding, 可再加距离 */
+    margin-top: 10px; /* 默认已经有 padding, 可再加距离 */
 }
 
 
