@@ -263,16 +263,20 @@ footer {
     background-position: center;
 }
 
+----------------/*加上business consept文字样式*/----------------
+/* 英文标题区域样式 */
 .hero {
-    padding: 4rem 1rem;
-    background-color: #f8f8f8;
+    padding: 6rem 1rem; /* 加大整体上下内边距 */
+    background-color: #f8f8f8; /* 设置浅灰背景提高可读性 */
     text-align: center;
 }
 
-----------------/*加上business consept文字样式*/----------------
+/* Business Concept 标题样式 */
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 5rem; /* 字体大小放大为原来的两倍 */
     color: #333;
+    margin-top: 5rem; /* 增加与上方的距离 */
     margin-bottom: 2rem;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3); /* 添加 5px 阴影 */
 }
 
