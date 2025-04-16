@@ -250,7 +250,7 @@ footer {
 
 .concept-card {
     position: relative;
-    margin: 2rem 0;
+    margin: 0.5rem 0;
     padding: 2.5rem;
     border-radius: 15px;
     overflow: hidden;
@@ -267,7 +267,7 @@ footer {
 /*----------------加上business consept文字样式----------------*/
 /* 英文标题区域样式 */
 .hero {
-    padding: 2rem 0.5rem; /* 加大整体上下内边距 */
+    padding: 1px 0.5rem; /* 加大整体上下内边距 */
     text-align: center;
 }
 
@@ -275,8 +275,8 @@ footer {
 .hero h1 {
     font-size: 3rem; /* 字体大小放大为原来的两倍 */
     color: white;
-    margin-top: 2rem; /* 增加与上方的距离 */
-    margin-bottom: 0.01rem;
+    margin-top: 0rem; /* 增加与上方的距离 */
+    margin-bottom: 1px;
     text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3); /* 添加 5px 阴影 */
 }
 
