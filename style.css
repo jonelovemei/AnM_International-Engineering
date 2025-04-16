@@ -267,7 +267,6 @@ footer {
 /* 英文标题区域样式 */
 .hero {
     padding: 6rem 0.5rem; /* 加大整体上下内边距 */
-    background-color: #f8f8f8; /* 设置浅灰背景提高可读性 */
     text-align: center;
 }
 
