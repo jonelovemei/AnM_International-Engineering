@@ -280,3 +280,27 @@ footer {
     text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3); /* 添加 5px 阴影 */
 }
 
+/* 调整文字块样式：字体加大、阴影加粗、段落对齐 */
+.concept-card h2 {
+    font-size: 2.2rem; /* 原本是 2rem，稍微放大一点 */
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5); /* 原来是2px，这里加粗为3px阴影 */
+}
+
+.concept-card p {
+    font-size: 1.2rem; /* 段落文字放大一点 */
+    line-height: 1.8;
+    text-align: justify; /* 文字左右对齐 */
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4); /* 段落阴影从1px提升到2px */
+    max-width: 90%; /* 让文字不紧贴边界，看起来更舒服 */
+    margin: auto; /* 居中段落 */
+}
+
+/* 修改背景图尺寸让它略大于内容区域 */
+.automation-bg,
+.solutions-bg,
+.security-bg {
+    background-size: 110% auto; /* 背景图略大于文字内容 */
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
