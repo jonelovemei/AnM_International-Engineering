@@ -262,3 +262,17 @@ footer {
     background-size: cover;
     background-position: center;
 }
+
+.hero {
+    padding: 4rem 1rem;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+----------------/*加上business consept文字样式*/----------------
+.hero h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
