@@ -266,7 +266,7 @@ footer {
 /*----------------加上business consept文字样式----------------*/
 /* 英文标题区域样式 */
 .hero {
-    padding: 6rem 0.5rem; /* 加大整体上下内边距 */
+    padding: 5rem 0.5rem; /* 加大整体上下内边距 */
     text-align: center;
 }
 
@@ -274,8 +274,8 @@ footer {
 .hero h1 {
     font-size: 3rem; /* 字体大小放大为原来的两倍 */
     color: white;
-    margin-top: 5rem; /* 增加与上方的距离 */
-    margin-bottom: 0.1rem;
+    margin-top: 4rem; /* 增加与上方的距离 */
+    margin-bottom: 0.05rem;
     text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3); /* 添加 5px 阴影 */
 }
 
@@ -298,7 +298,7 @@ footer {
 .automation-bg,
 .solutions-bg,
 .security-bg {
-    background-size: 110% auto; /* 背景图略大于文字内容 */
+    background-size: 101% auto; /* 背景图略大于文字内容 */
     background-position: center;
     background-repeat: no-repeat;
 }
