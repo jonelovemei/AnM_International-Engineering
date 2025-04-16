@@ -267,7 +267,8 @@ footer {
 /*----------------加上business consept文字样式----------------*/
 /* 英文标题区域样式 */
 .hero {
-    padding: 1px 0.5rem; /* 加大整体上下内边距 */
+    margin-top: calc(60px + 1rem); /* 根据 header 实际高度偏移 */
+    padding: 3rem 0.5rem; /* 加大整体上下内边距 */
     text-align: center;
 }
 
