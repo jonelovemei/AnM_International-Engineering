@@ -11,7 +11,7 @@ body {
     color: #fff;
     background-color: rgba(255,255,255,0.45); /* 半透明白色遮罩 */
     background-blend-mode: overlay; /* ✅修改：使用背景混合效果 */
-    padding-top: 80px; /* ✅修改：增加上 padding 给 header 位置 */
+    padding-top: 60px; /* ✅修改：增加上 padding 给 header 位置 */
 }
 
 /* ✅合并和整理 header 样式 */
@@ -23,7 +23,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 1px 20px;/* ✅👉顶部底部 padding 减小为1px */
     color: white;
     font-size: 19px;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
@@ -38,9 +38,10 @@ header img {
 }
 
 header h1 {
-    margin: 0;
+    margin: 0; /* ✅已设为0，保留 */
     flex-grow: 1;
     text-align: left;
+    padding: 0; /* ✅👉添加这行以清除 padding */
 }
 
 header p {
