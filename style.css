@@ -338,3 +338,22 @@ footer {
     font-size: 0.95rem;
 }
 
+
+/*--------------------------------*/
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+}
+
