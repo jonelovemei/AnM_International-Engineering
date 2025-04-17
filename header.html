@@ -25,14 +25,15 @@
     <a href="contact.html">Contact Us</a>
 
        
-<!-- 搜索框 -->
-  <form action="search.html" method="get" class="search-container">
-    <input type="text" placeholder="Search..." name="q" id="search-input">
-    <button type="submit" class="search-button">
-        <div class="search-icon-wrapper">
-            <img src="Image/search-icon.png" alt="Search" class="search-icon">
-        </div>
-    </button>
-</form>
+
+<!-- 搜索栏 -->
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Search...">
+    <button onclick="searchSite()">Search</button>
+</div>
+
+<!-- 搜索结果显示区域 -->
+<div id="search-results"></div>
+
 
 </nav>
