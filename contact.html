@@ -3,45 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Page</title>
+    <title>Contact Us - A&M INTERNATIONAL ENGINEERING</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* 页头固定样式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f5f7fa;
+        }
+
+        /* 页头占位固定 */
         #header-placeholder {
-            position: sticky; /* 使页头固定 */
-            top: 0; /* 距离页面顶部为 0 */
-            z-index: 1000; /* 确保页头在内容之上 */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        /* 表格样式 */
+        /* 联系表格样式 */
         .contact-table {
-            width: 80%;
-            margin: 20px auto;
-            border-collapse: collapse; /* 合并表格边框 */
-            background-color: rgba(255, 255, 255, 0.4); /* 半透明白色背景 */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
-            border-radius: 8px; /* 圆角边框 */
-            table-layout: fixed; /* 固定表格布局 */
-        }
-        .contact-table th, .contact-table td {
-            padding: 15px; /* 单元格内边距 */
-            text-align: left; /* 单元格文字左对齐 */
-            font-size: 14px; /* 字体大小 */
-            line-height: 1.5; /* 行高 */
-            color: #00aaff; /* 天蓝色文字 */
-            word-wrap: break-word; /* 自动换行 */
-        }
-        .contact-table th {
-            text-align: center; /* 标题居中 */
-            font-weight: bold; /* 加粗标题 */
-        }
-        .contact-table tr:nth-child(odd) {
-            background-color: rgba(255, 255, 255, 0.6); /* 奇数行背景颜色稍深 */
+            width: 60%;
+            margin: 40px auto;
+            border-collapse: collapse;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
         }
 
-        /* 表格列宽设置 */
-        .contact-table colgroup col {
-            width: 16.67%; /* 将所有列宽设置为表格宽度的 16.67% */
+        .contact-table th, .contact-table td {
+            padding: 20px;
+            font-size: 16px;
+            text-align: left;
+            color: #004466;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .contact-table th {
+            background-color: #00aaff;
+            color: white;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .contact-table tr:last-child td {
+            border-bottom: none;
         }
 
         /* 页脚样式 */
@@ -51,77 +56,72 @@
             background-color: #333;
             color: white;
         }
+
+        /* 二维码样式 */
+        .qr-code {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 120px;
+            height: 120px;
+            background-color: white;
+            border: 2px solid #ccc;
+            padding: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        .qr-code img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
     </style>
 </head>
 <body>
-    <div id="header-placeholder"></div> <!-- 页头占位符 -->
+    <div id="header-placeholder"></div>
+
     <script>
-        // 动态加载 header.html
+        // 加载 header.html
         fetch('header.html')
             .then(response => response.text())
             .then(data => document.getElementById('header-placeholder').innerHTML = data)
             .catch(error => console.error('Error loading header:', error));
     </script>
 
-    <!-- 内容 -->
+    <!-- 页面主体 -->
     <main>
-        <h2 style="text-align: center; color: #333;">联系我们</h2>
+        <h2 style="text-align: center; color: #004466; margin-top: 40px;">Contact Us</h2>
         <table class="contact-table">
-            <colgroup>
-                <col> <!-- 第一列 -->
-                <col> <!-- 第二列 -->
-                <col> <!-- 第三列 -->
-                <col> <!-- 第四列 -->
-                <col> <!-- 第五列 -->
-                <col> <!-- 第六列 -->
-            </colgroup>
             <thead>
                 <tr>
-                    <th>序号</th>
-                    <th>姓名</th>
-                    <th>联系方式</th>
-                    <th>备注</th>
-                    <th>部门</th>
+                    <th>Contact Information</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>1</td>
-                    <td>张三</td>
-                    <td>+86 123 4567 8901</td>
-                    <td>欢迎通过邮件联系</td>
-                    <td rowspan="5" class="vertical-cell">所有部门</td>
+                    <td>Phone: +65 6123 4567</td>
                 </tr>
                 <tr>
-                    <td>2</td>
-                    <td>李四</td>
-                    <td>+86 987 6543 210</td>
-                    <td>优先电话沟通</td>
+                    <td>Email: info@aminternational.com</td>
                 </tr>
                 <tr>
-                    <td>3</td>
-                    <td>王五</td>
-                    <td>wangwu@example.com</td>
-                    <td>邮件回复可能稍慢</td>
+                    <td>WeChat: AM_Engineering</td>
                 </tr>
                 <tr>
-                    <td>4</td>
-                    <td>赵六</td>
-                    <td>+86 555 6666 7777</td>
-                    <td>欢迎面谈</td>
+                    <td>WhatsApp: +65 9123 4567</td>
                 </tr>
                 <tr>
-                    <td>5</td>
-                    <td>孙七</td>
-                    <td>sunqi@example.com</td>
-                    <td>线上联系最佳</td>
-                </tr>
-                <tr>
-                    <td colspan="4" class="merged-cell">以上是我们的团队联系方式，期待与您合作！</td>
+                    <td>Address: 123 Pioneer Road North, Singapore 628000</td>
                 </tr>
             </tbody>
         </table>
     </main>
+
+    <!-- 固定二维码 -->
+    <div class="qr-code">
+        <img src="Image/qr-code.png" alt="Scan QR Code">
+    </div>
 
     <!-- 页脚 -->
     <footer>
