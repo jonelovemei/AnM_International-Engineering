@@ -9,7 +9,7 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            background-color: #f5f7fa;
+            background-color: #ffffff;
         }
 
         /* 页头占位固定 */
@@ -19,34 +19,38 @@
             z-index: 1000;
         }
 
-        /* 联系表格样式 */
+        /* 表格样式（无边框，无背景，行高紧凑） */
         .contact-table {
             width: 60%;
             margin: 40px auto;
             border-collapse: collapse;
-            background-color: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            overflow: hidden;
+            background: none;
         }
 
         .contact-table th, .contact-table td {
-            padding: 20px;
+            border: none;
+            padding: 5px 0;
             font-size: 16px;
             text-align: left;
-            color: #004466;
-            border-bottom: 1px solid #ddd;
+            color: #222;
+            line-height: 1.5;
         }
 
         .contact-table th {
-            background-color: #00aaff;
-            color: white;
-            text-align: center;
             font-size: 18px;
+            color: #005577;
+            font-weight: bold;
+            padding-bottom: 10px;
         }
 
-        .contact-table tr:last-child td {
-            border-bottom: none;
+        .qr-cell {
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .qr-cell img {
+            width: 160px;
+            height: auto;
         }
 
         /* 页脚样式 */
@@ -55,26 +59,6 @@
             padding: 20px 0;
             background-color: #333;
             color: white;
-        }
-
-        /* 二维码样式 */
-        .qr-code {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 120px;
-            height: 120px;
-            background-color: white;
-            border: 2px solid #ccc;
-            padding: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 8px;
-        }
-
-        .qr-code img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
         }
     </style>
 </head>
@@ -94,34 +78,23 @@
         <h2 style="text-align: center; color: #004466; margin-top: 40px;">Contact Us</h2>
         <table class="contact-table">
             <thead>
-                <tr>
-                    <th>Contact Information</th>
-                </tr>
+                <tr><th>Contact Information</th></tr>
             </thead>
             <tbody>
+                <tr><td>Phone: +65 6123 4567</td></tr>
+                <tr><td>Email: info@aminternational.com</td></tr>
+                <tr><td>WeChat: AM_Engineering</td></tr>
+                <tr><td>WhatsApp: +65 9123 4567</td></tr>
+                <tr><td>Address: 123 Pioneer Road North, Singapore 628000</td></tr>
                 <tr>
-                    <td>Phone: +65 6123 4567</td>
-                </tr>
-                <tr>
-                    <td>Email: info@aminternational.com</td>
-                </tr>
-                <tr>
-                    <td>WeChat: AM_Engineering</td>
-                </tr>
-                <tr>
-                    <td>WhatsApp: +65 9123 4567</td>
-                </tr>
-                <tr>
-                    <td>Address: 123 Pioneer Road North, Singapore 628000</td>
+                    <td class="qr-cell">
+                        <img src="Image/contact_qr_with_logo.png" alt="Contact QR Code with Logo">
+                        <div style="margin-top: 5px; font-size: 14px; color: #555;">Scan to connect us on WeChat / WhatsApp</div>
+                    </td>
                 </tr>
             </tbody>
         </table>
     </main>
-
-    <!-- 固定二维码 -->
-    <div class="qr-code">
-        <img src="Image/qr-code.png" alt="Scan QR Code">
-    </div>
 
     <!-- 页脚 -->
     <footer>
