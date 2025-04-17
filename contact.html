@@ -11,10 +11,10 @@
             margin: 0;
             background-color: #ffffff;
             display: flex;
-            flex-direction: row;
             justify-content: center;
             align-items: flex-start;
             gap: 30px;
+            flex-wrap: wrap;
         }
 
         /* 页头占位固定 */
@@ -27,7 +27,7 @@
         /* 联系表格样式（无边框，无背景，行高紧凑） */
         .contact-table {
             width: 48%;
-            margin: 40px auto;
+            margin: 40px 0;
             border-collapse: collapse;
             background: none;
         }
@@ -48,6 +48,10 @@
             padding-bottom: 10px;
         }
 
+        .contact-table td {
+            padding-bottom: 15px;
+        }
+
         .qr-cell {
             text-align: center;
             padding-top: 20px;
@@ -66,6 +70,9 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* 竖向居中对齐 */
         }
 
         .feedback-container h3 {
@@ -82,6 +89,7 @@
             font-size: 14px;
             color: #333;
             resize: none;
+            margin-bottom: 15px;
         }
 
         .submit-btn {
@@ -93,7 +101,6 @@
             font-size: 16px;
             border-radius: 4px;
             cursor: pointer;
-            margin-top: 10px;
         }
 
         .submit-btn:hover {
