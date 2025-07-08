@@ -358,15 +358,3 @@ footer {
 }
 
 
-/*--------------------------202507------*/
-main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 90%;
-    max-width: 1200px;
-    margin-top: 80px;  /* ✅ 这里从 40px 改为 80px */
-    gap: 30px;
-}
-
-
