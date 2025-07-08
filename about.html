@@ -1,7 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us - A&M INTERNATIONAL ENGINEERING</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #ffffff;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        #header-placeholder {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        section#about {
+            max-width: 1000px;
+            margin: 80px auto 60px;
+            padding: 0 20px;
+        }
+
+        .about-description h2 {
+            font-size: 28px;
+            color: #005577;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .about-description p {
+            font-size: 17px;
+            font-weight: 500;
+            text-shadow: 1px 1px 1px #ccc;
+            text-align: justify;
+            margin-bottom: 16px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
 <body>
-    <div id="header-placeholder"></div> <!-- 占位符 -->
+
+    <!-- Header 占位符 -->
+    <div id="header-placeholder"></div>
     <script>
         // 动态加载 header.html
         fetch('header.html')
@@ -9,19 +59,29 @@
             .then(data => document.getElementById('header-placeholder').innerHTML = data)
             .catch(error => console.error('Error loading header:', error));
     </script>
- 
+
+    <!-- About Us Section -->
     <section id="about">
-    <div class="about-description">
-        <h2>About Us</h2>
-        <p>A Professional Industry Process Engineering company, 
-            A system integration solution provider, 
-            An AI Automation solution is a great partner.</p>
-    </div>
+        <div class="about-description">
+            <h2>About Us</h2>
+            <p>At A&M International Engineering, we deliver next-generation solutions for a rapidly evolving industrial world. Our expertise spans across <strong>intelligent automation, industrial metering systems</strong>, and <strong>cloud-based software platforms</strong>, enabling our clients to achieve operational excellence through technology-driven innovation.</p>
+
+            <p>We specialize in <strong>Intelligent & Automated Integration</strong>, combining real-time data connectivity, IIoT, PLCs, SCADA, and cloud technologies to create engineering systems that are scalable, efficient, and resilient. Through smart integration and predictive analytics, we empower industries to optimize performance, reduce downtime, and prepare for future expansion.</p>
+
+            <p>As a trusted provider of <strong>metering systems</strong>, we design and implement high-precision, regulatory-compliant measurement solutions tailored to critical energy, utility, and industrial applications. Our systems ensure accuracy, transparency, and operational reliability in every drop and every watt measured.</p>
+
+            <p>In the digital domain, we develop and operate <strong>SaaS (Software-as-a-Service)</strong> and <strong>SaaP (Software-as-a-Product)</strong> platforms that streamline industrial workflows, support remote monitoring, and deliver actionable insights in real time. These platforms are built to be secure, scalable, and fully customizable—enhancing agility and collaboration across distributed teams and assets.</p>
+
+            <p>We provide <strong>end-to-end engineering services</strong> covering the full project lifecycle—from conceptual design and system engineering to commissioning, training, and long-term maintenance. Each solution is tailored to meet the specific technical, operational, and regulatory requirements of our clients.</p>
+
+            <p>Our work adheres strictly to international standards including <strong>ASME, ATMS, AGA, and LR</strong>, ensuring security, compliance, and future-proof operations. With deep technical knowledge and a forward-thinking mindset, we help industries confidently navigate digital transformation and long-term growth.</p>
+        </div>
     </section>
-    
+
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
-
