@@ -1,168 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - A&M INTERNATIONAL ENGINEERING</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - A&M INTERNATIONAL ENGINEERING</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-        #header-placeholder {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            width: 100%;
-        }
+    #header-placeholder {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+    }
 
-        main {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            width: 90%;
-            max-width: 1200px;
-            margin-top: 80px; /* ✅ 这里从 40px 改为 80px */
-            gap: 30px;
-        }
-        
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 90%;
+      max-width: 1200px;
+      margin-top: 80px; /* ✅ 增加 header 到正文的距离 */
+      gap: 60px;
+    }
 
-        /* 联系方式和二维码横排 */
-        .contact-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            width: 100%;
-            gap: 40px;
-        }
+    .contact-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+      gap: 40px;
+    }
 
-        .contact-info {
-            flex: 1;
-        }
+    .contact-info {
+      flex: 1;
+    }
 
-        .contact-info h2 {
-            color: #005577;
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
+    .contact-info h2 {
+      color: #005577;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
 
-        .contact-info p {
-            font-size: 16px;
-            color: #222;
-            line-height: 1.6;
-            margin: 5px 0;
-        }
+    .contact-info p {
+      font-size: 16px;
+      color: #222;
+      line-height: 1.6;
+      margin: 5px 0;
+    }
 
-        .qr-section {
-            flex-shrink: 0;
-            text-align: center;
-        }
+    .qr-section {
+      flex-shrink: 0;
+      text-align: center;
+    }
 
-        .qr-section img {
-            width: 160px;
-            height: auto;
-        }
+    .qr-section img {
+      width: 160px;
+      height: auto;
+    }
 
-        .qr-section div {
-            margin-top: 5px;
-            font-size: 14px;
-            color: #555;
-        }
+    .qr-section div {
+      margin-top: 5px;
+      font-size: 14px;
+      color: #555;
+    }
 
-        .feedback-container {
-            width: 100%;
-            background-color: #f4f4f4;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+    /* ✅ Feedback整体居中 + 样式优化 */
+    .feedback-container {
+      width: 600px;
+      background-color: #f4f4f4;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto;
+    }
 
-        .feedback-container h3 {
-            text-align: center;
-            color: #005577;
-        }
+    .feedback-container h3 {
+      text-align: center;
+      color: #005577;
+      margin-bottom: 20px;
+    }
 
-        .feedback-textarea {
-            width: 100%;
-            height: 200px;
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-            font-size: 14px;
-            color: #333;
-            resize: none;
-            margin-bottom: 15px;
-        }
+    .feedback-textarea {
+      width: 100%;
+      height: 200px;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      font-size: 16px; /* ✅ 字体放大 */
+      font-weight: bold; /* ✅ 加粗 */
+      text-shadow: 2px 2px #ccc; /* ✅ 添加阴影 */
+      color: #333;
+      resize: none;
+      margin-bottom: 15px;
+    }
 
-        .submit-btn {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            background-color: #005577;
-            color: white;
-            font-size: 16px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+    .submit-btn {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background-color: #005577;
+      color: white;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
 
-        .submit-btn:hover {
-            background-color: #003f53;
-        }
+    .submit-btn:hover {
+      background-color: #003f53;
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            background-color: #333;
-            color: white;
-            margin-top: 60px;
-            width: 100%;
-        }
-    </style>
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background-color: #333;
+      color: white;
+      margin-top: 60px;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
-    <div id="header-placeholder"></div>
+  <div id="header-placeholder"></div>
 
-    <script>
-        // 加载 header.html
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('header-placeholder').innerHTML = data)
-            .catch(error => console.error('Error loading header:', error));
-    </script>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('header-placeholder').innerHTML = data)
+      .catch(error => console.error('Error loading header:', error));
+  </script>
 
-    <main>
-        <!-- 联系信息 + QR码（横排） -->
-        <div class="contact-section">
-            <div class="contact-info">
-                <h2>Contact Information</h2>
-                <p>Phone: +65 6123 4567</p>
-                <p>Email: info@aminternational.com</p>
-                <p>WeChat: AM_Engineering</p>
-                <p>WhatsApp: +65 9123 4567</p>
-                <p>Address: 123 Pioneer Road North, Singapore 628000</p>
-            </div>
-            <div class="qr-section">
-                <img src="Image/contact_qr_with_logo.png" alt="Contact QR Code with Logo">
-                <div>Scan to connect us on WeChat / WhatsApp</div>
-            </div>
-        </div>
+  <main>
+    <!-- 联系信息 + QR码（横排） -->
+    <div class="contact-section">
+      <div class="contact-info">
+        <h2>Contact Information</h2>
+        <p>Phone: +65 6123 4567</p>
+        <p>Email: info@aminternational.com</p>
+        <p>WeChat: AM_Engineering</p>
+        <p>WhatsApp: +65 9123 4567</p>
+        <p>Address: 123 Pioneer Road North, Singapore 628000</p>
+      </div>
+      <div class="qr-section">
+        <img src="Image/contact_qr_with_logo.png" alt="Contact QR Code with Logo" />
+        <div>Scan to connect us on WeChat / WhatsApp</div>
+      </div>
+    </div>
 
-        <!-- Feedback框 -->
-        <div class="feedback-container">
-            <h3>Feedback</h3>
-            <textarea class="feedback-textarea" placeholder="Write your feedback here... (Max 500 characters)" maxlength="500"></textarea>
-            <button class="submit-btn">Submit Feedback</button>
-        </div>
-    </main>
+    <!-- ✅ Feedback Form 发送 Email -->
+    <form class="feedback-container" action="mailto:anm_info@anmie.com.sg" method="POST" enctype="text/plain">
+      <h3>Feedback</h3>
+      <textarea class="feedback-textarea" name="message" placeholder="Write your feedback here... (Max 500 characters)" maxlength="500"></textarea>
+      <button class="submit-btn" type="submit">Submit Feedback</button>
+    </form>
+  </main>
 
-    <footer>
-        <p>&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. All rights reserved.</p>
-    </footer>
+  <footer>
+    <p>&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. All rights reserved.</p>
+  </footer>
 </body>
 </html>
