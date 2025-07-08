@@ -1,25 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Solutions - A&M INTERNATIONAL ENGINEERING</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #ffffff;
+      color: #222;
+    }
+
+    #header-placeholder {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    section#Solutions {
+      max-width: 1200px;
+      margin: 80px auto 60px;
+      padding: 0 20px;
+    }
+
+    .Solutions-description h2 {
+      font-size: 28px;
+      color: #005577;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .solutions-grid {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .solution-item {
+      flex: 1 1 calc(33.333% - 20px);
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .solution-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .solution-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .solution-item .text {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .solution-item .text h3 {
+      font-size: 18px;
+      color: #005577;
+      margin-bottom: 10px;
+    }
+
+    .solution-item .text p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background-color: #333;
+      color: white;
+    }
+
+    @media (max-width: 900px) {
+      .solution-item {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
 <body>
-    <div id="header-placeholder"></div> <!-- 占位符 -->
-    <script>
-        // 动态加载 header.html
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('header-placeholder').innerHTML = data)
-            .catch(error => console.error('Error loading header:', error));
-    </script>
- 
-    <section id="Solutions">
-      <div class="Solutions-description">
-        <h2>Solutions</h2>
-          <p>A Professional Industry Process Engineering Design,  
-          </p>
+
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('header-placeholder').innerHTML = data)
+      .catch(error => console.error('Error loading header:', error));
+  </script>
+
+  <!-- Solutions Section -->
+  <section id="Solutions">
+    <div class="Solutions-description">
+      <h2>Our Solutions</h2>
+      <div class="solutions-grid">
+        <!-- Solution 1 -->
+        <div class="solution-item">
+          <img src="Image/solution_automation.jpg" alt="Automation Solution">
+          <div class="text">
+            <h3>Intelligent Automation</h3>
+            <p>Smart integration of IIoT, SCADA, and PLCs to enable predictive maintenance and intelligent control across systems.</p>
+          </div>
+        </div>
+
+        <!-- Solution 2 -->
+        <div class="solution-item">
+          <img src="Image/solution_metering.jpg" alt="Metering Solution">
+          <div class="text">
+            <h3>Industrial Metering</h3>
+            <p>Precision-engineered metering systems for oil & gas, utilities, and energy sectors—fully compliant and transparent.</p>
+          </div>
+        </div>
+
+        <!-- Solution 3 -->
+        <div class="solution-item">
+          <img src="Image/solution_saas.jpg" alt="SaaS Solution">
+          <div class="text">
+            <h3>SaaS & SaaP Platforms</h3>
+            <p>Custom-developed software platforms for remote monitoring, asset control, and scalable digital transformation.</p>
+          </div>
+        </div>
       </div>
-    </section>
-    
-    <footer>
-        <p>&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. All rights reserved.</p>
-    </footer>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
