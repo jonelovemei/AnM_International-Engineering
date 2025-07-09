@@ -378,3 +378,9 @@ footer {
   z-index: 1;
 }
 
+section#services {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 40px 20px 0;  /* 增加顶部空隙 */
+}
+
