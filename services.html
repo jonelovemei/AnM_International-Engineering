@@ -1,28 +1,37 @@
-<section id="services">
-    <div class="services">
-        <div class="service">
-            <h3>Automation Systems</h3>
-            <p>Integrated PLC, SCADA & DCS control solutions for seamless and scalable industrial automation.</p>
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div id="header-placeholder"></div> <!-- 占位符 -->
+    <script>
+        // 动态加载 header.html
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-placeholder').innerHTML = data)
+            .catch(error => console.error('Error loading header:', error));
+    </script>
+  
+    <section id="services">
+     
+        <div class="services">
+            <div class="service">
+                <h3>Process Design</h3>
+                <p>Creating efficient, innovative processes for your industry.</p>
+            </div>
+            <div class="service">
+                <h3>3D Modeling</h3>
+                <p>Detailed and accurate models to visualize your projects.</p>
+            </div>
+            <div class="service">
+                <h3>Steel Structure Design</h3>
+                <p>Reliable and robust designs for your structural needs.</p>
+            </div>
         </div>
-        <div class="service">
-            <h3>Industrial SaaS & SaaP</h3>
-            <p>Smart platforms for remote asset monitoring, predictive maintenance, and data analytics.</p>
-        </div>
-        <div class="service">
-            <h3>Metering & Instrumentation</h3>
-            <p>High-accuracy flow and energy measurement systems built for compliance and reliability.</p>
-        </div>
-        <div class="service">
-            <h3>Engineering Design & 3D Modeling</h3>
-            <p>Process piping, steel structures, and digital twins designed with precision and clarity.</p>
-        </div>
-        <div class="service">
-            <h3>Commissioning & Site Integration</h3>
-            <p>From FAT to SAT — seamless system deployment, integration, and on-site supervision.</p>
-        </div>
-        <div class="service">
-            <h3>Safety & Compliance Solutions</h3>
-            <p>Certified systems aligned with ASME, ATEX, and industry-specific safety standards.</p>
-        </div>
-    </div>
-</section>
+    </section>
+
+
+    
+    <footer>
+        <p>&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. All rights reserved.</p>
+    </footer>
+</body>
+</html>
