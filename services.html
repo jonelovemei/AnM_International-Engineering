@@ -1,47 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products & Services - A&M INTERNATIONAL ENGINEERING</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #ffffff;
+            color: #222;
+        }
+
+        #header-placeholder {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        section#services {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #005577;
+            background-image: url('Image/bg_animation.gif'); /* 替换为浮动动画背景图 */
+            background-repeat: repeat;
+            background-size: cover;
+            padding: 30px 0;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .category {
+            flex: 1 1 48%;
+        }
+
+        .category h3 {
+            font-size: 24px;
+            color: #003344;
+            border-bottom: 2px solid #005577;
+            margin-bottom: 20px;
+        }
+
+        .category ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .category li {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #333;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .flex-container {
+                flex-direction: column;
+            }
+
+            .category {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
 <body>
-    <div id="header-placeholder"></div> <!-- 占位符 -->
+    <div id="header-placeholder"></div>
     <script>
-        // 动态加载 header.html
         fetch('header.html')
             .then(response => response.text())
             .then(data => document.getElementById('header-placeholder').innerHTML = data)
             .catch(error => console.error('Error loading header:', error));
     </script>
-  
+
     <section id="services">
-    <div class="services">
-        <div class="service">
-            <h3>Automation Systems</h3>
-            <p>Integrated PLC, SCADA & DCS control solutions for seamless and scalable industrial automation.</p>
-        </div>
-        <div class="service">
-            <h3>Industrial SaaS & SaaP</h3>
-            <p>Smart platforms for remote asset monitoring, predictive maintenance, and data analytics.</p>
-        </div>
-        <div class="service">
-            <h3>Metering & Instrumentation</h3>
-            <p>High-accuracy flow and energy measurement systems built for compliance and reliability.</p>
-        </div>
-        <div class="service">
-            <h3>Engineering Design & 3D Modeling</h3>
-            <p>Process piping, steel structures, and digital twins are designed with precision and clarity.</p>
-        </div>
-        <div class="service">
-            <h3>Commissioning & Site Integration</h3>
-            <p>From FAT to SAT — seamless system deployment, integration, and on-site supervision.</p>
-        </div>
-        <div class="service">
-            <h3>Safety & Compliance Solutions</h3>
-            <p>Certified systems aligned with ASME, ATEX, and industry-specific safety standards.</p>
-        </div>
-    </div>
-</section>
+        <div class="section-title">Products & Services</div>
 
+        <div class="flex-container">
+            <!-- 产品 -->
+            <div class="category">
+                <h3>Products</h3>
+                <ul>
+                    <li>Metering Skids / Flow Measurement Systems</li>
+                    <li>Process Control Panels, PLC Cabinets</li>
+                    <li>MCC, DCS Panels</li>
+                    <li>Chemical Dosing Systems</li>
+                    <li>Burner Management Systems</li>
+                    <li>Skids, Valves, Manifolds</li>
+                    <li>Pressure, Temperature, Flow, Level Sensors</li>
+                    <li>SaaS Monitoring Platforms</li>
+                    <li>Digital Twin Simulation</li>
+                    <li>Dashboard / SCADA Visualization</li>
+                    <li>Predictive Maintenance Platforms</li>
+                    <li>Energy Management Systems (EMS)</li>
+                    <li>Compliance & Audit Reporting Tools</li>
+                </ul>
+            </div>
 
+            <!-- 服务 -->
+            <div class="category">
+                <h3>Services</h3>
+                <ul>
+                    <li>Detailed Design (P&ID, 3D, Electrical)</li>
+                    <li>Project Management (PMO, PMP)</li>
+                    <li>System Integration (PLC, DCS, HMI, IIoT)</li>
+                    <li>Industrial Automation Implementation</li>
+                    <li>Third-party Interface Integration (ERP, MES)</li>
+                    <li>Feasibility Studies & Conceptual Design</li>
+                    <li>Engineering Audit & Compliance Evaluation</li>
+                    <li>HAZOP, SIL, Safety Case Assessments</li>
+                    <li>Equipment Selection & Optimization</li>
+                    <li>Smart Factory Consulting</li>
+                    <li>Installation & Construction Supervision</li>
+                    <li>Commissioning, SAT/FAT</li>
+                    <li>Welding, Piping, Instrument Calibration</li>
+                    <li>Start-up Support</li>
+                    <li>Preventive Maintenance & Repairs</li>
+                    <li>Remote Support & Troubleshooting</li>
+                    <li>Annual Maintenance Contracts (AMC)</li>
+                    <li>Spares Management & Replacement</li>
+                    <li>On-site Staff Training</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-    
     <footer>
         <p>&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. All rights reserved.</p>
     </footer>
