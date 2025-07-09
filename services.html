@@ -1,160 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Products & Services - A&M INTERNATIONAL ENGINEERING</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #ffffff;
-            color: #222;
-        }
+  <meta charset="UTF-8">
+  <title>Products & Services - A&M INTERNATIONAL ENGINEERING</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #ffffff;
+      color: #222;
+    }
 
-        #header-placeholder {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+    #header-placeholder {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-        section#services {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
+    section#services {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
 
-        .section-title {
-            font-size: 32px;
-            text-align: center;
-            margin-bottom: 40px;
-            color: #005577;
-            padding: 30px 0;
-        }
+    .section-title {
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #005577;
+      padding: 30px 0;
+    }
 
-        .flex-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 30px;
-        }
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
 
-        .category {
-            flex: 1 1 48%;
-            padding: 20px;
-            border-radius: 10px;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: #fff;
-            text-shadow: 1px 1px 2px #000;
-        }
+    .category {
+      flex: 1 1 48%;
+      padding: 30px;
+      border-radius: 12px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #fff;
+      text-shadow: 1px 1px 2px #000;
+      min-height: 500px;
+      box-sizing: border-box;
+    }
 
-        .category h3 {
-            font-size: 24px;
-            border-bottom: 2px solid #ffffff;
-            margin-bottom: 20px;
-            padding-bottom: 5px;
-        }
+    .products-bg {
+      background-image: url("Image/Product.png");
+    }
 
-        .category ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
+    .services-bg {
+      background-image: url("Image/servise.png");
+    }
 
-        .category li {
-            margin-bottom: 10px;
-            font-size: 16px;
-        }
+    .category h3 {
+      font-size: 24px;
+      border-bottom: 2px solid #ffffff;
+      margin-bottom: 20px;
+      padding-bottom: 5px;
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            background-color: #333;
-            color: white;
-        }
+    .category ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
 
-        @media (max-width: 768px) {
-            .flex-container {
-                flex-direction: column;
-            }
+    .category li {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
 
-            .category {
-                flex: 1 1 100%;
-            }
-        }
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background-color: #333;
+      color: white;
+    }
 
-        /* 为产品和服务设置不同背景图 */
-        .products-bg {
-            background-image: url("Image/Product.png");
-        }
+    @media (max-width: 768px) {
+      .flex-container {
+        flex-direction: column;
+      }
 
-        .services-bg {
-            background-image: url("Image/servise.png");
-        }
-    </style>
+      .category {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div id="header-placeholder"></div>
-    <script>
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('header-placeholder').innerHTML = data)
-            .catch(error => console.error('Error loading header:', error));
-    </script>
+  <div id="header-placeholder"></div>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('header-placeholder').innerHTML = data)
+      .catch(error => console.error('Error loading header:', error));
+  </script>
 
-    <section id="services">
-        <div class="flex-container">
-            <!-- 产品 -->
-            <div class="category products-bg">
-                <h3>Products</h3>
-                <ul>
-                    <li>Metering Skids / Flow Measurement Systems</li>
-                    <li>Process Control Panels, PLC Cabinets</li>
-                    <li>MCC, DCS Panels</li>
-                    <li>Chemical Dosing Systems</li>
-                    <li>Burner Management Systems</li>
-                    <li>Skids, Valves, Manifolds</li>
-                    <li>Pressure, Temperature, Flow, Level Sensors</li>
-                    <li>SaaS Monitoring Platforms</li>
-                    <li>Digital Twin Simulation</li>
-                    <li>Dashboard / SCADA Visualization</li>
-                    <li>Predictive Maintenance Platforms</li>
-                    <li>Energy Management Systems (EMS)</li>
-                    <li>Compliance & Audit Reporting Tools</li>
-                </ul>
-            </div>
+  <section id="services">
+    <div class="flex-container">
+      <!-- 产品 -->
+      <div class="category products-bg">
+        <h3>Products</h3>
+        <ul>
+          <li>Metering Skids / Flow Measurement Systems</li>
+          <li>Process Control Panels, PLC Cabinets</li>
+          <li>MCC, DCS Panels</li>
+          <li>Chemical Dosing Systems</li>
+          <li>Burner Management Systems</li>
+          <li>Skids, Valves, Manifolds</li>
+          <li>Pressure, Temperature, Flow, Level Sensors</li>
+          <li>SaaS Monitoring Platforms</li>
+          <li>Digital Twin Simulation</li>
+          <li>Dashboard / SCADA Visualization</li>
+          <li>Predictive Maintenance Platforms</li>
+          <li>Energy Management Systems (EMS)</li>
+          <li>Compliance & Audit Reporting Tools</li>
+        </ul>
+      </div>
 
-            <!-- 服务 -->
-            <div class="category services-bg">
-                <h3>Services</h3>
-                <ul>
-                    <li>Detailed Design (P&ID, 3D, Electrical)</li>
-                    <li>Project Management (PMO, PMP)</li>
-                    <li>System Integration (PLC, DCS, HMI, IIoT)</li>
-                    <li>Industrial Automation Implementation</li>
-                    <li>Third-party Interface Integration (ERP, MES)</li>
-                    <li>Feasibility Studies & Conceptual Design</li>
-                    <li>Engineering Audit & Compliance Evaluation</li>
-                    <li>HAZOP, SIL, Safety Case Assessments</li>
-                    <li>Equipment Selection & Optimization</li>
-                    <li>Smart Factory Consulting</li>
-                    <li>Installation & Construction Supervision</li>
-                    <li>Commissioning, SAT/FAT</li>
-                    <li>Welding, Piping, Instrument Calibration</li>
-                    <li>Start-up Support</li>
-                    <li>Preventive Maintenance & Repairs</li>
-                    <li>Remote Support & Troubleshooting</li>
-                    <li>Annual Maintenance Contracts (AMC)</li>
-                    <li>Spares Management & Replacement</li>
-                    <li>On-site Staff Training</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+      <!-- 服务 -->
+      <div class="category services-bg">
+        <h3>Services</h3>
+        <ul>
+          <li>Detailed Design (P&ID, 3D, Electrical)</li>
+          <li>Project Management (PMO, PMP)</li>
+          <li>System Integration (PLC, DCS, HMI, IIoT)</li>
+          <li>Industrial Automation Implementation</li>
+          <li>Third-party Interface Integration (ERP, MES)</li>
+          <li>Feasibility Studies & Conceptual Design</li>
+          <li>Engineering Audit & Compliance Evaluation</li>
+          <li>HAZOP, SIL, Safety Case Assessments</li>
+          <li>Equipment Selection & Optimization</li>
+          <li>Smart Factory Consulting</li>
+          <li>Installation & Construction Supervision</li>
+          <li>Commissioning, SAT/FAT</li>
+          <li>Welding, Piping, Instrument Calibration</li>
+          <li>Start-up Support</li>
+          <li>Preventive Maintenance & Repairs</li>
+          <li>Remote Support & Troubleshooting</li>
+          <li>Annual Maintenance Contracts (AMC)</li>
+          <li>Spares Management & Replacement</li>
+          <li>On-site Staff Training</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. All rights reserved.</p>
-    </footer>
+  <footer>
+    <p>&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. All rights reserved.</p>
+  </footer>
 </body>
 </html>
