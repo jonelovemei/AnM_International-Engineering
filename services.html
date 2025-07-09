@@ -29,9 +29,6 @@
             text-align: center;
             margin-bottom: 40px;
             color: #005577;
-            background-image: img src="Image/CCTV.jpg"; /* 替换为浮动动画背景图 */
-            background-repeat: repeat;
-            background-size: cover;
             padding: 30px 0;
         }
 
@@ -44,13 +41,20 @@
 
         .category {
             flex: 1 1 48%;
+            padding: 20px;
+            border-radius: 10px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #fff;
+            text-shadow: 1px 1px 2px #000;
         }
 
         .category h3 {
             font-size: 24px;
-            color: #003344;
-            border-bottom: 2px solid #005577;
+            border-bottom: 2px solid #ffffff;
             margin-bottom: 20px;
+            padding-bottom: 5px;
         }
 
         .category ul {
@@ -79,6 +83,15 @@
                 flex: 1 1 100%;
             }
         }
+
+        /* 为产品和服务设置不同背景图 */
+        .products-bg {
+            background-image: url("Image/Product.png");
+        }
+
+        .services-bg {
+            background-image: url("Image/servise.png");
+        }
     </style>
 </head>
 <body>
@@ -91,11 +104,9 @@
     </script>
 
     <section id="services">
-       
-
         <div class="flex-container">
             <!-- 产品 -->
-            <div class="category">
+            <div class="category products-bg">
                 <h3>Products</h3>
                 <ul>
                     <li>Metering Skids / Flow Measurement Systems</li>
@@ -115,7 +126,7 @@
             </div>
 
             <!-- 服务 -->
-            <div class="category">
+            <div class="category services-bg">
                 <h3>Services</h3>
                 <ul>
                     <li>Detailed Design (P&ID, 3D, Electrical)</li>
