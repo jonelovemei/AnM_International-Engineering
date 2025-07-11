@@ -9,7 +9,7 @@
       font-family: Arial, sans-serif;
       margin: 0;
       background-color: #ffffff;
-      color: #222;
+      color: #fff; /* 主文字改为白色 */
       line-height: 1.6;
     }
 
@@ -23,16 +23,12 @@
       position: relative;
       background: url('Image/AboutUS.jpg') no-repeat center center / cover;
       padding: 80px 20px;
-      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6); /* ✅ 文字阴影 */
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
     }
 
+    /* ✅ 删除遮罩层 */
     section#about::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(255, 255, 255, 0.4); /* ✅ 淡白色遮罩增强文字清晰度 */
-      z-index: 1;
+      content: none;
     }
 
     .about-description {
@@ -44,7 +40,7 @@
 
     .about-description h2 {
       font-size: 28px;
-      color: #005577;
+      color: #ffffff;
       margin-bottom: 20px;
       text-align: center;
       text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
@@ -54,9 +50,9 @@
       font-size: 17px;
       font-weight: 500;
       margin-bottom: 16px;
-      color: #222;
+      color: #ffffff;
       text-align: justify;
-      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6); /* ✅ 所有段落文字 1px 阴影 */
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
     }
 
     footer {
