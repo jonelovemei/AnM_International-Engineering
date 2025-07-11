@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>About Us - A&M INTERNATIONAL ENGINEERING</title>
+  <title>About - A&M INTERNATIONAL ENGINEERING</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       background-color: #ffffff;
-      color: #fff; /* 主文字改为白色 */
+      color: #fff;
       line-height: 1.6;
     }
 
@@ -23,12 +23,6 @@
       position: relative;
       background: url('Image/AboutUS.jpg') no-repeat center center / cover;
       padding: 80px 20px;
-      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
-    }
-
-    /* ✅ 删除遮罩层 */
-    section#about::before {
-      content: none;
     }
 
     .about-description {
@@ -38,21 +32,19 @@
       z-index: 2;
     }
 
-    .about-description h2 {
-      font-size: 28px;
-      color: #ffffff;
-      margin-bottom: 20px;
-      text-align: center;
-      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
-    }
-
     .about-description p {
       font-size: 17px;
       font-weight: 500;
       margin-bottom: 16px;
-      color: #ffffff;
+      color: #fff;
       text-align: justify;
-      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+      text-shadow: 1px 1px 1px #000;
+    }
+
+    .about-description strong {
+      color: #fff;
+      font-weight: bold;
+      text-shadow: 1px 1px 1px #000;
     }
 
     footer {
@@ -73,10 +65,9 @@
       .catch(error => console.error('Error loading header:', error));
   </script>
 
-  <!-- About Us Section -->
+  <!-- About Section -->
   <section id="about">
     <div class="about-description">
-      <h2>About Us</h2>
       <p>At A&M International Engineering, we deliver next-generation solutions for a rapidly evolving industrial world. Our expertise spans across <strong>intelligent automation, industrial metering systems</strong>, and <strong>cloud-based software platforms</strong>, enabling our clients to achieve operational excellence through technology-driven innovation.</p>
 
       <p>We specialize in <strong>Intelligent & Automated Integration</strong>, combining real-time data connectivity, IIoT, PLCs, SCADA, and cloud technologies to create engineering systems that are scalable, efficient, and resilient. Through smart integration and predictive analytics, we empower industries to optimize performance, reduce downtime, and prepare for future expansion.</p>
