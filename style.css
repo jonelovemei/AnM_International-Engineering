@@ -396,7 +396,7 @@ section#services {
 }
 
 .footer-column ul li a {
-    color: #fff; /* 链接保持白色 */
+    color: #000;   /* 链接文字黑色 */
     text-decoration: none;
 }
 
