@@ -384,3 +384,23 @@ section#services {
   padding: 40px 20px 0;  /* 增加顶部空隙 */
 }
 
+
+===============
+.footer-menu {
+    background: #222;
+    color: #ccc; /* 普通文字用浅灰，避免全白 */
+}
+
+.footer-column ul li {
+    color: #ccc; /* 非链接的文字 */
+}
+
+.footer-column ul li a {
+    color: #fff; /* 链接保持白色 */
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
