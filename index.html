@@ -270,6 +270,16 @@
             .then(data => document.getElementById('header-placeholder').innerHTML = data)
             .catch(error => console.error('Error loading header:', error));
     </script>
+
+      <!-- ✅ 搜索栏开始 -->
+    <div style="text-align:center; margin: 20px;">
+        <input type="text" id="searchInput" placeholder="Search..." 
+               style="padding: 8px; width: 250px; border-radius: 5px; border:1px solid #ccc;">
+        <button onclick="searchSite()" style="border:none; background:none; cursor:pointer;">
+            <img src="Image/search-icon.png" alt="Search" style="height:24px; vertical-align:middle;">
+        </button>
+    </div>
+    <!-- ✅ 搜索栏结束 -->
     
     <section class="business-concept">
         <div class="concept-card automation-bg">
@@ -288,6 +298,30 @@
         </div>
     </section>
 
+    <!-- ✅ 搜索功能脚本 -->
+    <script>
+        function searchSite() {
+            let input = document.getElementById("searchInput").value.toLowerCase();
+            let cards = document.querySelectorAll(".concept-card");
+            let found = false;
+
+            cards.forEach(card => {
+                let text = card.innerText.toLowerCase();
+                if (text.includes(input)) {
+                    card.style.display = "block";
+                    found = true;
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+            if (!found) {
+                alert("No results found for: " + input);
+            }
+        }
+    </script>
+    <!-- ✅ 脚本结束 -->
+    
     <!-- 修复后的 footer 结构 -->
     <section class="footer-menu">
         <div class="footer-column">
