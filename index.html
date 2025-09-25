@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A&M INTERNATIONAL ENGINEERING PTE LTD</title>
-    <link rel="stylesheet" href="style.css">
     <style>
         /* 更新背景图路径 */
         .automation-bg {
             background: url('Image/IAI.jpg') center/cover;
-            background-size: cover; /* 确保背景图铺满区域 */
+            background-size: cover;
         }
 
         .solutions-bg {
@@ -35,13 +34,13 @@
             padding: 2.5rem;
             border-radius: 15px;
             overflow: hidden;
-            color: #fff; /* 确保所有文字为白色 */
+            color: #fff;
             min-height: 300px;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* 上边对齐 */
+            justify-content: flex-start;
             transition: transform 0.3s ease;
-            z-index: 0; /* 保证背景图不被其他元素遮挡 */
+            z-index: 0;
         }
 
         .concept-card::before {
@@ -51,8 +50,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(255, 255, 255, 0.3); /* 调亮背景 */
-            z-index: -1; /* 确保背景图在前面 */
+            background: rgba(255, 255, 255, 0.3);
+            z-index: -1;
         }
 
         .concept-card:hover {
@@ -62,8 +61,8 @@
         .concept-card h2, .concept-card p {
             position: relative;
             z-index: 2;
-            color: #fff; /* 确保字体颜色为白色 */
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); /* 添加 2px 阴影 */
+            color: #fff;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
         }
 
         .concept-card h2 {
@@ -79,13 +78,6 @@
             max-width: 800px;
         }
 
-        @media (max-width: 768px) {
-            .concept-card {
-                min-height: 250px;
-                padding: 1.5rem;
-            }
-        }
-
         /* ----------- 新增 Footer 样式 ----------- */
         .footer-menu {
             display: flex;
@@ -94,7 +86,7 @@
             padding: 2rem 1rem;
             background: #222;
             color: #fff;
-            flex-wrap: wrap; /* 让小屏幕自动换行 */
+            flex-wrap: wrap;
         }
 
         .footer-column {
@@ -134,7 +126,61 @@
             padding: 1rem;
         }
 
-        /* 响应式调整 - 仅针对移动设备 */
+        /* 搜索功能样式 */
+        .search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+        }
+
+        .search-results ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .search-results li {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .search-results li:last-child {
+            border-bottom: none;
+        }
+
+        .search-results a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+        }
+
+        .search-results a:hover {
+            background-color: #f5f5f5;
+        }
+
+        .search-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-container input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+        }
+
+        /* 响应式调整 */
         @media (max-width: 768px) {
             .concept-card {
                 min-height: 250px;
@@ -156,6 +202,10 @@
             
             .footer-column {
                 min-width: 100%;
+            }
+            
+            .search-container input {
+                width: 150px;
             }
         }
         
@@ -203,73 +253,33 @@
             .footer-menu {
                 padding: 1.5rem 0.5rem;
             }
-        }
-
-        /* 页眉响应式调整 - 不影响原有样式 */
-        /* 这些样式会应用到header.html中的元素 */
-        
-        /* 桌面设备 - 默认大小 */
-        @media (min-width: 1025px) {
-            /* 保持原有的header样式不变 */
-        }
-        
-        /* iPad 横向 */
-        @media (min-width: 769px) and (max-width: 1024px) {
-            /* 调整header中的文字和logo大小 */
-            .header-logo {
-                height: 45px !important; /* Logo稍微缩小 */
-            }
             
-            .company-name {
-                font-size: 1.8rem !important; /* 文字稍微缩小 */
-            }
-            
-            .nav-link {
-                font-size: 0.9rem !important; /* 导航链接稍微缩小 */
-            }
-        }
-        
-        /* iPad 纵向/大手机 */
-        @media (min-width: 481px) and (max-width: 768px) {
-            .header-logo {
-                height: 40px !important; /* Logo进一步缩小 */
-            }
-            
-            .company-name {
-                font-size: 1.5rem !important; /* 文字进一步缩小 */
-            }
-            
-            .nav-link {
-                font-size: 0.85rem !important; /* 导航链接进一步缩小 */
-            }
-        }
-        
-        /* 手机设备 */
-        @media (max-width: 480px) {
-            .header-logo {
-                height: 35px !important; /* 手机上Logo最小 */
-            }
-            
-            .company-name {
-                font-size: 1.2rem !important; /* 手机上文字最小 */
-            }
-            
-            .nav-link {
-                font-size: 0.8rem !important; /* 导航链接最小 */
+            .search-container input {
+                width: 120px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- 恢复原有的header结构 -->
-    <div id="header-placeholder"></div>
-
-    <script>
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('header-placeholder').innerHTML = data)
-            .catch(error => console.error('Error loading header:', error));
-    </script>
+    <!-- 模拟header，包含搜索功能 -->
+    <header style="background: #003366; color: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center;">
+        <div style="display: flex; align-items: center;">
+            <img src="Image/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+            <h1 style="margin: 0;">A&M INTERNATIONAL ENGINEERING PTE LTD</h1>
+        </div>
+        
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search..." onkeyup="handleSearch(event)">
+            <button class="search-button" onclick="searchSite()">
+                <div class="search-icon-wrapper">
+                    <svg class="search-icon" viewBox="0 0 24 24" width="20" height="20">
+                        <path fill="currentColor" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                </div>
+            </button>
+            <div id="search-results" class="search-results"></div>
+        </div>
+    </header>
     
     <section class="business-concept">
         <div class="concept-card automation-bg">
@@ -288,7 +298,7 @@
         </div>
     </section>
 
-    <!-- 修复后的 footer 结构 -->
+    <!-- Footer 结构 -->
     <section class="footer-menu">
         <div class="footer-column">
             <h3>Solutions</h3>
@@ -337,5 +347,143 @@
     <footer>
         <p>&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. All rights reserved.</p>
     </footer>
+
+    <script>
+        // 网站页面数据
+        const pages = [
+            {
+                title: "Home",
+                content: "Welcome to A&M INTERNATIONAL ENGINEERING PTE LTD. We provide professional integration solutions.",
+                url: "index.html"
+            },
+            {
+                title: "About Us",
+                content: "Learn more about our company's history, values, and mission.",
+                url: "about.html"
+            },
+            {
+                title: "Solutions",
+                content: "Our solutions include supply chain optimization, digital transformation, and operational risk management.",
+                url: "Solutions.html"
+            },
+            {
+                title: "Products & Services",
+                content: "Explore our services including control, measurement, and project execution.",
+                url: "services.html"
+            },
+            {
+                title: "Projects",
+                content: "View our portfolio of completed and ongoing projects in various industries.",
+                url: "projects.html"
+            },
+            {
+                title: "Support",
+                content: "Access technical support, product finder, and customer portal.",
+                url: "Support.html"
+            },
+            {
+                title: "Contact Us",
+                content: "Reach out to us through our contact form or find our office location.",
+                url: "contact.html"
+            }
+        ];
+
+        // 处理搜索功能
+        function handleSearch(event) {
+            if (event.key === 'Enter') {
+                searchSite();
+            } else {
+                searchSiteRealTime();
+            }
+        }
+
+        // 实时搜索功能
+        function searchSiteRealTime() {
+            const keyword = document.getElementById("search-input").value.toLowerCase().trim();
+            const resultsContainer = document.getElementById("search-results");
+            
+            if (!keyword) {
+                resultsContainer.style.display = 'none';
+                return;
+            }
+
+            // 网站内搜索结果
+            const siteResults = pages.filter(page =>
+                page.title.toLowerCase().includes(keyword) ||
+                page.content.toLowerCase().includes(keyword)
+            );
+
+            // 网络搜索结果（模拟）
+            const webResults = [
+                {
+                    title: `Web results for "${keyword}"`,
+                    content: `Search the web for "${keyword}"`,
+                    url: `https://www.google.com/search?q=${encodeURIComponent(keyword)}+site:am-engineering.com`,
+                    type: 'web'
+                }
+            ];
+
+            const allResults = [...siteResults, ...webResults];
+
+            if (allResults.length === 0) {
+                resultsContainer.innerHTML = "<li>No results found</li>";
+            } else {
+                let resultsHTML = '';
+                allResults.forEach(result => {
+                    if (result.type === 'web') {
+                        resultsHTML += `
+                            <li style="background: #f0f8ff; border-left: 4px solid #007bff;">
+                                <a href="${result.url}" target="_blank" style="color: #007bff; font-weight: bold;">
+                                    ${result.title}
+                                </a>
+                                <div style="font-size: 0.8em; color: #666;">${result.content}</div>
+                            </li>`;
+                    } else {
+                        resultsHTML += `
+                            <li>
+                                <a href="${result.url}">${result.title}</a>
+                                <div style="font-size: 0.8em; color: #666;">${result.content.substring(0, 100)}...</div>
+                            </li>`;
+                    }
+                });
+                resultsContainer.innerHTML = resultsHTML;
+            }
+            
+            resultsContainer.style.display = 'block';
+        }
+
+        // 完整搜索功能
+        function searchSite() {
+            const keyword = document.getElementById("search-input").value.toLowerCase().trim();
+            
+            if (!keyword) {
+                alert("Please enter a keyword.");
+                return;
+            }
+
+            // 检查是否有网站内结果
+            const siteResults = pages.filter(page =>
+                page.title.toLowerCase().includes(keyword) ||
+                page.content.toLowerCase().includes(keyword)
+            );
+
+            if (siteResults.length > 0) {
+                // 如果有网站内结果，跳转到第一个结果
+                window.location.href = siteResults[0].url;
+            } else {
+                // 如果没有网站内结果，进行网络搜索
+                const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(keyword)}+site:am-engineering.com`;
+                window.open(searchUrl, '_blank');
+            }
+        }
+
+        // 点击页面其他区域关闭搜索结果
+        document.addEventListener('click', function(event) {
+            const searchContainer = document.querySelector('.search-container');
+            if (!searchContainer.contains(event.target)) {
+                document.getElementById('search-results').style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
