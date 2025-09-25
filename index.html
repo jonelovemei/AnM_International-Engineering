@@ -197,18 +197,60 @@
                 padding: 1.5rem 0.5rem;
             }
         }
+
+        /* 页眉响应式调整 */
+        /* 桌面设备 - 默认大小 */
+        .header-content {
+            font-size: 1.5rem; /* 默认大小 */
+        }
+        
+        .header-logo {
+            height: 60px; /* 默认Logo大小 */
+        }
+        
+        /* iPad 横向 */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .header-content {
+                font-size: 1.3rem; /* iPad上稍微小一点 */
+            }
+            
+            .header-logo {
+                height: 50px; /* Logo稍微缩小 */
+            }
+        }
+        
+        /* iPad 纵向/大手机 */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .header-content {
+                font-size: 1.1rem; /* 中等设备上更小 */
+            }
+            
+            .header-logo {
+                height: 45px; /* Logo进一步缩小 */
+            }
+        }
+        
+        /* 手机设备 */
+        @media (max-width: 480px) {
+            .header-content {
+                font-size: 0.9rem; /* 手机上最小 */
+            }
+            
+            .header-logo {
+                height: 40px; /* 手机上Logo最小 */
+            }
+        }
     </style>
 </head>
 <body>
-    <div id="header-placeholder"></div>
+    <!-- 模拟header，包含Logo和公司名称 -->
+    <div class="header">
+        <div class="header-content">
+            <img src="Image/logo.png" alt="A&M INTERNATIONAL ENGINEERING" class="header-logo">
+            <span>A&M INTERNATIONAL ENGINEERING PTE LTD</span>
+        </div>
+    </div>
 
-    <script>
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('header-placeholder').innerHTML = data)
-            .catch(error => console.error('Error loading header:', error));
-    </script>
-    
     <section class="business-concept">
         <div class="concept-card automation-bg">
             <h2>Intelligent & Automated Integration</h2>
