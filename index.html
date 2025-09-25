@@ -300,26 +300,40 @@
 
     <!-- ✅ 搜索功能脚本 -->
     <script>
-        function searchSite() {
-            let input = document.getElementById("searchInput").value.toLowerCase();
-            let cards = document.querySelectorAll(".concept-card");
-            let found = false;
+    function searchSite() {
+        let input = document.getElementById("searchInput").value.toLowerCase().trim();
+        let cards = document.querySelectorAll(".concept-card");
+        let found = false;
 
-            cards.forEach(card => {
-                let text = card.innerText.toLowerCase();
-                if (text.includes(input)) {
-                    card.style.display = "block";
-                    found = true;
-                } else {
-                    card.style.display = "none";
-                }
-            });
-
-            if (!found) {
-                alert("No results found for: " + input);
-            }
+        // 如果输入为空，恢复所有卡片
+        if (input === "") {
+            cards.forEach(card => card.style.display = "flex");
+            return;
         }
-    </script>
+
+        cards.forEach(card => {
+            let text = card.innerText.toLowerCase();
+            if (text.includes(input)) {
+                card.style.display = "flex"; // ✅ 保持原始布局
+                found = true;
+            } else {
+                card.style.display = "none";
+            }
+        });
+
+        if (!found) {
+            alert("No results found for: " + input);
+        }
+    }
+
+    // ✅ 让输入框支持按回车搜索
+    document.getElementById("searchInput").addEventListener("keypress", function(e) {
+        if (e.key === "Enter") {
+            searchSite();
+        }
+    });
+</script>
+
     <!-- ✅ 脚本结束 -->
     
     <!-- 修复后的 footer 结构 -->
