@@ -37,15 +37,10 @@ const pages = [
     }
 ];
 
-function searchSite() {
-    const keyword = document.getElementById("search-input").value.toLowerCase();
+function searchSite(keyword) {
+    keyword = keyword.toLowerCase();
     const resultsContainer = document.getElementById("search-results");
     resultsContainer.innerHTML = ""; // 清空上次结果
-
-    if (!keyword) {
-        resultsContainer.innerHTML = "<p>Please enter a keyword.</p>";
-        return;
-    }
 
     const results = pages.filter(page =>
         page.title.toLowerCase().includes(keyword) ||
