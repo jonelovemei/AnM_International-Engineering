@@ -6,6 +6,20 @@
     <title>A&M INTERNATIONAL ENGINEERING PTE LTD</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* 基础重置和响应式设置 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
         /* 更新背景图路径 */
         .automation-bg {
             background: url('Image/IAI.jpg') center/cover;
@@ -79,13 +93,6 @@
             max-width: 800px;
         }
 
-        @media (max-width: 768px) {
-            .concept-card {
-                min-height: 250px;
-                padding: 1.5rem;
-            }
-        }
-
         /* ----------- 新增 Footer 样式 ----------- */
         .footer-menu {
             display: flex;
@@ -133,11 +140,79 @@
             text-align: center;
             padding: 1rem;
         }
+        
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .concept-card {
+                min-height: 250px;
+                padding: 1.5rem;
+            }
+            
+            .concept-card h2 {
+                font-size: 1.5rem;
+            }
+            
+            .concept-card p {
+                font-size: 1rem;
+            }
+            
+            .footer-menu {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .footer-column {
+                min-width: 100%;
+            }
+        }
+        
+        /* iPad 特定优化 */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .business-concept {
+                padding: 3rem 1rem;
+            }
+            
+            .concept-card {
+                min-height: 280px;
+                padding: 2rem;
+            }
+            
+            .concept-card h2 {
+                font-size: 1.8rem;
+            }
+            
+            .footer-menu {
+                gap: 1.5rem;
+            }
+        }
+        
+        /* 小屏幕手机优化 */
+        @media (max-width: 480px) {
+            .business-concept {
+                padding: 2rem 0.5rem;
+            }
+            
+            .concept-card {
+                padding: 1rem;
+                margin: 1.5rem 0;
+                min-height: 220px;
+            }
+            
+            .concept-card h2 {
+                font-size: 1.3rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .concept-card p {
+                font-size: 0.9rem;
+            }
+            
+            .footer-menu {
+                padding: 1.5rem 0.5rem;
+            }
+        }
     </style>
 </head>
-/*--------------搜索引用------------------*/
-    <script src="search.js" defer></script>
-
 <body>
     <div id="header-placeholder"></div>
 
@@ -147,6 +222,7 @@
             .then(data => document.getElementById('header-placeholder').innerHTML = data)
             .catch(error => console.error('Error loading header:', error));
     </script>
+    
     <section class="business-concept">
         <div class="concept-card automation-bg">
             <h2>Intelligent & Automated Integration</h2>
@@ -155,13 +231,12 @@
 
         <div class="concept-card solutions-bg">
             <h2>End-to-End Solutions</h2>
-            <p> We deliver comprehensive end-to-end solutions that span the entire project lifecycle — from concept design and engineering to seamless implementation, commissioning, and ongoing maintenance. Our approach ensures reliable, efficient, and fully customized systems tailored to meet the specific operational and regulatory requirements of diverse industries. By integrating technical expertise with industry best practices, we empower our clients to achieve sustainable performance and long-term value.</p>
+            <p>We deliver comprehensive end-to-end solutions that span the entire project lifecycle — from concept design and engineering to seamless implementation, commissioning, and ongoing maintenance. Our approach ensures reliable, efficient, and fully customized systems tailored to meet the specific operational and regulatory requirements of diverse industries. By integrating technical expertise with industry best practices, we empower our clients to achieve sustainable performance and long-term value.</p>
         </div>
 
         <div class="concept-card security-bg">
             <h2>Security & Compliance</h2>
-            <p>Security & Compliance
-We prioritize the highest standards of security and compliance by ensuring that all systems we design and implement fully adhere to internationally recognized standards, including ASME, ATMS, AGA, and LR. Our approach guarantees that every project not only meets regulatory requirements but also operates with the utmost stability and security. By focusing on these critical aspects, we provide our clients with systems that are resilient, reliable, and future-proof, helping them navigate complex regulatory landscapes and ensure long-term operational success in diverse industries.</p>
+            <p>We prioritize the highest standards of security and compliance by ensuring that all systems we design and implement fully adhere to internationally recognized standards, including ASME, ATMS, AGA, and LR. Our approach guarantees that every project not only meets regulatory requirements but also operates with the utmost stability and security. By focusing on these critical aspects, we provide our clients with systems that are resilient, reliable, and future-proof, helping them navigate complex regulatory landscapes and ensure long-term operational success in diverse industries.</p>
         </div>
     </section>
 
