@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A&M INTERNATIONAL ENGINEERING PTE LTD</title>
-    <link rel="stylesheet" href="style.css">
     <style>
         /* 基础重置和响应式设置 */
         * {
@@ -22,17 +21,17 @@
         
         /* 更新背景图路径 */
         .automation-bg {
-            background: url('Image/IAI.jpg') center/cover;
+            background: url('https://placehold.co/800x600/003366/FFFFFF?text=IAI') center/cover;
             background-size: cover; /* 确保背景图铺满区域 */
         }
 
         .solutions-bg {
-            background: url('Image/ETE.jpg') center/cover;
+            background: url('https://placehold.co/800x600/006633/FFFFFF?text=ETE') center/cover;
             background-size: cover;
         }
 
         .security-bg {
-            background: url('Image/SC.jpg') center/cover;
+            background: url('https://placehold.co/800x600/660033/FFFFFF?text=SC') center/cover;
             background-size: cover;
         }
 
@@ -141,33 +140,42 @@
             padding: 1rem;
         }
         
-        /* 响应式调整 */
-        @media (max-width: 768px) {
+        /* 响应式调整 - 针对不同设备尺寸 */
+        
+        /* 桌面设备 (1200px 及以上) */
+        @media (min-width: 1200px) {
             .concept-card {
-                min-height: 250px;
-                padding: 1.5rem;
+                min-height: 350px;
+                padding: 3rem;
             }
             
             .concept-card h2 {
-                font-size: 1.5rem;
+                font-size: 2.5rem;
             }
             
             .concept-card p {
-                font-size: 1rem;
-            }
-            
-            .footer-menu {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .footer-column {
-                min-width: 100%;
+                font-size: 1.3rem;
             }
         }
         
-        /* iPad 特定优化 */
-        @media (min-width: 769px) and (max-width: 1024px) {
+        /* 小型桌面/大平板 (1024px - 1199px) */
+        @media (min-width: 1024px) and (max-width: 1199px) {
+            .concept-card {
+                min-height: 320px;
+                padding: 2.5rem;
+            }
+            
+            .concept-card h2 {
+                font-size: 2.2rem;
+            }
+            
+            .concept-card p {
+                font-size: 1.2rem;
+            }
+        }
+        
+        /* iPad 横向 (768px - 1023px) */
+        @media (min-width: 768px) and (max-width: 1023px) {
             .business-concept {
                 padding: 3rem 1rem;
             }
@@ -181,26 +189,92 @@
                 font-size: 1.8rem;
             }
             
+            .concept-card p {
+                font-size: 1.1rem;
+            }
+            
             .footer-menu {
                 gap: 1.5rem;
             }
         }
         
-        /* 小屏幕手机优化 */
-        @media (max-width: 480px) {
+        /* iPad 纵向/大手机 (600px - 767px) */
+        @media (min-width: 600px) and (max-width: 767px) {
             .business-concept {
-                padding: 2rem 0.5rem;
+                padding: 2.5rem 1rem;
             }
             
             .concept-card {
-                padding: 1rem;
+                min-height: 250px;
+                padding: 1.8rem;
                 margin: 1.5rem 0;
-                min-height: 220px;
             }
             
             .concept-card h2 {
-                font-size: 1.3rem;
+                font-size: 1.6rem;
+            }
+            
+            .concept-card p {
+                font-size: 1rem;
+            }
+            
+            .footer-menu {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .footer-column {
+                min-width: 100%;
+            }
+        }
+        
+        /* 手机 (480px - 599px) */
+        @media (min-width: 480px) and (max-width: 599px) {
+            .business-concept {
+                padding: 2rem 0.8rem;
+            }
+            
+            .concept-card {
+                min-height: 220px;
+                padding: 1.5rem;
+                margin: 1.2rem 0;
+            }
+            
+            .concept-card h2 {
+                font-size: 1.4rem;
                 margin-bottom: 0.8rem;
+            }
+            
+            .concept-card p {
+                font-size: 0.95rem;
+            }
+            
+            .footer-menu {
+                padding: 1.5rem 0.8rem;
+                flex-direction: column;
+                gap: 1.2rem;
+            }
+            
+            .footer-column {
+                min-width: 100%;
+            }
+        }
+        
+        /* 小屏幕手机 (小于480px) */
+        @media (max-width: 479px) {
+            .business-concept {
+                padding: 1.5rem 0.5rem;
+            }
+            
+            .concept-card {
+                padding: 1.2rem;
+                margin: 1rem 0;
+                min-height: 200px;
+            }
+            
+            .concept-card h2 {
+                font-size: 1.2rem;
+                margin-bottom: 0.6rem;
             }
             
             .concept-card p {
@@ -208,20 +282,68 @@
             }
             
             .footer-menu {
-                padding: 1.5rem 0.5rem;
+                padding: 1.2rem 0.5rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .footer-column {
+                min-width: 100%;
+            }
+            
+            .footer-column h3 {
+                font-size: 1.1rem;
+            }
+            
+            footer p {
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* 模拟header样式 */
+        .header {
+            background: #003366;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        /* 响应式header字体大小 */
+        @media (min-width: 1200px) {
+            .header {
+                font-size: 2rem;
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .header {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 599px) {
+            .header {
+                font-size: 1.3rem;
+                padding: 0.8rem;
+            }
+        }
+        
+        @media (max-width: 479px) {
+            .header {
+                font-size: 1.1rem;
+                padding: 0.6rem;
             }
         }
     </style>
 </head>
 <body>
-    <div id="header-placeholder"></div>
-
-    <script>
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('header-placeholder').innerHTML = data)
-            .catch(error => console.error('Error loading header:', error));
-    </script>
+    <!-- 模拟header -->
+    <div class="header">
+        A&M INTERNATIONAL ENGINEERING PTE LTD
+    </div>
     
     <section class="business-concept">
         <div class="concept-card automation-bg">
