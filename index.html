@@ -4,25 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A&M INTERNATIONAL ENGINEERING PTE LTD</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        /* 基础重置和响应式设置 */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
-        }
-        
-        /* 恢复原有背景图路径 */
+        /* 更新背景图路径 */
         .automation-bg {
             background: url('Image/IAI.jpg') center/cover;
-            background-size: cover;
+            background-size: cover; /* 确保背景图铺满区域 */
         }
 
         .solutions-bg {
@@ -35,7 +22,7 @@
             background-size: cover;
         }
 
-        /* 恢复原有样式 */
+        /* 其他原有样式保持不变 */
         .business-concept {
             padding: 4rem 1rem;
             max-width: 1200px;
@@ -48,13 +35,13 @@
             padding: 2.5rem;
             border-radius: 15px;
             overflow: hidden;
-            color: #fff;
+            color: #fff; /* 确保所有文字为白色 */
             min-height: 300px;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: flex-start; /* 上边对齐 */
             transition: transform 0.3s ease;
-            z-index: 0;
+            z-index: 0; /* 保证背景图不被其他元素遮挡 */
         }
 
         .concept-card::before {
@@ -64,8 +51,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(255, 255, 255, 0.3);
-            z-index: -1;
+            background: rgba(255, 255, 255, 0.3); /* 调亮背景 */
+            z-index: -1; /* 确保背景图在前面 */
         }
 
         .concept-card:hover {
@@ -75,8 +62,8 @@
         .concept-card h2, .concept-card p {
             position: relative;
             z-index: 2;
-            color: #fff;
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+            color: #fff; /* 确保字体颜色为白色 */
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); /* 添加 2px 阴影 */
         }
 
         .concept-card h2 {
@@ -92,7 +79,7 @@
             max-width: 800px;
         }
 
-        /* Footer 样式 */
+        /* ----------- 新增 Footer 样式 ----------- */
         .footer-menu {
             display: flex;
             justify-content: space-between;
@@ -100,7 +87,7 @@
             padding: 2rem 1rem;
             background: #222;
             color: #fff;
-            flex-wrap: wrap;
+            flex-wrap: wrap; /* 让小屏幕自动换行 */
         }
 
         .footer-column {
@@ -139,50 +126,8 @@
             text-align: center;
             padding: 1rem;
         }
-        
-        /* 恢复原有页眉样式 */
-        .header {
-            background: #003366;
-            color: white;
-            padding: 1.5rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('Image/header-bg.jpg') center/cover;
-            opacity: 0.7;
-            z-index: 1;
-        }
-        
-        .header-content {
-            position: relative;
-            z-index: 2;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .company-name {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        
-        .company-tagline {
-            font-size: 1.2rem;
-            font-style: italic;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        }
-        
-        /* 响应式调整 */
+
+        /* 响应式调整 - 仅针对移动设备 */
         @media (max-width: 768px) {
             .concept-card {
                 min-height: 250px;
@@ -190,7 +135,7 @@
             }
             
             .concept-card h2 {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
             }
             
             .concept-card p {
@@ -204,14 +149,6 @@
             
             .footer-column {
                 min-width: 100%;
-            }
-            
-            .company-name {
-                font-size: 1.8rem;
-            }
-            
-            .company-tagline {
-                font-size: 1rem;
             }
         }
         
@@ -232,10 +169,6 @@
             
             .footer-menu {
                 gap: 1.5rem;
-            }
-            
-            .company-name {
-                font-size: 2rem;
             }
         }
         
@@ -263,29 +196,18 @@
             .footer-menu {
                 padding: 1.5rem 0.5rem;
             }
-            
-            .header {
-                padding: 1rem;
-            }
-            
-            .company-name {
-                font-size: 1.5rem;
-            }
-            
-            .company-tagline {
-                font-size: 0.9rem;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- 恢复原有页眉结构 -->
-    <div class="header">
-        <div class="header-content">
-            <div class="company-name">A&M INTERNATIONAL ENGINEERING PTE LTD</div>
-            <div class="company-tagline">Innovative Engineering Solutions for a Connected World</div>
-        </div>
-    </div>
+    <div id="header-placeholder"></div>
+
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-placeholder').innerHTML = data)
+            .catch(error => console.error('Error loading header:', error));
+    </script>
     
     <section class="business-concept">
         <div class="concept-card automation-bg">
@@ -304,7 +226,7 @@
         </div>
     </section>
 
-    <!-- Footer 结构 -->
+    <!-- 修复后的 footer 结构 -->
     <section class="footer-menu">
         <div class="footer-column">
             <h3>Solutions</h3>
