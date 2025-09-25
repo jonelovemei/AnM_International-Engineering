@@ -11,14 +11,19 @@
     </header>
     <main>
         <p>Showing results for: <span id="search-query"></span></p>
-        <!-- 展示搜索结果 -->
+        <div id="search-results"></div>
     </main>
 
+    <script src="search.js"></script>
     <script>
         // 获取 URL 参数中的搜索关键词
         const params = new URLSearchParams(window.location.search);
         const query = params.get('query');
         document.getElementById('search-query').textContent = query || 'No query provided';
+    
+        if (query) {
+            searchSite(query); // 调用 search.js 的搜索函数
+        }
     </script>
 </body>
 </html>
