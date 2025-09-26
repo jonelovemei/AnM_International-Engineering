@@ -6,10 +6,28 @@
     <title>A&M INTERNATIONAL ENGINEERING PTE LTD</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* 更新背景图路径 */
+        /* 强制设置header高度为60px */
+        header {
+            height: 60px !important;
+            min-height: 60px !important;
+            max-height: 60px !important;
+            padding: 1px 20px !important;
+        }
+        
+        /* 确保header内的元素也适应这个高度 */
+        header img {
+            height: 40px !important;
+        }
+        
+        header h1 {
+            font-size: 1.5rem !important;
+            margin: 0 !important;
+        }
+        
+        /* 其他原有样式完全保持不变 */
         .automation-bg {
             background: url('Image/IAI.jpg') center/cover;
-            background-size: cover; /* 确保背景图铺满区域 */
+            background-size: cover;
         }
 
         .solutions-bg {
@@ -22,7 +40,6 @@
             background-size: cover;
         }
 
-        /* 其他原有样式保持不变 */
         .business-concept {
             padding: 4rem 1rem;
             max-width: 1200px;
@@ -35,13 +52,13 @@
             padding: 2.5rem;
             border-radius: 15px;
             overflow: hidden;
-            color: #fff; /* 确保所有文字为白色 */
+            color: #fff;
             min-height: 300px;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* 上边对齐 */
+            justify-content: flex-start;
             transition: transform 0.3s ease;
-            z-index: 0; /* 保证背景图不被其他元素遮挡 */
+            z-index: 0;
         }
 
         .concept-card::before {
@@ -51,8 +68,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(255, 255, 255, 0.3); /* 调亮背景 */
-            z-index: -1; /* 确保背景图在前面 */
+            background: rgba(255, 255, 255, 0.3);
+            z-index: -1;
         }
 
         .concept-card:hover {
@@ -62,8 +79,8 @@
         .concept-card h2, .concept-card p {
             position: relative;
             z-index: 2;
-            color: #fff; /* 确保字体颜色为白色 */
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); /* 添加 2px 阴影 */
+            color: #fff;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
         }
 
         .concept-card h2 {
@@ -86,7 +103,6 @@
             }
         }
 
-        /* ----------- 新增 Footer 样式 ----------- */
         .footer-menu {
             display: flex;
             justify-content: space-between;
@@ -94,7 +110,7 @@
             padding: 2rem 1rem;
             background: #222;
             color: #fff;
-            flex-wrap: wrap; /* 让小屏幕自动换行 */
+            flex-wrap: wrap;
         }
 
         .footer-column {
@@ -134,7 +150,7 @@
             padding: 1rem;
         }
 
-        /* 响应式调整 - 仅针对移动设备 */
+        /* 响应式调整 */
         @media (max-width: 768px) {
             .concept-card {
                 min-height: 250px;
@@ -159,7 +175,6 @@
             }
         }
         
-        /* iPad 特定优化 */
         @media (min-width: 769px) and (max-width: 1024px) {
             .business-concept {
                 padding: 3rem 1rem;
@@ -179,7 +194,6 @@
             }
         }
         
-        /* 小屏幕手机优化 */
         @media (max-width: 480px) {
             .business-concept {
                 padding: 2rem 0.5rem;
@@ -205,61 +219,7 @@
             }
         }
 
-        /* 页眉响应式调整 - 不影响原有样式 */
-        /* 这些样式会应用到header.html中的元素 */
-        
-        /* 桌面设备 - 默认大小 */
-        @media (min-width: 1025px) {
-            /* 保持原有的header样式不变 */
-        }
-        
-        /* iPad 横向 */
-        @media (min-width: 769px) and (max-width: 1024px) {
-            /* 调整header中的文字和logo大小 */
-            .header-logo {
-                height: 45px !important; /* Logo稍微缩小 */
-            }
-            
-            .company-name {
-                font-size: 1.8rem !important; /* 文字稍微缩小 */
-            }
-            
-            .nav-link {
-                font-size: 0.9rem !important; /* 导航链接稍微缩小 */
-            }
-        }
-        
-        /* iPad 纵向/大手机 */
-        @media (min-width: 481px) and (max-width: 768px) {
-            .header-logo {
-                height: 40px !important; /* Logo进一步缩小 */
-            }
-            
-            .company-name {
-                font-size: 1.5rem !important; /* 文字进一步缩小 */
-            }
-            
-            .nav-link {
-                font-size: 0.85rem !important; /* 导航链接进一步缩小 */
-            }
-        }
-        
-        /* 手机设备 */
-        @media (max-width: 480px) {
-            .header-logo {
-                height: 35px !important; /* 手机上Logo最小 */
-            }
-            
-            .company-name {
-                font-size: 1.2rem !important; /* 手机上文字最小 */
-            }
-            
-            .nav-link {
-                font-size: 0.8rem !important; /* 导航链接最小 */
-            }
-        }
-
-        /* 搜索栏样式 - 最小化修改，避免影响其他布局 */
+        /* 搜索栏样式 */
         .search-container {
             text-align: center;
             margin: 20px 0;
@@ -267,7 +227,6 @@
     </style>
 </head>
 <body>
-    <!-- 恢复原有的header结构 -->
     <div id="header-placeholder"></div>
 
     <script>
@@ -277,7 +236,7 @@
             .catch(error => console.error('Error loading header:', error));
     </script>
 
-    <!-- 搜索栏 - 保持原有样式 -->
+    <!-- 搜索栏 -->
     <div class="search-container">
         <input type="text" id="search-input" placeholder="Search..." 
                style="padding: 8px; width: 250px; border-radius: 5px; border:1px solid #ccc;">
@@ -286,6 +245,7 @@
         </button>
     </div>
 
+    <!-- 页面内容保持不变 -->
     <section class="business-concept">
         <div class="concept-card automation-bg">
             <h2>Intelligent & Automated Integration</h2>
@@ -303,7 +263,6 @@
         </div>
     </section>
 
-    <!-- 修复后的 footer 结构 -->
     <section class="footer-menu">
         <div class="footer-column">
             <h3>Solutions</h3>
@@ -354,13 +313,11 @@
     </footer>
 
     <script>
-        // 搜索功能
         function searchSite() {
             const input = document.getElementById("search-input").value.toLowerCase().trim();
             const cards = document.querySelectorAll(".concept-card");
             let found = false;
 
-            // 如果输入为空，恢复所有卡片
             if (input === "") {
                 cards.forEach(card => card.style.display = "flex");
                 return;
@@ -378,12 +335,10 @@
 
             if (!found) {
                 alert("No results found for: " + input);
-                // 如果没有找到，恢复显示所有卡片
                 cards.forEach(card => card.style.display = "flex");
             }
         }
 
-        // 让输入框支持按回车搜索
         document.getElementById("search-input").addEventListener("keypress", function(e) {
             if (e.key === "Enter") {
                 searchSite();
