@@ -6,35 +6,10 @@
     <title>A&M INTERNATIONAL ENGINEERING PTE LTD</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* 强制设置header高度为固定值，参考about.html的样式 */
-        header {
-            height: 80px !important;
-            min-height: 80px !important;
-            max-height: 80px !important;
-            padding: 5px 20px !important;
-        }
-        
-        /* 确保header内的元素也适应这个高度 */
-        header img {
-            height: 50px !important;
-            max-height: 50px !important;
-        }
-        
-        header h1 {
-            font-size: 1.8rem !important;
-            margin: 0 !important;
-            line-height: 1.2 !important;
-        }
-        
-        nav a {
-            padding: 8px 12px !important;
-            font-size: 1rem !important;
-        }
-
-        /* 其他原有样式完全保持不变 */
+        /* 更新背景图路径 */
         .automation-bg {
             background: url('Image/IAI.jpg') center/cover;
-            background-size: cover;
+            background-size: cover; /* 确保背景图铺满区域 */
         }
 
         .solutions-bg {
@@ -47,6 +22,7 @@
             background-size: cover;
         }
 
+        /* 其他原有样式保持不变 */
         .business-concept {
             padding: 4rem 1rem;
             max-width: 1200px;
@@ -59,13 +35,13 @@
             padding: 2.5rem;
             border-radius: 15px;
             overflow: hidden;
-            color: #fff;
+            color: #fff; /* 确保所有文字为白色 */
             min-height: 300px;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: flex-start; /* 上边对齐 */
             transition: transform 0.3s ease;
-            z-index: 0;
+            z-index: 0; /* 保证背景图不被其他元素遮挡 */
         }
 
         .concept-card::before {
@@ -75,8 +51,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(255, 255, 255, 0.3);
-            z-index: -1;
+            background: rgba(255, 255, 255, 0.3); /* 调亮背景 */
+            z-index: -1; /* 确保背景图在前面 */
         }
 
         .concept-card:hover {
@@ -86,8 +62,8 @@
         .concept-card h2, .concept-card p {
             position: relative;
             z-index: 2;
-            color: #fff;
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+            color: #fff; /* 确保字体颜色为白色 */
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); /* 添加 2px 阴影 */
         }
 
         .concept-card h2 {
@@ -110,6 +86,7 @@
             }
         }
 
+        /* ----------- 新增 Footer 样式 ----------- */
         .footer-menu {
             display: flex;
             justify-content: space-between;
@@ -117,7 +94,7 @@
             padding: 2rem 1rem;
             background: #222;
             color: #fff;
-            flex-wrap: wrap;
+            flex-wrap: wrap; /* 让小屏幕自动换行 */
         }
 
         .footer-column {
@@ -156,127 +133,11 @@
             text-align: center;
             padding: 1rem;
         }
-
-        /* 响应式调整 */
-        @media (max-width: 768px) {
-            .concept-card {
-                min-height: 250px;
-                padding: 1.5rem;
-            }
-            
-            .concept-card h2 {
-                font-size: 1.6rem;
-            }
-            
-            .concept-card p {
-                font-size: 1rem;
-            }
-            
-            .footer-menu {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .footer-column {
-                min-width: 100%;
-            }
-        }
-        
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .business-concept {
-                padding: 3rem 1rem;
-            }
-            
-            .concept-card {
-                min-height: 280px;
-                padding: 2rem;
-            }
-            
-            .concept-card h2 {
-                font-size: 1.8rem;
-            }
-            
-            .footer-menu {
-                gap: 1.5rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .business-concept {
-                padding: 2rem 0.5rem;
-            }
-            
-            .concept-card {
-                padding: 1rem;
-                margin: 1.5rem 0;
-                min-height: 220px;
-            }
-            
-            .concept-card h2 {
-                font-size: 1.3rem;
-                margin-bottom: 0.8rem;
-            }
-            
-            .concept-card p {
-                font-size: 0.9rem;
-            }
-            
-            .footer-menu {
-                padding: 1.5rem 0.5rem;
-            }
-        }
-
-        /* 搜索栏样式 */
-        .search-container {
-            text-align: center;
-            margin: 20px 0;
-            padding-top: 10px;
-        }
-
-        /* 搜索结果样式 */
-        .search-results {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 1rem;
-        }
-
-        .search-result-item {
-            background: rgba(255, 255, 255, 0.1);
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 5px;
-            border-left: 4px solid #00b4d8;
-        }
-
-        .search-result-item h3 {
-            margin: 0 0 10px 0;
-            color: #00b4d8;
-        }
-
-        .search-result-item p {
-            margin: 0;
-            color: #fff;
-        }
-
-        .search-result-item a {
-            color: #00b4d8;
-            text-decoration: none;
-        }
-
-        .search-result-item a:hover {
-            text-decoration: underline;
-        }
-
-        .web-search-result {
-            background: rgba(255, 255, 255, 0.05);
-            border-left: 4px solid #ff6b6b;
-        }
-
-        .web-search-result h3 {
-            color: #ff6b6b;
-        }
     </style>
 </head>
+/*--------------搜索引用------------------*/
+    <script src="search.js" defer></script>
+
 <body>
     <div id="header-placeholder"></div>
 
@@ -286,20 +147,6 @@
             .then(data => document.getElementById('header-placeholder').innerHTML = data)
             .catch(error => console.error('Error loading header:', error));
     </script>
-
-    <!-- 搜索栏 -->
-    <div class="search-container">
-        <input type="text" id="search-input" placeholder="Search..." 
-               style="padding: 8px; width: 300px; border-radius: 5px; border:1px solid #ccc;">
-        <button onclick="performSearch()" style="border:none; background:none; cursor:pointer;">
-            <img src="Image/search-icon.png" alt="Search" style="width:20px; height:20px;">
-        </button>
-    </div>
-
-    <!-- 搜索结果容器 -->
-    <div id="search-results" class="search-results" style="display: none;"></div>
-
-    <!-- 页面内容 -->
     <section class="business-concept">
         <div class="concept-card automation-bg">
             <h2>Intelligent & Automated Integration</h2>
@@ -308,15 +155,17 @@
 
         <div class="concept-card solutions-bg">
             <h2>End-to-End Solutions</h2>
-            <p>We deliver comprehensive end-to-end solutions that span the entire project lifecycle — from concept design and engineering to seamless implementation, commissioning, and ongoing maintenance. Our approach ensures reliable, efficient, and fully customized systems tailored to meet the specific operational and regulatory requirements of diverse industries. By integrating technical expertise with industry best practices, we empower our clients to achieve sustainable performance and long-term value.</p>
+            <p> We deliver comprehensive end-to-end solutions that span the entire project lifecycle — from concept design and engineering to seamless implementation, commissioning, and ongoing maintenance. Our approach ensures reliable, efficient, and fully customized systems tailored to meet the specific operational and regulatory requirements of diverse industries. By integrating technical expertise with industry best practices, we empower our clients to achieve sustainable performance and long-term value.</p>
         </div>
 
         <div class="concept-card security-bg">
             <h2>Security & Compliance</h2>
-            <p>We prioritize the highest standards of security and compliance by ensuring that all systems we design and implement fully adhere to internationally recognized standards, including ASME, ATMS, AGA, and LR. Our approach guarantees that every project not only meets regulatory requirements but also operates with the utmost stability and security. By focusing on these critical aspects, we provide our clients with systems that are resilient, reliable, and future-proof, helping them navigate complex regulatory landscapes and ensure long-term operational success in diverse industries.</p>
+            <p>Security & Compliance
+We prioritize the highest standards of security and compliance by ensuring that all systems we design and implement fully adhere to internationally recognized standards, including ASME, ATMS, AGA, and LR. Our approach guarantees that every project not only meets regulatory requirements but also operates with the utmost stability and security. By focusing on these critical aspects, we provide our clients with systems that are resilient, reliable, and future-proof, helping them navigate complex regulatory landscapes and ensure long-term operational success in diverse industries.</p>
         </div>
     </section>
 
+    <!-- 修复后的 footer 结构 -->
     <section class="footer-menu">
         <div class="footer-column">
             <h3>Solutions</h3>
@@ -365,200 +214,5 @@
     <footer>
         <p>&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. All rights reserved.</p>
     </footer>
-
-    <script>
-        // 全网站页面数据（包含所有HTML页面）
-        const websitePages = [
-            {
-                title: "Home Page",
-                content: "Welcome to A&M INTERNATIONAL ENGINEERING PTE LTD. We provide professional integration solutions including Intelligent & Automated Integration, End-to-End Solutions, and Security & Compliance services.",
-                url: "index.html",
-                keywords: ["home", "welcome", "engineering", "solutions", "A&M", "international"]
-            },
-            {
-                title: "Intelligent & Automated Integration",
-                content: "Intelligent & Automated Integration refers to our approach of combining smart technologies, real-time data connectivity, and advanced automation to deliver seamless, scalable, and efficient engineering systems.",
-                url: "index.html",
-                keywords: ["intelligent", "automated", "integration", "IIoT", "PLC", "SCADA", "cloud", "monitoring", "automation"]
-            },
-            {
-                title: "End-to-End Solutions",
-                content: "We deliver comprehensive end-to-end solutions that span the entire project lifecycle from concept design to implementation and maintenance.",
-                url: "index.html",
-                keywords: ["end-to-end", "solutions", "project", "lifecycle", "implementation", "maintenance", "comprehensive"]
-            },
-            {
-                title: "Security & Compliance",
-                content: "We prioritize the highest standards of security and compliance by ensuring adherence to international standards including ASME, ATMS, AGA, and LR.",
-                url: "index.html",
-                keywords: ["security", "compliance", "ASME", "ATMS", "AGA", "LR", "standards", "regulatory"]
-            },
-            {
-                title: "About Us",
-                content: "Learn about A&M International Engineering, our expertise in intelligent automation, industrial metering systems, and cloud-based software platforms.",
-                url: "about.html",
-                keywords: ["about", "company", "expertise", "automation", "metering", "software", "SaaS", "SaaP"]
-            },
-            {
-                title: "Solutions Overview",
-                content: "Our solutions include Supply Chain Optimization, Asset Operations, Operational Risk Management, and Connected Intelligence.",
-                url: "Solutions.html",
-                keywords: ["solutions", "supply chain", "asset operations", "risk management", "connected intelligence", "CCTV", "safety case"]
-            },
-            {
-                title: "Products & Services",
-                content: "Explore our services including Control systems, Measurement solutions, Project Execution Services, and Digital Transformation.",
-                url: "services.html",
-                keywords: ["products", "services", "control", "measurement", "project execution", "digital transformation"]
-            },
-            {
-                title: "Library Resources",
-                content: "Access documents, downloads, resources, videos, and information on Smart Manufacturing, Digital Transformation, and Artificial Intelligence.",
-                url: "Libary.html",
-                keywords: ["library", "documents", "downloads", "resources", "videos", "smart manufacturing", "AI", "artificial intelligence"]
-            },
-            {
-                title: "Support Services",
-                content: "Get technical support, use our product finder, and access the customer portal for assistance.",
-                url: "Support.html",
-                keywords: ["support", "technical", "product finder", "customer portal", "help", "assistance"]
-            },
-            {
-                title: "Projects Portfolio",
-                content: "View our portfolio of completed and ongoing projects in various industries.",
-                url: "projects.html",
-                keywords: ["projects", "portfolio", "completed", "ongoing", "industries", "case studies"]
-            },
-            {
-                title: "Supply Chain Optimization",
-                content: "Optimize your supply chain with our advanced engineering solutions for better efficiency and cost reduction.",
-                url: "Solutions.html#supply-chain",
-                keywords: ["supply chain", "optimization", "efficiency", "cost reduction", "logistics"]
-            },
-            {
-                title: "Asset Operations and Optimization",
-                content: "Maximize asset performance and operational efficiency with our comprehensive optimization services.",
-                url: "Solutions.html#asset-operations",
-                keywords: ["asset", "operations", "optimization", "performance", "efficiency", "maintenance"]
-            },
-            {
-                title: "Control Systems",
-                content: "Advanced control systems for industrial automation and process control applications.",
-                url: "Solutions.html#control",
-                keywords: ["control", "systems", "automation", "process control", "industrial"]
-            }
-        ];
-
-        function performSearch() {
-            const input = document.getElementById("search-input").value.toLowerCase().trim();
-            const resultsContainer = document.getElementById("search-results");
-            const conceptCards = document.querySelectorAll(".concept-card");
-            
-            // 如果输入为空，恢复所有卡片并隐藏搜索结果
-            if (input === "") {
-                conceptCards.forEach(card => card.style.display = "flex");
-                resultsContainer.style.display = "none";
-                return;
-            }
-
-            // 搜索全网站内容
-            const siteResults = websitePages.filter(page => {
-                return page.title.toLowerCase().includes(input) ||
-                       page.content.toLowerCase().includes(input) ||
-                       page.keywords.some(keyword => keyword.toLowerCase().includes(input));
-            });
-
-            // 同时搜索当前页面的概念卡片
-            let cardFound = false;
-            conceptCards.forEach(card => {
-                const text = card.innerText.toLowerCase();
-                if (text.includes(input)) {
-                    card.style.display = "flex";
-                    cardFound = true;
-                } else {
-                    card.style.display = "none";
-                }
-            });
-
-            // 显示搜索结果
-            if (siteResults.length > 0 || cardFound) {
-                let resultsHTML = '<h2 style="color: white; text-align: center; margin-bottom: 20px;">Search Results</h2>';
-                
-                // 显示网站内搜索结果
-                if (siteResults.length > 0) {
-                    siteResults.forEach(result => {
-                        const highlightedTitle = result.title.replace(
-                            new RegExp(input, 'gi'), 
-                            match => `<span style="background-color: yellow; color: black;">${match}</span>`
-                        );
-                        
-                        const highlightedContent = result.content.replace(
-                            new RegExp(input, 'gi'), 
-                            match => `<span style="background-color: yellow; color: black;">${match}</span>`
-                        );
-
-                        resultsHTML += `
-                            <div class="search-result-item">
-                                <h3><a href="${result.url}">${highlightedTitle}</a></h3>
-                                <p>${highlightedContent}</p>
-                                <small style="color: #ccc;">Page: ${result.url}</small>
-                            </div>
-                        `;
-                    });
-                }
-
-                // 如果没有网站内结果，提供网络搜索选项
-                if (siteResults.length === 0 && !cardFound) {
-                    resultsHTML += `
-                        <div class="search-result-item web-search-result">
-                            <h3>No results found on our website</h3>
-                            <p>Try searching the web for: "${input}"</p>
-                            <button onclick="searchWeb('${input}')" style="background: #ff6b6b; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">
-                                Search Web for "${input}"
-                            </button>
-                        </div>
-                    `;
-                }
-
-                resultsContainer.innerHTML = resultsHTML;
-                resultsContainer.style.display = "block";
-            } else {
-                // 如果没有找到任何结果
-                conceptCards.forEach(card => card.style.display = "flex");
-                resultsContainer.innerHTML = `
-                    <div class="search-result-item web-search-result">
-                        <h3>No results found on our website</h3>
-                        <p>Try searching the web for: "${input}"</p>
-                        <button onclick="searchWeb('${input}')" style="background: #ff6b6b; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">
-                            Search Web for "${input}"
-                        </button>
-                    </div>
-                `;
-                resultsContainer.style.display = "block";
-            }
-        }
-
-        function searchWeb(query) {
-            const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query + ' site:am-engineering.com')}`;
-            window.open(searchUrl, '_blank');
-        }
-
-        document.getElementById("search-input").addEventListener("keypress", function(e) {
-            if (e.key === "Enter") {
-                performSearch();
-            }
-        });
-
-        // 点击页面其他区域关闭搜索结果
-        document.addEventListener('click', function(event) {
-            const searchContainer = document.querySelector('.search-container');
-            const resultsContainer = document.getElementById('search-results');
-            if (!searchContainer.contains(event.target) && !resultsContainer.contains(event.target)) {
-                resultsContainer.style.display = 'none';
-                // 恢复显示所有卡片
-                document.querySelectorAll(".concept-card").forEach(card => card.style.display = "flex");
-            }
-        });
-    </script>
 </body>
 </html>
