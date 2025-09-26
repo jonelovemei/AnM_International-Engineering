@@ -9,7 +9,7 @@
         /* 更新背景图路径 */
         .automation-bg {
             background: url('Image/IAI.jpg') center/cover;
-            background-size: cover; /* 确保背景图铺满区域 */
+            background-size: cover;
         }
 
         .solutions-bg {
@@ -35,13 +35,13 @@
             padding: 2.5rem;
             border-radius: 15px;
             overflow: hidden;
-            color: #fff; /* 确保所有文字为白色 */
+            color: #fff;
             min-height: 300px;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* 上边对齐 */
+            justify-content: flex-start;
             transition: transform 0.3s ease;
-            z-index: 0; /* 保证背景图不被其他元素遮挡 */
+            z-index: 0;
         }
 
         .concept-card::before {
@@ -51,8 +51,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(255, 255, 255, 0.3); /* 调亮背景 */
-            z-index: -1; /* 确保背景图在前面 */
+            background: rgba(255, 255, 255, 0.3);
+            z-index: -1;
         }
 
         .concept-card:hover {
@@ -62,8 +62,8 @@
         .concept-card h2, .concept-card p {
             position: relative;
             z-index: 2;
-            color: #fff; /* 确保字体颜色为白色 */
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); /* 添加 2px 阴影 */
+            color: #fff;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
         }
 
         .concept-card h2 {
@@ -94,7 +94,7 @@
             padding: 2rem 1rem;
             background: #222;
             color: #fff;
-            flex-wrap: wrap; /* 让小屏幕自动换行 */
+            flex-wrap: wrap;
         }
 
         .footer-column {
@@ -205,58 +205,30 @@
             }
         }
 
-        /* 页眉响应式调整 - 不影响原有样式 */
-        /* 这些样式会应用到header.html中的元素 */
-        
-        /* 桌面设备 - 默认大小 */
-        @media (min-width: 1025px) {
-            /* 保持原有的header样式不变 */
+        /* 搜索栏样式 */
+        .search-container {
+            text-align: center;
+            margin: 20px;
+            padding-top: 80px; /* 确保不被header覆盖 */
         }
         
-        /* iPad 横向 */
-        @media (min-width: 769px) and (max-width: 1024px) {
-            /* 调整header中的文字和logo大小 */
-            .header-logo {
-                height: 45px !important; /* Logo稍微缩小 */
-            }
-            
-            .company-name {
-                font-size: 1.8rem !important; /* 文字稍微缩小 */
-            }
-            
-            .nav-link {
-                font-size: 0.9rem !important; /* 导航链接稍微缩小 */
-            }
+        .search-container input {
+            padding: 8px;
+            width: 250px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
         }
         
-        /* iPad 纵向/大手机 */
-        @media (min-width: 481px) and (max-width: 768px) {
-            .header-logo {
-                height: 40px !important; /* Logo进一步缩小 */
-            }
-            
-            .company-name {
-                font-size: 1.5rem !important; /* 文字进一步缩小 */
-            }
-            
-            .nav-link {
-                font-size: 0.85rem !important; /* 导航链接进一步缩小 */
-            }
+        .search-container button {
+            border: none;
+            background: none;
+            cursor: pointer;
+            margin-left: 5px;
         }
         
-        /* 手机设备 */
-        @media (max-width: 480px) {
-            .header-logo {
-                height: 35px !important; /* 手机上Logo最小 */
-            }
-            
-            .company-name {
-                font-size: 1.2rem !important; /* 手机上文字最小 */
-            }
-            
-            .nav-link {
-                font-size: 0.8rem !important; /* 导航链接最小 */
-            }
+        .search-container img {
+            width: 20px;
+            height: 20px;
         }
     </style>
 </head>
@@ -271,29 +243,14 @@
             .catch(error => console.error('Error loading header:', error));
     </script>
 
-  
-    <!-- ✅ 搜索栏开始 -->
-    <div style="text-align:center; margin: 20px;">
-        <input type="text" id="search-input" placeholder="Search..." 
-           style="padding: 8px; width: 250px; border-radius: 5px; border:1px solid #ccc;">
-        <button onclick="goSearch()" style="border:none; background:none; cursor:pointer;">
-        <img src="Image/search-icon.png" alt="Search" style="width:20px; height:20px;">
+    <!-- 搜索栏 -->
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search...">
+        <button onclick="searchSite()">
+            <img src="Image/search-icon.png" alt="Search">
         </button>
     </div>
-    <!-- ✅ 搜索栏结束 -->
-    <script>
-    function goSearch() {
-        const keyword = document.getElementById("search-input").value.trim();
-        if (keyword) {
-                // 跳转到 search.html 并把关键词放到 URL
-        window.location.href = "search.html?query=" + encodeURIComponent(keyword);
-        } else {
-        alert("Please enter a keyword.");
-        }
-    }
-    </script>
-    <!-- ✅ 搜索栏相关2 -->
-    
+
     <section class="business-concept">
         <div class="concept-card automation-bg">
             <h2>Intelligent & Automated Integration</h2>
@@ -311,45 +268,7 @@
         </div>
     </section>
 
-    <!-- ✅ 搜索功能脚本 -->
-    <script>
-    function searchSite() {
-        let input = document.getElementById("searchInput").value.toLowerCase().trim();
-        let cards = document.querySelectorAll(".concept-card");
-        let found = false;
-
-        // 如果输入为空，恢复所有卡片
-        if (input === "") {
-            cards.forEach(card => card.style.display = "flex");
-            return;
-        }
-
-        cards.forEach(card => {
-            let text = card.innerText.toLowerCase();
-            if (text.includes(input)) {
-                card.style.display = "flex"; // ✅ 保持原始布局
-                found = true;
-            } else {
-                card.style.display = "none";
-            }
-        });
-
-        if (!found) {
-            alert("No results found for: " + input);
-        }
-    }
-
-    // ✅ 让输入框支持按回车搜索
-    document.getElementById("searchInput").addEventListener("keypress", function(e) {
-        if (e.key === "Enter") {
-            searchSite();
-        }
-    });
-</script>
-
-    <!-- ✅ 脚本结束 -->
-    
-    <!-- 修复后的 footer 结构 -->
+    <!-- Footer 结构 -->
     <section class="footer-menu">
         <div class="footer-column">
             <h3>Solutions</h3>
@@ -398,5 +317,43 @@
     <footer>
         <p>&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. All rights reserved.</p>
     </footer>
+
+    <script>
+        // 搜索功能
+        function searchSite() {
+            const input = document.getElementById("search-input").value.toLowerCase().trim();
+            const cards = document.querySelectorAll(".concept-card");
+            let found = false;
+
+            // 如果输入为空，恢复所有卡片
+            if (input === "") {
+                cards.forEach(card => card.style.display = "flex");
+                return;
+            }
+
+            cards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                if (text.includes(input)) {
+                    card.style.display = "flex";
+                    found = true;
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+            if (!found) {
+                alert("No results found for: " + input);
+                // 如果没有找到，恢复显示所有卡片
+                cards.forEach(card => card.style.display = "flex");
+            }
+        }
+
+        // 让输入框支持按回车搜索
+        document.getElementById("search-input").addEventListener("keypress", function(e) {
+            if (e.key === "Enter") {
+                searchSite();
+            }
+        });
+    </script>
 </body>
 </html>
