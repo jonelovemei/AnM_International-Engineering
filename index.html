@@ -9,7 +9,7 @@
         /* 更新背景图路径 */
         .automation-bg {
             background: url('Image/IAI.jpg') center/cover;
-            background-size: cover; /* 确保背景图铺满区域 */
+            background-size: cover;
         }
 
         .solutions-bg {
@@ -35,13 +35,13 @@
             padding: 2.5rem;
             border-radius: 15px;
             overflow: hidden;
-            color: #fff; /* 确保所有文字为白色 */
+            color: #fff;
             min-height: 300px;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* 上边对齐 */
+            justify-content: flex-start;
             transition: transform 0.3s ease;
-            z-index: 0; /* 保证背景图不被其他元素遮挡 */
+            z-index: 0;
         }
 
         .concept-card::before {
@@ -51,8 +51,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(255, 255, 255, 0.3); /* 调亮背景 */
-            z-index: -1; /* 确保背景图在前面 */
+            background: rgba(255, 255, 255, 0.3);
+            z-index: -1;
         }
 
         .concept-card:hover {
@@ -62,8 +62,8 @@
         .concept-card h2, .concept-card p {
             position: relative;
             z-index: 2;
-            color: #fff; /* 确保字体颜色为白色 */
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); /* 添加 2px 阴影 */
+            color: #fff;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
         }
 
         .concept-card h2 {
@@ -86,7 +86,7 @@
             }
         }
 
-        /* ----------- 新增 Footer 样式 ----------- */
+        /* ----------- Footer 样式 ----------- */
         .footer-menu {
             display: flex;
             justify-content: space-between;
@@ -94,7 +94,7 @@
             padding: 2rem 1rem;
             background: #222;
             color: #fff;
-            flex-wrap: wrap; /* 让小屏幕自动换行 */
+            flex-wrap: wrap;
         }
 
         .footer-column {
@@ -134,39 +134,51 @@
             padding: 1rem;
         }
 
-        /* 新增搜索栏样式 */
+        /* 新增搜索栏样式 - 修复版 */
         .search-container {
             display: flex;
             align-items: center;
             background: white;
             border-radius: 25px;
-            padding: 5px;
+            padding: 2px;
             border: 2px solid #00b4d8;
+            max-width: 300px;
         }
 
-        .search-input {
+        #search-input {
             border: none;
             outline: none;
             padding: 8px 15px;
             border-radius: 25px;
-            width: 200px;
+            flex: 1;
             font-size: 14px;
+            background: transparent;
         }
 
-        .search-button {
-            background: none;
+        #search-button {
+            background: #00b4d8;
             border: none;
             cursor: pointer;
-            padding: 5px;
+            padding: 6px 12px;
+            border-radius: 50%;
+            margin: 2px;
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 35px;
+            height: 35px;
+            transition: background 0.3s ease;
+        }
+
+        #search-button:hover {
+            background: #0099c0;
         }
 
         .search-icon {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             object-fit: contain;
+            filter: brightness(0) invert(1); /* 使图标变为白色 */
         }
     </style>
 </head>
@@ -180,9 +192,10 @@
             const searchInput = document.getElementById('search-input');
             const query = searchInput ? searchInput.value.trim() : '';
             if (query) {
-                // 这里可以替换为实际的搜索逻辑
                 alert('Searching for: ' + query);
-                // window.location.href = 'search-results.html?q=' + encodeURIComponent(query);
+                // 实际搜索逻辑：window.location.href = 'search-results.html?q=' + encodeURIComponent(query);
+            } else {
+                alert('Please enter search keywords');
             }
         }
 
@@ -191,15 +204,28 @@
             const searchInput = document.getElementById('search-input');
             const searchButton = document.getElementById('search-button');
             
+            console.log('Initializing search...', searchInput, searchButton);
+            
             if (searchInput && searchButton) {
+                // 移除可能存在的旧事件监听器
+                searchButton.replaceWith(searchButton.cloneNode(true));
+                const newSearchButton = document.getElementById('search-button');
+                
                 // 点击搜索按钮事件
-                searchButton.addEventListener('click', performSearch);
+                newSearchButton.addEventListener('click', performSearch);
                 
                 // Enter键搜索功能
                 searchInput.addEventListener('keypress', function(e) {
                     if (e.key === 'Enter') {
                         performSearch();
                     }
+                });
+                
+                console.log('Search functionality initialized successfully');
+            } else {
+                console.error('Search elements not found:', {
+                    searchInput: !!searchInput,
+                    searchButton: !!searchButton
                 });
             }
         }
@@ -213,30 +239,77 @@
                 return response.text();
             })
             .then(data => {
+                // 先插入header内容
                 document.getElementById('header-placeholder').innerHTML = data;
-                // 初始化搜索功能
-                setTimeout(initSearch, 100);
+                
+                // 替换header中的搜索部分为我们的版本
+                replaceSearchSection();
+                
+                // 延迟初始化确保DOM完全加载
+                setTimeout(initSearch, 500);
             })
             .catch(error => {
                 console.error('Error loading header:', error);
-                // 如果header.html不存在，提供带图片搜索按钮的header结构
-                document.getElementById('header-placeholder').innerHTML = `
-                    <header style="padding: 1rem; background: #333; color: white;">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <h1>A&M INTERNATIONAL ENGINEERING</h1>
-                            <div class="search-container">
-                                <input type="text" id="search-input" placeholder="Search..." class="search-input">
-                                <button id="search-button" class="search-button">
-                                    <img src="Image/search-icon.png" alt="Search" class="search-icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'">
-                                    <span style="display: none; padding: 0 10px; color: #00b4d8;">Search</span>
-                                </button>
-                            </div>
-                        </div>
-                    </header>
-                `;
-                // 初始化搜索功能
+                // 如果header.html不存在，使用我们的完整header
+                document.getElementById('header-placeholder').innerHTML = createFullHeader();
                 setTimeout(initSearch, 100);
             });
+
+        // 替换header中的搜索部分
+        function replaceSearchSection() {
+            // 查找现有的搜索元素并替换
+            const existingSearch = document.querySelector('input[type="text"][placeholder*="Search"], input[placeholder*="search"]');
+            const existingButton = document.querySelector('button:contains("Search"), input[type="submit"][value*="Search"]');
+            
+            if (existingSearch || existingButton) {
+                // 创建新的搜索容器
+                const newSearchContainer = document.createElement('div');
+                newSearchContainer.className = 'search-container';
+                newSearchContainer.innerHTML = `
+                    <input type="text" id="search-input" placeholder="Search..." class="search-input">
+                    <button id="search-button" class="search-button">
+                        <img src="Image/search-icon.png" alt="Search" class="search-icon">
+                    </button>
+                `;
+                
+                // 替换或插入新的搜索容器
+                if (existingSearch && existingSearch.parentNode) {
+                    existingSearch.parentNode.replaceChild(newSearchContainer, existingSearch);
+                } else if (existingButton && existingButton.parentNode) {
+                    existingButton.parentNode.replaceChild(newSearchContainer, existingButton);
+                } else {
+                    // 如果没有找到现有搜索，添加到header右侧
+                    const header = document.querySelector('header');
+                    if (header) {
+                        header.appendChild(newSearchContainer);
+                    }
+                }
+            }
+        }
+
+        // 创建完整header（备用）
+        function createFullHeader() {
+            return `
+                <header style="padding: 1rem; background: #333; color: white;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                        <div style="display: flex; align-items: center;">
+                            <h1 style="margin: 0; margin-right: 2rem;">A&M INTERNATIONAL ENGINEERING PTE LTD</h1>
+                            <nav style="display: flex; gap: 1rem;">
+                                <a href="#" style="color: white; text-decoration: none;">Home</a>
+                                <a href="#" style="color: white; text-decoration: none;">Solutions</a>
+                                <a href="#" style="color: white; text-decoration: none;">Contact Us</a>
+                            </nav>
+                        </div>
+                        <div class="search-container">
+                            <input type="text" id="search-input" placeholder="Search..." class="search-input">
+                            <button id="search-button" class="search-button">
+                                <img src="Image/search-icon.png" alt="Search" class="search-icon">
+                            </button>
+                        </div>
+                    </div>
+                </header>
+            `;
+        }
     </script>
 
     <!-- 以下所有内容保持不变 -->
