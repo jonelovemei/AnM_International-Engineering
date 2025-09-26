@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A&M INTERNATIONAL ENGINEERING PTE LTD</title>
     <link rel="stylesheet" href="style.css">
+    <!-- 将搜索脚本移到head内 -->
+    <script src="search.js" defer></script>
     <style>
         /* 更新背景图路径 */
         .automation-bg {
@@ -135,18 +137,44 @@
         }
     </style>
 </head>
-/*--------------搜索引用------------------*/
-    <script src="search.js" defer></script>
 
 <body>
     <div id="header-placeholder"></div>
 
     <script>
+        // 修改header加载逻辑，确保搜索功能正确初始化
         fetch('header.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('header-placeholder').innerHTML = data)
-            .catch(error => console.error('Error loading header:', error));
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('header.html not found');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                // 确保搜索功能在header加载后初始化
+                if (typeof initSearch === 'function') {
+                    initSearch();
+                }
+            })
+            .catch(error => {
+                console.error('Error loading header:', error);
+                // 如果header.html不存在，提供基本的header结构
+                document.getElementById('header-placeholder').innerHTML = `
+                    <header style="padding: 1rem; background: #333; color: white;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <h1>A&M INTERNATIONAL ENGINEERING</h1>
+                            <div>
+                                <input type="text" id="search-input" placeholder="Search..." style="padding: 0.5rem;">
+                                <button id="search-button" style="padding: 0.5rem 1rem;">Search</button>
+                            </div>
+                        </div>
+                    </header>
+                `;
+            });
     </script>
+
+    <!-- 以下所有内容保持不变 -->
     <section class="business-concept">
         <div class="concept-card automation-bg">
             <h2>Intelligent & Automated Integration</h2>
@@ -165,7 +193,6 @@ We prioritize the highest standards of security and compliance by ensuring that 
         </div>
     </section>
 
-    <!-- 修复后的 footer 结构 -->
     <section class="footer-menu">
         <div class="footer-column">
             <h3>Solutions</h3>
