@@ -9,7 +9,7 @@
         /* 更新背景图路径 */
         .automation-bg {
             background: url('Image/IAI.jpg') center/cover;
-            background-size: cover;
+            background-size: cover; /* 确保背景图铺满区域 */
         }
 
         .solutions-bg {
@@ -35,13 +35,13 @@
             padding: 2.5rem;
             border-radius: 15px;
             overflow: hidden;
-            color: #fff;
+            color: #fff; /* 确保所有文字为白色 */
             min-height: 300px;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: flex-start; /* 上边对齐 */
             transition: transform 0.3s ease;
-            z-index: 0;
+            z-index: 0; /* 保证背景图不被其他元素遮挡 */
         }
 
         .concept-card::before {
@@ -51,8 +51,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(255, 255, 255, 0.3);
-            z-index: -1;
+            background: rgba(255, 255, 255, 0.3); /* 调亮背景 */
+            z-index: -1; /* 确保背景图在前面 */
         }
 
         .concept-card:hover {
@@ -62,8 +62,8 @@
         .concept-card h2, .concept-card p {
             position: relative;
             z-index: 2;
-            color: #fff;
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+            color: #fff; /* 确保字体颜色为白色 */
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); /* 添加 2px 阴影 */
         }
 
         .concept-card h2 {
@@ -94,7 +94,7 @@
             padding: 2rem 1rem;
             background: #222;
             color: #fff;
-            flex-wrap: wrap;
+            flex-wrap: wrap; /* 让小屏幕自动换行 */
         }
 
         .footer-column {
@@ -205,30 +205,64 @@
             }
         }
 
-        /* 搜索栏样式 */
+        /* 页眉响应式调整 - 不影响原有样式 */
+        /* 这些样式会应用到header.html中的元素 */
+        
+        /* 桌面设备 - 默认大小 */
+        @media (min-width: 1025px) {
+            /* 保持原有的header样式不变 */
+        }
+        
+        /* iPad 横向 */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            /* 调整header中的文字和logo大小 */
+            .header-logo {
+                height: 45px !important; /* Logo稍微缩小 */
+            }
+            
+            .company-name {
+                font-size: 1.8rem !important; /* 文字稍微缩小 */
+            }
+            
+            .nav-link {
+                font-size: 0.9rem !important; /* 导航链接稍微缩小 */
+            }
+        }
+        
+        /* iPad 纵向/大手机 */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .header-logo {
+                height: 40px !important; /* Logo进一步缩小 */
+            }
+            
+            .company-name {
+                font-size: 1.5rem !important; /* 文字进一步缩小 */
+            }
+            
+            .nav-link {
+                font-size: 0.85rem !important; /* 导航链接进一步缩小 */
+            }
+        }
+        
+        /* 手机设备 */
+        @media (max-width: 480px) {
+            .header-logo {
+                height: 35px !important; /* 手机上Logo最小 */
+            }
+            
+            .company-name {
+                font-size: 1.2rem !important; /* 手机上文字最小 */
+            }
+            
+            .nav-link {
+                font-size: 0.8rem !important; /* 导航链接最小 */
+            }
+        }
+
+        /* 搜索栏样式 - 最小化修改，避免影响其他布局 */
         .search-container {
             text-align: center;
-            margin: 20px;
-            padding-top: 80px; /* 确保不被header覆盖 */
-        }
-        
-        .search-container input {
-            padding: 8px;
-            width: 250px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        
-        .search-container button {
-            border: none;
-            background: none;
-            cursor: pointer;
-            margin-left: 5px;
-        }
-        
-        .search-container img {
-            width: 20px;
-            height: 20px;
+            margin: 20px 0;
         }
     </style>
 </head>
@@ -243,11 +277,12 @@
             .catch(error => console.error('Error loading header:', error));
     </script>
 
-    <!-- 搜索栏 -->
+    <!-- 搜索栏 - 保持原有样式 -->
     <div class="search-container">
-        <input type="text" id="search-input" placeholder="Search...">
-        <button onclick="searchSite()">
-            <img src="Image/search-icon.png" alt="Search">
+        <input type="text" id="search-input" placeholder="Search..." 
+               style="padding: 8px; width: 250px; border-radius: 5px; border:1px solid #ccc;">
+        <button onclick="searchSite()" style="border:none; background:none; cursor:pointer;">
+            <img src="Image/search-icon.png" alt="Search" style="width:20px; height:20px;">
         </button>
     </div>
 
@@ -268,7 +303,7 @@
         </div>
     </section>
 
-    <!-- Footer 结构 -->
+    <!-- 修复后的 footer 结构 -->
     <section class="footer-menu">
         <div class="footer-column">
             <h3>Solutions</h3>
