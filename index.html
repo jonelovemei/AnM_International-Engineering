@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A&M INTERNATIONAL ENGINEERING PTE LTD</title>
     <link rel="stylesheet" href="style.css">
-    <!-- 将搜索脚本移到head内 -->
-    <script src="search.js" defer></script>
     <style>
         /* 更新背景图路径 */
         .automation-bg {
@@ -135,6 +133,41 @@
             text-align: center;
             padding: 1rem;
         }
+
+        /* 新增搜索栏样式 */
+        .search-container {
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 25px;
+            padding: 5px;
+            border: 2px solid #00b4d8;
+        }
+
+        .search-input {
+            border: none;
+            outline: none;
+            padding: 8px 15px;
+            border-radius: 25px;
+            width: 200px;
+            font-size: 14px;
+        }
+
+        .search-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-icon {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+        }
     </style>
 </head>
 
@@ -142,7 +175,36 @@
     <div id="header-placeholder"></div>
 
     <script>
-        // 修改header加载逻辑，确保搜索功能正确初始化
+        // 搜索功能函数
+        function performSearch() {
+            const searchInput = document.getElementById('search-input');
+            const query = searchInput ? searchInput.value.trim() : '';
+            if (query) {
+                // 这里可以替换为实际的搜索逻辑
+                alert('Searching for: ' + query);
+                // window.location.href = 'search-results.html?q=' + encodeURIComponent(query);
+            }
+        }
+
+        // 初始化搜索功能
+        function initSearch() {
+            const searchInput = document.getElementById('search-input');
+            const searchButton = document.getElementById('search-button');
+            
+            if (searchInput && searchButton) {
+                // 点击搜索按钮事件
+                searchButton.addEventListener('click', performSearch);
+                
+                // Enter键搜索功能
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        performSearch();
+                    }
+                });
+            }
+        }
+
+        // 加载header
         fetch('header.html')
             .then(response => {
                 if (!response.ok) {
@@ -152,25 +214,28 @@
             })
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
-                // 确保搜索功能在header加载后初始化
-                if (typeof initSearch === 'function') {
-                    initSearch();
-                }
+                // 初始化搜索功能
+                setTimeout(initSearch, 100);
             })
             .catch(error => {
                 console.error('Error loading header:', error);
-                // 如果header.html不存在，提供基本的header结构
+                // 如果header.html不存在，提供带图片搜索按钮的header结构
                 document.getElementById('header-placeholder').innerHTML = `
                     <header style="padding: 1rem; background: #333; color: white;">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <h1>A&M INTERNATIONAL ENGINEERING</h1>
-                            <div>
-                                <input type="text" id="search-input" placeholder="Search..." style="padding: 0.5rem;">
-                                <button id="search-button" style="padding: 0.5rem 1rem;">Search</button>
+                            <div class="search-container">
+                                <input type="text" id="search-input" placeholder="Search..." class="search-input">
+                                <button id="search-button" class="search-button">
+                                    <img src="Image/search-icon.png" alt="Search" class="search-icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'">
+                                    <span style="display: none; padding: 0 10px; color: #00b4d8;">Search</span>
+                                </button>
                             </div>
                         </div>
                     </header>
                 `;
+                // 初始化搜索功能
+                setTimeout(initSearch, 100);
             });
     </script>
 
