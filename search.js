@@ -36,12 +36,15 @@ const pages = [
     }
 ];
 
-function searchSite(keyword) {
+// 在 search.js 中修改这个函数名
+function performSearch(keyword) {
     keyword = keyword.toLowerCase();
     const resultsContainer = document.getElementById("search-results");
     
     if (!resultsContainer) {
         console.error('Search results container not found');
+        // 如果没有搜索结果容器，跳转到搜索页面
+        window.location.href = `search.html?query=${encodeURIComponent(keyword)}`;
         return;
     }
     
@@ -65,34 +68,5 @@ function searchSite(keyword) {
     }
 }
 
-function initSearch() {
-    const input = document.getElementById("search-input");
-    const button = document.getElementById("search-button");
-
-    if (input && button) {
-        button.addEventListener("click", () => {
-            const query = input.value.trim();
-            if (query) {
-                searchSite(query);
-            } else {
-                alert('Please enter search keywords');
-            }
-        });
-
-        input.addEventListener("keypress", (e) => {
-            if (e.key === "Enter") {
-                e.preventDefault();
-                const query = input.value.trim();
-                if (query) {
-                    searchSite(query);
-                } else {
-                    alert('Please enter search keywords');
-                }
-            }
-        });
-    }
-}
-
-document.addEventListener("DOMContentLoaded", initSearch);
-window.searchSite = searchSite;
-window.initSearch = initSearch;
+// 同时修改导出的函数名
+window.performSearch = performSearch;
