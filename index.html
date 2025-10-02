@@ -256,6 +256,24 @@
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(initSearchFunctionality, 300);
         });
+
+        // 添加这个函数来解决 header.html 中的 onclick 错误
+            function searchSite() {
+                const searchInput = document.getElementById('search-input');
+                const query = searchInput ? searchInput.value.trim() : '';
+                
+                if (query) {
+                    // 跳转到搜索结果页面
+                    window.location.href = `search.html?query=${encodeURIComponent(query)}`;
+                } else {
+                    alert('Please enter search keywords');
+                }
+            }
+            
+            // 保持现有的 performSearch 函数
+            function performSearch() {
+                searchSite(); // 调用 searchSite 函数
+            }
     </script>
 
     <!-- 以下所有内容完全保持不变 -->
