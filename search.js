@@ -59,5 +59,26 @@ function searchSite(keyword) {
         resultsContainer.appendChild(list);
     }
 }
-</script>
 
+// ✅ 新增初始化函数
+function initSearch() {
+    const input = document.getElementById("search-input");
+    const button = document.getElementById("search-button");
+
+    // 点击按钮时搜索
+    button.addEventListener("click", () => {
+        searchSite(input.value.trim());
+    });
+
+    // 按下 Enter 时搜索
+    input.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            searchSite(input.value.trim());
+        }
+    });
+}
+
+// 页面加载完成后执行
+document.addEventListener("DOMContentLoaded", initSearch);
+</script>
