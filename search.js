@@ -38,16 +38,9 @@ const pages = [
 ];
 
 function performSearch(keyword) {
-    // 修复：如果没有传递参数，从输入框获取值
-    if (typeof keyword === 'undefined') {
-        const searchInput = document.getElementById('search-input');
-        keyword = searchInput ? searchInput.value.trim() : '';
-    }
-    
-    // 如果还是没有关键词，直接返回
+    // 只在 search.html 页面执行搜索逻辑
     if (!keyword) {
         console.error('No search keyword provided');
-        alert('Please enter search keywords');
         return;
     }
     
@@ -58,8 +51,6 @@ function performSearch(keyword) {
     
     if (!resultsContainer) {
         console.error('Search results container not found');
-        // 如果没有结果容器，跳转到搜索页面
-        window.location.href = `search.html?query=${encodeURIComponent(keyword)}`;
         return;
     }
     
@@ -83,5 +74,14 @@ function performSearch(keyword) {
     }
 }
 
-// 导出函数供其他脚本使用
-window.performSearch = performSearch;
+// 页面加载时自动执行搜索（仅在 search.html 页面）
+document.addEventListener('DOMContentLoaded', function() {
+    // 获取 URL 参数中的搜索关键词
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get('query');
+    
+    if (query && typeof performSearch === 'function') {
+        document.getElementById('search-query').textContent = query;
+        performSearch(query);
+    }
+});
