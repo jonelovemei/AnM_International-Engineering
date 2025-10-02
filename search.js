@@ -36,15 +36,12 @@ const pages = [
     }
 ];
 
-// 在 search.js 中修改这个函数名
 function performSearch(keyword) {
     keyword = keyword.toLowerCase();
     const resultsContainer = document.getElementById("search-results");
     
     if (!resultsContainer) {
         console.error('Search results container not found');
-        // 如果没有搜索结果容器，跳转到搜索页面
-        window.location.href = `search.html?query=${encodeURIComponent(keyword)}`;
         return;
     }
     
@@ -56,7 +53,7 @@ function performSearch(keyword) {
     );
 
     if (results.length === 0) {
-        resultsContainer.innerHTML = "<p>No results found.</p>";
+        resultsContainer.innerHTML = "<p>No results found. Please try different keywords.</p>";
     } else {
         const list = document.createElement("ul");
         results.forEach(page => {
@@ -68,5 +65,5 @@ function performSearch(keyword) {
     }
 }
 
-// 同时修改导出的函数名
+// 导出函数供其他脚本使用
 window.performSearch = performSearch;
