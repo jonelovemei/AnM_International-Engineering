@@ -40,13 +40,12 @@ function searchSite(keyword) {
     keyword = keyword.toLowerCase();
     const resultsContainer = document.getElementById("search-results");
     
-    // 添加安全检查
     if (!resultsContainer) {
         console.error('Search results container not found');
         return;
     }
     
-    resultsContainer.innerHTML = ""; // 清空上次结果
+    resultsContainer.innerHTML = "";
 
     const results = pages.filter(page =>
         page.title.toLowerCase().includes(keyword) ||
@@ -66,17 +65,12 @@ function searchSite(keyword) {
     }
 }
 
-// 初始化函数 - 添加错误处理
 function initSearch() {
     const input = document.getElementById("search-input");
     const button = document.getElementById("search-button");
 
-    console.log('initSearch called - Input:', input, 'Button:', button);
-
     if (input && button) {
-        // 点击按钮时搜索
         button.addEventListener("click", () => {
-            console.log('Search button clicked');
             const query = input.value.trim();
             if (query) {
                 searchSite(query);
@@ -85,11 +79,9 @@ function initSearch() {
             }
         });
 
-        // 按下 Enter 时搜索
         input.addEventListener("keypress", (e) => {
             if (e.key === "Enter") {
                 e.preventDefault();
-                console.log('Enter key pressed');
                 const query = input.value.trim();
                 if (query) {
                     searchSite(query);
@@ -98,16 +90,9 @@ function initSearch() {
                 }
             }
         });
-        
-        console.log('Search event listeners added successfully');
-    } else {
-        console.error('Search elements not found:', { input, button });
     }
 }
 
-// 页面加载完成后执行
 document.addEventListener("DOMContentLoaded", initSearch);
-
-// 导出函数供其他脚本使用
 window.searchSite = searchSite;
 window.initSearch = initSearch;
