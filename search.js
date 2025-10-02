@@ -1,4 +1,3 @@
-<script>
 const pages = [
     {
         title: "Home",
@@ -40,6 +39,13 @@ const pages = [
 function searchSite(keyword) {
     keyword = keyword.toLowerCase();
     const resultsContainer = document.getElementById("search-results");
+    
+    // 添加安全检查
+    if (!resultsContainer) {
+        console.error('Search results container not found');
+        return;
+    }
+    
     resultsContainer.innerHTML = ""; // 清空上次结果
 
     const results = pages.filter(page =>
@@ -60,25 +66,48 @@ function searchSite(keyword) {
     }
 }
 
-// ✅ 新增初始化函数
+// 初始化函数 - 添加错误处理
 function initSearch() {
     const input = document.getElementById("search-input");
     const button = document.getElementById("search-button");
 
-    // 点击按钮时搜索
-    button.addEventListener("click", () => {
-        searchSite(input.value.trim());
-    });
+    console.log('initSearch called - Input:', input, 'Button:', button);
 
-    // 按下 Enter 时搜索
-    input.addEventListener("keypress", (e) => {
-        if (e.key === "Enter") {
-            e.preventDefault();
-            searchSite(input.value.trim());
-        }
-    });
+    if (input && button) {
+        // 点击按钮时搜索
+        button.addEventListener("click", () => {
+            console.log('Search button clicked');
+            const query = input.value.trim();
+            if (query) {
+                searchSite(query);
+            } else {
+                alert('Please enter search keywords');
+            }
+        });
+
+        // 按下 Enter 时搜索
+        input.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                console.log('Enter key pressed');
+                const query = input.value.trim();
+                if (query) {
+                    searchSite(query);
+                } else {
+                    alert('Please enter search keywords');
+                }
+            }
+        });
+        
+        console.log('Search event listeners added successfully');
+    } else {
+        console.error('Search elements not found:', { input, button });
+    }
 }
 
 // 页面加载完成后执行
 document.addEventListener("DOMContentLoaded", initSearch);
-</script>
+
+// 导出函数供其他脚本使用
+window.searchSite = searchSite;
+window.initSearch = initSearch;
