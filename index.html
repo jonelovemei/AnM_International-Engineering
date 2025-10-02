@@ -261,35 +261,27 @@
         });
 
         // 添加这个函数来解决 header.html 中的 onclick 错误
-          // 在 index.html 的 script 部分修改这些函数
-            function searchSite() {
-                const searchInput = document.getElementById('search-input');
-                const query = searchInput ? searchInput.value.trim() : '';
-                
-                if (query) {
-                    // 跳转到搜索结果页面
-                    window.location.href = `search.html?query=${encodeURIComponent(query)}`;
-                } else {
-                    alert('Please enter search keywords');
-                }
-            }
-            
-            function performSearch() {
-                const searchInput = document.getElementById('search-input');
-                const query = searchInput ? searchInput.value.trim() : '';
-                
-                if (query) {
-                    // 跳转到搜索结果页面
-                    window.location.href = `search.html?query=${encodeURIComponent(query)}`;
-                } else {
-                    alert('Please enter search keywords');
-                }
-            }
-            
-            // 保持现有的 performSearch 函数
-            function performSearch() {
-                searchSite(); // 调用 searchSite 函数
-            }
+         // 在 index.html 的 script 部分
+function searchSite() {
+    performSearch(); // 直接调用 performSearch，它会自己处理参数
+}
+
+function performSearch() {
+    // 现在这个函数会调用 search.js 中的 performSearch
+    // 由于我们在 search.js 中修复了参数问题，这里可以直接调用
+    if (typeof window.performSearch === 'function') {
+        window.performSearch();
+    } else {
+        // 备用方案：直接跳转
+        const searchInput = document.getElementById('search-input');
+        const query = searchInput ? searchInput.value.trim() : '';
+        if (query) {
+            window.location.href = `search.html?query=${encodeURIComponent(query)}`;
+        } else {
+            alert('Please enter search keywords');
+        }
+    }
+}
     </script>
 
     <!-- 以下所有内容完全保持不变 -->
