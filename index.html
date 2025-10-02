@@ -185,14 +185,14 @@
     <script>
         // 搜索功能函数
         function performSearch() {
-            const searchInput = document.getElementById('search-input');
+        const searchInput = document.getElementById('search-input');
             const query = searchInput ? searchInput.value.trim() : '';
-            
+    
             if (query) {
-                // 跳转到搜索结果页面
-                window.location.href = `search.html?query=${encodeURIComponent(query)}`;
-            } else {
-                alert('Please enter search keywords');
+        // 跳转到搜索结果页面
+            window.location.href = `search.html?query=${encodeURIComponent(query)}`;
+        } else {
+        alert('Please enter search keywords');
             }
         }
 
