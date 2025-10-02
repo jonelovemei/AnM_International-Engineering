@@ -183,19 +183,23 @@
     <div id="header-placeholder"></div>
 
     <script>
-        // 搜索功能函数
-        function performSearch() {
-        const searchInput = document.getElementById('search-input');
-            const query = searchInput ? searchInput.value.trim() : '';
+       // 搜索功能函数
+function performSearch() {
+    const searchInput = document.getElementById('search-input');
+    const query = searchInput ? searchInput.value.trim() : '';
     
-            if (query) {
-        // 跳转到搜索结果页面
-            window.location.href = `search.html?query=${encodeURIComponent(query)}`;
+    if (query) {
+        // 直接调用 search.js 中的 searchSite 函数进行搜索
+        if (typeof searchSite === 'function') {
+            searchSite(query);
         } else {
-        alert('Please enter search keywords');
-            }
+            // 如果 searchSite 函数不可用，跳转到搜索页面
+            window.location.href = `search.html?query=${encodeURIComponent(query)}`;
         }
-
+    } else {
+        alert('Please enter search keywords');
+    }
+}
         // 初始化搜索功能
         function initSearchFunctionality() {
             const searchInput = document.getElementById('search-input');
