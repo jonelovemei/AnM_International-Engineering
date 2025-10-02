@@ -261,7 +261,20 @@
         });
 
         // 添加这个函数来解决 header.html 中的 onclick 错误
+          // 在 index.html 的 script 部分修改这些函数
             function searchSite() {
+                const searchInput = document.getElementById('search-input');
+                const query = searchInput ? searchInput.value.trim() : '';
+                
+                if (query) {
+                    // 跳转到搜索结果页面
+                    window.location.href = `search.html?query=${encodeURIComponent(query)}`;
+                } else {
+                    alert('Please enter search keywords');
+                }
+            }
+            
+            function performSearch() {
                 const searchInput = document.getElementById('search-input');
                 const query = searchInput ? searchInput.value.trim() : '';
                 
