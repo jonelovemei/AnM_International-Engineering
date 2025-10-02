@@ -1,3 +1,4 @@
+// search.js
 const pages = [
     {
         title: "Home",
@@ -37,6 +38,12 @@ const pages = [
 ];
 
 function performSearch(keyword) {
+    // 添加参数检查
+    if (!keyword) {
+        console.error('No keyword provided to performSearch');
+        return;
+    }
+    
     keyword = keyword.toLowerCase();
     const resultsContainer = document.getElementById("search-results");
     
