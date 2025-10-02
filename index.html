@@ -195,11 +195,14 @@
     }
 }
         // 初始化搜索功能
-        function initSearchFunctionality() {
+              function initSearchFunctionality() {
             const searchInput = document.getElementById('search-input');
             const searchButton = document.getElementById('search-button');
             
             if (searchInput && searchButton) {
+                // 移除导致错误的 onclick 属性
+                searchButton.removeAttribute('onclick');
+                
                 // 点击搜索按钮事件
                 searchButton.addEventListener('click', function(e) {
                     e.preventDefault();
