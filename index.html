@@ -182,101 +182,104 @@
 <body>
     <div id="header-placeholder"></div>
 
-      <script>
-        // 搜索功能函数 - 简化版，只负责跳转
-        function performSearch() {
-            const searchInput = document.getElementById('search-input');
-            const query = searchInput ? searchInput.value.trim() : '';
-            
-            console.log('Search query:', query); // 调试信息
-            
-            if (query) {
-                // 直接跳转到搜索结果页面，不调用 search.js 的函数
-                window.location.href = `search.html?query=${encodeURIComponent(query)}`;
-            } else {
-                alert('Please enter search keywords');
-            }
+     <script>
+    // 搜索功能函数 - 只负责跳转到搜索页面
+    function performSearch() {
+        const searchInput = document.getElementById('search-input');
+        const query = searchInput ? searchInput.value.trim() : '';
+        
+        console.log('Search query:', query);
+        
+        if (query) {
+            // 直接跳转到搜索结果页面
+            window.location.href = `search.html?query=${encodeURIComponent(query)}`;
+        } else {
+            alert('Please enter search keywords');
         }
-    
-        // 添加这个函数来解决 header.html 中的 onclick 错误
-        function searchSite() {
-            performSearch(); // 调用统一的搜索函数
-        }
-    
-        // 初始化搜索功能
-        function initSearchFunctionality() {
-            const searchInput = document.getElementById('search-input');
-            const searchButton = document.getElementById('search-button');
+    }
+
+    // 添加这个函数来解决 header.html 中的 onclick 错误
+    function searchSite() {
+        performSearch(); // 调用统一的搜索函数
+    }
+
+    // 初始化搜索功能
+    function initSearchFunctionality() {
+        const searchInput = document.getElementById('search-input');
+        const searchButton = document.getElementById('search-button');
+        
+        console.log('Initializing search functionality...');
+        
+        if (searchInput && searchButton) {
+            // 移除可能导致冲突的 onclick 属性
+            searchButton.removeAttribute('onclick');
             
-            console.log('Initializing search functionality...');
+            // 点击搜索按钮事件
+            searchButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Search button clicked');
+                performSearch();
+            });
             
-            if (searchInput && searchButton) {
-                // 移除可能导致冲突的 onclick 属性
-                searchButton.removeAttribute('onclick');
-                
-                // 点击搜索按钮事件
-                searchButton.addEventListener('click', function(e) {
+            // Enter键搜索功能
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
                     e.preventDefault();
-                    console.log('Search button clicked');
+                    console.log('Enter key pressed');
                     performSearch();
-                });
-                
-                // Enter键搜索功能
-                searchInput.addEventListener('keypress', function(e) {
-                    if (e.key === 'Enter') {
-                        e.preventDefault();
-                        console.log('Enter key pressed');
-                        performSearch();
-                    }
-                });
-                
-                console.log('Search functionality initialized successfully');
-            } else {
-                console.error('Search elements not found');
-            }
-        }
-    
-        // 加载header
-        fetch('header.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('header.html not found');
                 }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-                // 初始化搜索功能
-                setTimeout(initSearchFunctionality, 100);
-            })
-            .catch(error => {
-                console.error('Error loading header:', error);
-                // 如果header.html不存在，提供基本的header结构
-                document.getElementById('header-placeholder').innerHTML = `
-                    <header style="padding: 1rem; background: #333; color: white;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-                            <h1 style="margin: 0 1rem 1rem 0;">A&M INTERNATIONAL ENGINEERING</h1>
-                            <div style="display: flex; align-items: center; gap: 1rem;">
-                                <a href="contact.html" style="color: white; text-decoration: none;">Contact Us</a>
-                                <div class="search-container">
-                                    <input type="text" id="search-input" placeholder="Search..." class="search-input">
-                                    <button id="search-button" class="search-button" type="button">
-                                        <img src="Image/search-icon.png" alt="Search" class="search-icon">
-                                    </button>
-                                </div>
+            });
+            
+            console.log('Search functionality initialized successfully');
+        } else {
+            console.error('Search elements not found');
+        }
+    }
+
+    // 加载header
+    fetch('header.html')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('header.html not found');
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+            // 初始化搜索功能
+            setTimeout(initSearchFunctionality, 100);
+        })
+        .catch(error => {
+            console.error('Error loading header:', error);
+            // 如果header.html不存在，提供基本的header结构
+            document.getElementById('header-placeholder').innerHTML = `
+                <header style="padding: 1rem; background: #333; color: white;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                        <h1 style="margin: 0 1rem 1rem 0;">A&M INTERNATIONAL ENGINEERING</h1>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <a href="contact.html" style="color: white; text-decoration: none;">Contact Us</a>
+                            <div class="search-container">
+                                <input type="text" id="search-input" placeholder="Search..." class="search-input">
+                                <button id="search-button" class="search-button" type="button">
+                                    <img src="Image/search-icon.png" alt="Search" class="search-icon">
+                                </button>
                             </div>
                         </div>
-                    </header>
-                `;
-                // 初始化搜索功能
-                setTimeout(initSearchFunctionality, 100);
-            });
-    
-        // 页面加载完成后再次初始化
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(initSearchFunctionality, 300);
+                    </div>
+                </header>
+            `;
+            // 初始化搜索功能
+            setTimeout(initSearchFunctionality, 100);
         });
-    </script>
+
+    // 页面加载完成后再次初始化
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(initSearchFunctionality, 300);
+    });
+</script>
+
+<!-- 从 index.html 中移除 search.js 的引用 -->
+<!-- 删除这行: <script src="search.js" defer></script> -->
 
     <!-- 以下所有内容完全保持不变 -->
     <section class="business-concept">
