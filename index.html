@@ -183,24 +183,31 @@
     <div id="header-placeholder"></div>
 
     <script>
-       function performSearch() {
-    const searchInput = document.getElementById('search-input');
-    const query = searchInput ? searchInput.value.trim() : '';
-    
-    if (query) {
-        // 跳转到搜索结果页面
-        window.location.href = `search.html?query=${encodeURIComponent(query)}`;
-    } else {
-        alert('Please enter search keywords');
-    }
-}
+        // 搜索功能函数 - 统一版本
+        function performSearch() {
+            const searchInput = document.getElementById('search-input');
+            const query = searchInput ? searchInput.value.trim() : '';
+            
+            if (query) {
+                // 跳转到搜索结果页面
+                window.location.href = `search.html?query=${encodeURIComponent(query)}`;
+            } else {
+                alert('Please enter search keywords');
+            }
+        }
+
+        // 添加这个函数来解决 header.html 中的 onclick 错误
+        function searchSite() {
+            performSearch(); // 调用统一的搜索函数
+        }
+
         // 初始化搜索功能
-              function initSearchFunctionality() {
+        function initSearchFunctionality() {
             const searchInput = document.getElementById('search-input');
             const searchButton = document.getElementById('search-button');
             
             if (searchInput && searchButton) {
-                // 移除导致错误的 onclick 属性
+                // 移除可能导致冲突的 onclick 属性
                 searchButton.removeAttribute('onclick');
                 
                 // 点击搜索按钮事件
@@ -259,26 +266,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(initSearchFunctionality, 300);
         });
-
-        // 添加这个函数来解决 header.html 中的 onclick 错误
-         // 在 index.html 的 script 部分
-            // 在 index.html 的 script 部分修改搜索函数
-            function searchSite() {
-                const searchInput = document.getElementById('search-input');
-                const query = searchInput ? searchInput.value.trim() : '';
-                
-                if (query) {
-                    // 直接跳转到搜索页面
-                    window.location.href = `search.html?query=${encodeURIComponent(query)}`;
-                } else {
-                    alert('Please enter search keywords');
-                }
-            }
-            
-            function performSearch() {
-                searchSite(); // 调用同一个函数
-            }
-}
     </script>
 
     <!-- 以下所有内容完全保持不变 -->
