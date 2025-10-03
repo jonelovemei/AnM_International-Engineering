@@ -8,12 +8,24 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             background: #f5f5f5;
+        }
+        .header {
+            background: #333;
+            color: white;
+            padding: 1rem;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         .search-results {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 20px auto;
             background: white;
             padding: 20px;
             border-radius: 8px;
@@ -32,6 +44,10 @@
             padding: 15px;
             border: 1px solid #ddd;
             border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        li:hover {
+            background: #f9f9f9;
         }
         a {
             color: #00b4d8;
@@ -41,31 +57,32 @@
         a:hover {
             text-decoration: underline;
         }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #00b4d8;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
+    <div class="header">
+        <div class="header-content">
+            <h1>A&M INTERNATIONAL ENGINEERING</h1>
+            <a href="index.html" style="color: white; text-decoration: none;">← Back to Home</a>
+        </div>
+    </div>
+    
     <div class="search-results">
-        <h1>Search Results</h1>
+        <h2>Search Results</h2>
         <p>Showing results for: <span id="search-query" class="search-query"></span></p>
         <div id="search-results"></div>
+        <a href="index.html" class="back-link">← Back to Home</a>
     </div>
 
     <script src="search.js"></script>
-    <script>
-        // 获取 URL 参数中的搜索关键词
-        const params = new URLSearchParams(window.location.search);
-        const query = params.get('query');
-        
-        if (query) {
-            document.getElementById('search-query').textContent = query;
-            // 调用搜索函数
-            if (typeof performSearch === 'function') {
-                performSearch(query);
-            }
-        } else {
-            document.getElementById('search-query').textContent = 'No query provided';
-            document.getElementById('search-results').innerHTML = '<p>Please enter a search term.</p>';
-        }
-    </script>
 </body>
 </html>
