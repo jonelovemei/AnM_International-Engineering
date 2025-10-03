@@ -1,4 +1,3 @@
-// search.js
 const pages = [
     {
         title: "Home",
@@ -38,7 +37,7 @@ const pages = [
 ];
 
 function performSearch(keyword) {
-    // 只在 search.html 页面执行搜索逻辑
+    // 检查参数
     if (!keyword) {
         console.error('No search keyword provided');
         return;
@@ -46,6 +45,7 @@ function performSearch(keyword) {
     
     console.log('Searching for:', keyword);
     
+    const originalKeyword = keyword;
     keyword = keyword.toLowerCase();
     const resultsContainer = document.getElementById("search-results");
     
@@ -56,13 +56,30 @@ function performSearch(keyword) {
     
     resultsContainer.innerHTML = "";
 
+    // 站内搜索
     const results = pages.filter(page =>
         page.title.toLowerCase().includes(keyword) ||
         page.content.toLowerCase().includes(keyword)
     );
 
     if (results.length === 0) {
-        resultsContainer.innerHTML = "<p>No results found. Please try different keywords.</p>";
+        // 站内无结果，显示Google搜索选项
+        const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(originalKeyword + ' site:am-engineering.com')}`;
+        resultsContainer.innerHTML = `
+            <div style="text-align: center; padding: 20px;">
+                <p>No results found on our website for "<strong>${originalKeyword}</strong>".</p>
+                <p>Would you like to search the internet?</p>
+                <a href="${googleSearchUrl}" target="_blank" style="
+                    display: inline-block;
+                    background: #00b4d8;
+                    color: white;
+                    padding: 10px 20px;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    margin-top: 10px;
+                ">Search on Google</a>
+            </div>
+        `;
     } else {
         const list = document.createElement("ul");
         results.forEach(page => {
@@ -74,14 +91,17 @@ function performSearch(keyword) {
     }
 }
 
-// 页面加载时自动执行搜索（仅在 search.html 页面）
+// 页面加载时自动执行搜索
 document.addEventListener('DOMContentLoaded', function() {
     // 获取 URL 参数中的搜索关键词
     const params = new URLSearchParams(window.location.search);
     const query = params.get('query');
     
-    if (query && typeof performSearch === 'function') {
+    if (query) {
         document.getElementById('search-query').textContent = query;
         performSearch(query);
     }
 });
+
+// 导出函数供其他脚本使用
+window.performSearch = performSearch;
