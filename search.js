@@ -36,17 +36,17 @@ const pages = [
     }
 ];
 
+// 搜索函数 - 只在 search.html 页面使用
 function performSearch(keyword) {
-    // 检查参数
-    if (!keyword) {
+    console.log('performSearch called with keyword:', keyword);
+    
+    if (!keyword || keyword.trim() === '') {
         console.error('No search keyword provided');
         return;
     }
     
-    console.log('Searching for:', keyword);
-    
     const originalKeyword = keyword;
-    keyword = keyword.toLowerCase();
+    keyword = keyword.toLowerCase().trim();
     const resultsContainer = document.getElementById("search-results");
     
     if (!resultsContainer) {
@@ -62,9 +62,11 @@ function performSearch(keyword) {
         page.content.toLowerCase().includes(keyword)
     );
 
+    console.log('Search results:', results);
+    
     if (results.length === 0) {
         // 站内无结果，显示Google搜索选项
-        const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(originalKeyword + ' site:am-engineering.com')}`;
+        const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(originalKeyword)}`;
         resultsContainer.innerHTML = `
             <div style="text-align: center; padding: 20px;">
                 <p>No results found on our website for "<strong>${originalKeyword}</strong>".</p>
@@ -91,17 +93,21 @@ function performSearch(keyword) {
     }
 }
 
-// 页面加载时自动执行搜索
+// 页面加载时自动执行搜索 - 只在 search.html 页面执行
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Search page loaded');
+    
     // 获取 URL 参数中的搜索关键词
     const params = new URLSearchParams(window.location.search);
     const query = params.get('query');
     
-    if (query) {
+    console.log('URL query parameter:', query);
+    
+    if (query && query.trim() !== '') {
         document.getElementById('search-query').textContent = query;
         performSearch(query);
+    } else {
+        document.getElementById('search-query').textContent = 'No query provided';
+        document.getElementById('search-results').innerHTML = '<p>Please enter a search term.</p>';
     }
 });
-
-// 导出函数供其他脚本使用
-window.performSearch = performSearch;
