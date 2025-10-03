@@ -40,8 +40,10 @@ const pages = [
 function performSearch(keyword) {
     console.log('performSearch called with keyword:', keyword);
     
-    if (!keyword || keyword.trim() === '') {
+    // 更严格的参数检查
+    if (typeof keyword === 'undefined' || keyword === null || keyword.trim() === '') {
         console.error('No search keyword provided');
+        document.getElementById('search-results').innerHTML = '<p>Please enter a search term.</p>';
         return;
     }
     
@@ -111,3 +113,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('search-results').innerHTML = '<p>Please enter a search term.</p>';
     }
 });
+
+// 确保函数不会在全局作用域中被错误调用
+if (typeof window !== 'undefined') {
+    window.performSearch = performSearch;
+}
