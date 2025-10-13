@@ -140,6 +140,7 @@
             border-radius: 25px;
             padding: 2px;
             border: 1px solid #ccc;
+            position: relative;
         }
 
         .search-input {
@@ -176,6 +177,76 @@
             height: 16px;
             object-fit: contain;
         }
+
+        /* 下拉搜索结果样式 */
+        .search-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+        }
+
+        .search-result-item {
+            padding: 12px 15px;
+            border-bottom: 1px solid #f0f0f0;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .search-result-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .search-result-item:last-child {
+            border-bottom: none;
+        }
+
+        .search-result-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .search-result-content {
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+
+        .search-result-url {
+            color: #00b4d8;
+            font-size: 0.8em;
+            margin-top: 4px;
+        }
+
+        .no-results {
+            padding: 15px;
+            text-align: center;
+            color: #666;
+        }
+
+        .google-search-link {
+            display: block;
+            padding: 10px 15px;
+            background: #f8f9fa;
+            color: #00b4d8;
+            text-decoration: none;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+            font-weight: bold;
+        }
+
+        .google-search-link:hover {
+            background: #e9ecef;
+        }
     </style>
 </head>
 
@@ -183,46 +254,154 @@
     <div id="header-placeholder"></div>
 
     <script>
-    // 搜索功能函数 - 只负责跳转到搜索页面
+    // 页面数据
+    const pages = [
+        {
+            title: "Home",
+            content: "Welcome to A&M INTERNATIONAL ENGINEERING PTE LTD. We provide professional integration solutions.",
+            url: "index.html"
+        },
+        {
+            title: "Solutions",
+            content: "Our solutions include supply chain optimization, digital transformation, and operational risk management.",
+            url: "Solutions.html"
+        },
+        {
+            title: "Products & Services",
+            content: "Explore our services including control, measurement, and project execution.",
+            url: "services.html"
+        },
+        {
+            title: "Support",
+            content: "Access technical support, product finder, and customer portal.",
+            url: "Support.html"
+        },
+        {
+            title: "Contact Us",
+            content: "Reach out to us through our contact form or find our office location.",
+            url: "contact.html"
+        }
+    ];
+
+    // 显示下拉搜索结果
+    function showSearchResults(results, query) {
+        const dropdown = document.getElementById('search-results-dropdown');
+        if (!dropdown) {
+            console.error('Dropdown element not found');
+            return;
+        }
+
+        console.log('Showing search results:', results.length, 'for query:', query);
+
+        if (results.length === 0) {
+            // 没有结果，显示Google搜索选项
+            dropdown.innerHTML = `
+                <div class="no-results">
+                    <p>No results found for "<strong>${query}</strong>"</p>
+                </div>
+                <a href="https://www.google.com/search?q=${encodeURIComponent('A&M INTERNATIONAL ENGINEERING ' + query)}" 
+                   target="_blank" class="google-search-link">
+                   Search on Google for "${query}"
+                </a>
+            `;
+        } else {
+            // 显示搜索结果
+            dropdown.innerHTML = results.map(page => `
+                <div class="search-result-item" onclick="window.location.href='${page.url}'">
+                    <div class="search-result-title">${page.title}</div>
+                    <div class="search-result-content">${page.content.substring(0, 100)}...</div>
+                    <div class="search-result-url">${page.url}</div>
+                </div>
+            `).join('');
+        }
+        
+        dropdown.style.display = 'block';
+    }
+
+    // 隐藏下拉结果
+    function hideSearchResults() {
+        const dropdown = document.getElementById('search-results-dropdown');
+        if (dropdown) {
+            setTimeout(() => {
+                dropdown.style.display = 'none';
+            }, 200);
+        }
+    }
+
+    // 执行搜索
     function performSearch() {
         const searchInput = document.getElementById('search-input');
         const query = searchInput ? searchInput.value.trim() : '';
         
-        console.log('Search query:', query);
+        console.log('Performing search for:', query);
         
-        if (query) {
-            // 直接跳转到搜索结果页面
-            window.location.href = `search.html?query=${encodeURIComponent(query)}`;
-        } else {
+        if (!query) {
+            hideSearchResults();
             alert('Please enter search keywords');
+            return;
         }
+
+        // 在页面中搜索
+        const results = pages.filter(page =>
+            page.title.toLowerCase().includes(query.toLowerCase()) ||
+            page.content.toLowerCase().includes(query.toLowerCase())
+        );
+
+        showSearchResults(results, query);
     }
 
-    // 添加这个函数来解决 header.html 中的 onclick 错误
-    function searchSite() {
-        performSearch(); // 调用统一的搜索函数
+    // 实时搜索
+    function handleRealTimeSearch() {
+        const query = this.value.trim();
+        console.log('Real-time search:', query);
+        
+        if (query.length < 2) {
+            hideSearchResults();
+            return;
+        }
+        
+        // 在页面中搜索
+        const results = pages.filter(page =>
+            page.title.toLowerCase().includes(query.toLowerCase()) ||
+            page.content.toLowerCase().includes(query.toLowerCase())
+        );
+
+        showSearchResults(results, query);
     }
 
-    // 初始化搜索功能
+    // 初始化搜索功能 - 简化和修复版本
     function initSearchFunctionality() {
+        console.log('Initializing search functionality...');
+        
         const searchInput = document.getElementById('search-input');
         const searchButton = document.getElementById('search-button');
         
-        console.log('Initializing search functionality...');
+        console.log('Search input found:', !!searchInput);
+        console.log('Search button found:', !!searchButton);
         
         if (searchInput && searchButton) {
-            // 移除可能导致冲突的 onclick 属性
-            searchButton.removeAttribute('onclick');
+            // 移除可能存在的旧事件监听器
+            const newSearchInput = searchInput.cloneNode(true);
+            const newSearchButton = searchButton.cloneNode(true);
+            searchInput.parentNode.replaceChild(newSearchInput, searchInput);
+            searchButton.parentNode.replaceChild(newSearchButton, searchButton);
             
-            // 点击搜索按钮事件
-            searchButton.addEventListener('click', function(e) {
+            // 重新获取元素引用
+            const freshSearchInput = document.getElementById('search-input');
+            const freshSearchButton = document.getElementById('search-button');
+            
+            // 实时搜索
+            freshSearchInput.addEventListener('input', handleRealTimeSearch);
+            
+            // 点击搜索按钮
+            freshSearchButton.addEventListener('click', function(e) {
                 e.preventDefault();
                 console.log('Search button clicked');
                 performSearch();
             });
             
-            // Enter键搜索功能
-            searchInput.addEventListener('keypress', function(e) {
+            // Enter键搜索
+            freshSearchInput.addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') {
                     e.preventDefault();
                     console.log('Enter key pressed');
@@ -230,58 +409,88 @@
                 }
             });
             
+            // 点击页面其他区域隐藏下拉菜单
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.search-container')) {
+                    hideSearchResults();
+                }
+            });
+            
+            // 搜索框获得焦点时显示最近的结果
+            freshSearchInput.addEventListener('focus', function() {
+                if (this.value.trim().length >= 2) {
+                    handleRealTimeSearch.call(this);
+                }
+            });
+            
             console.log('Search functionality initialized successfully');
         } else {
-            console.error('Search elements not found');
+            console.error('Search elements not found. Input:', !!searchInput, 'Button:', !!searchButton);
         }
     }
 
     // 加载header
-    fetch('header.html')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('header.html not found');
-            }
-            return response.text();
-        })
-        .then(data => {
-            document.getElementById('header-placeholder').innerHTML = data;
-            // 初始化搜索功能
-            setTimeout(initSearchFunctionality, 100);
-        })
-        .catch(error => {
-            console.error('Error loading header:', error);
-            // 如果header.html不存在，提供基本的header结构
-            document.getElementById('header-placeholder').innerHTML = `
-                <header style="padding: 1rem; background: #333; color: white;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-                        <h1 style="margin: 0 1rem 1rem 0;">A&M INTERNATIONAL ENGINEERING</h1>
-                        <div style="display: flex; align-items: center; gap: 1rem;">
-                            <a href="contact.html" style="color: white; text-decoration: none;">Contact Us</a>
-                            <div class="search-container">
-                                <input type="text" id="search-input" placeholder="Search..." class="search-input">
-                                <button id="search-button" class="search-button" type="button">
-                                    <img src="Image/search-icon.png" alt="Search" class="search-icon">
-                                </button>
+    function loadHeader() {
+        fetch('header.html')
+            .then(response => {
+                if (!response.ok) throw new Error('header.html not found');
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                // 确保下拉菜单容器存在
+                if (!document.getElementById('search-results-dropdown')) {
+                    const searchContainer = document.querySelector('.search-container');
+                    if (searchContainer) {
+                        const dropdown = document.createElement('div');
+                        dropdown.id = 'search-results-dropdown';
+                        dropdown.className = 'search-dropdown';
+                        searchContainer.appendChild(dropdown);
+                    }
+                }
+                // 初始化搜索功能
+                setTimeout(initSearchFunctionality, 100);
+            })
+            .catch(error => {
+                console.error('Error loading header:', error);
+                // 提供基本的header结构（包含下拉菜单容器）
+                document.getElementById('header-placeholder').innerHTML = `
+                    <header style="padding: 1rem; background: #333; color: white;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; position: relative;">
+                            <h1 style="margin: 0 1rem 1rem 0;">A&M INTERNATIONAL ENGINEERING</h1>
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <a href="contact.html" style="color: white; text-decoration: none;">Contact Us</a>
+                                <div class="search-container">
+                                    <input type="text" id="search-input" placeholder="Search..." class="search-input">
+                                    <button id="search-button" class="search-button" type="button">
+                                        <img src="Image/search-icon.png" alt="Search" class="search-icon">
+                                    </button>
+                                    <div id="search-results-dropdown" class="search-dropdown"></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </header>
-            `;
-            // 初始化搜索功能
-            setTimeout(initSearchFunctionality, 100);
-        });
+                    </header>
+                `;
+                // 初始化搜索功能
+                setTimeout(initSearchFunctionality, 100);
+            });
+    }
 
-    // 页面加载完成后再次初始化
+    // 页面加载完成后初始化
     document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(initSearchFunctionality, 300);
+        console.log('DOM fully loaded');
+        loadHeader();
     });
-</script>
 
-<!-- 从 index.html 中移除 search.js 的引用 -->
-<!-- 删除这行: <script src="search.js" defer></script> -->
+    // 如果DOMContentLoaded已经触发，直接加载header
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadHeader);
+    } else {
+        loadHeader();
+    }
+    </script>
 
-    <!-- 以下所有内容完全保持不变 -->
+    <!-- 以下所有内容保持不变 -->
     <section class="business-concept">
         <div class="concept-card automation-bg">
             <h2>Intelligent & Automated Integration</h2>
@@ -348,7 +557,5 @@ We prioritize the highest standards of security and compliance by ensuring that 
     <footer>
         <p>&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. All rights reserved.</p>
     </footer>
-
-    <script src="search.js" defer></script>
 </body>
 </html>
