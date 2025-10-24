@@ -370,10 +370,8 @@
       const currentDate = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}`;
       
       // 使用EmailJS发送邮件
-      // 使用您提供的Service ID和Template ID
       emailjs.send('service_ina3k0y', 'template_v7ece8m', {
-        to_email: 'anm_info@anmie.com.sg',
-        subject: `[ANM WEB info] Feedback from the A&M website _${currentDate}`,
+        date: currentDate,
         salutation: data.salutation,
         first_name: data.firstName,
         last_name: data.lastName,
