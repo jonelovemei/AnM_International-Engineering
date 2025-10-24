@@ -29,23 +29,63 @@
       width: 100%;
     }
 
-    /* 移动设备页眉调整 */
+    /* 移动设备页眉调整 - 优化版本 */
     @media (max-width: 768px) {
-      #header-placeholder * {
-        font-size: 50% !important;
+      #header-placeholder {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      #header-placeholder nav {
+        min-width: 100%;
+        white-space: nowrap;
+        display: flex;
+        justify-content: flex-start;
+        padding: 10px 0;
       }
       
       #header-placeholder nav ul {
         display: flex;
-        overflow-x: auto;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 5px;
+        flex-wrap: nowrap;
+        padding: 0 15px;
+        margin: 0;
+        min-width: max-content;
       }
       
       #header-placeholder nav li {
         display: inline-block;
+        margin-right: 20px;
         flex-shrink: 0;
+      }
+      
+      #header-placeholder nav a {
+        font-size: 16px; /* 适中的移动设备字体大小 */
+        padding: 8px 12px;
+        white-space: nowrap;
+        display: inline-block;
+      }
+      
+      /* 确保logo和品牌名称也适应移动设备 */
+      #header-placeholder .logo,
+      #header-placeholder .brand-name {
+        flex-shrink: 0;
+      }
+      
+      /* 确保整个header内容可以水平滚动 */
+      #header-placeholder > div {
+        min-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    /* 平板设备优化 */
+    @media (max-width: 1024px) and (min-width: 769px) {
+      #header-placeholder nav a {
+        font-size: 15px;
+        padding: 10px 15px;
       }
     }
 
@@ -235,7 +275,46 @@
       .form-group {
         min-width: 100%;
       }
+      
+      /* 移动设备上的字体大小调整 */
+      .contact-info h2 {
+        font-size: 18px;
+      }
+      
+      .contact-info p {
+        font-size: 15px;
+      }
+      
+      .feedback-container h3 {
+        font-size: 20px;
+      }
+      
+      .form-group label {
+        font-size: 15px;
+      }
+      
+      footer p {
+        font-size: 14px;
+      }
     }
+        main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 90%;
+      max-width: 1200px;
+      margin-top: 140px; /* 增加顶部间距，避免被页眉遮挡 */
+      gap: 60px;
+    }
+
+    /* 移动设备上调整顶部间距 */
+    @media (max-width: 768px) {
+      main {
+        margin-top: 160px; /* 移动设备上需要更多空间 */
+      }
+    }
+
+    
   </style>
 </head>
 <body>
@@ -334,7 +413,23 @@
     // 加载header
     fetch('header.html')
       .then(response => response.text())
-      .then(data => document.getElementById('header-placeholder').innerHTML = data)
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+        
+        // 确保导航栏在移动设备上可以左右滚动
+        setTimeout(function() {
+          const headerPlaceholder = document.getElementById('header-placeholder');
+          if (window.innerWidth <= 768) {
+            // 添加水平滚动指示器
+            const nav = headerPlaceholder.querySelector('nav');
+            if (nav) {
+              nav.style.overflowX = 'auto';
+              nav.style.overflowY = 'hidden';
+              nav.style.WebkitOverflowScrolling = 'touch';
+            }
+          }
+        }, 100);
+      })
       .catch(error => console.error('Error loading header:', error));
 
     // 表单提交处理
@@ -394,6 +489,19 @@
         submitBtn.disabled = false;
         submitBtn.textContent = 'Submit Feedback';
       });
+    });
+    
+    // 窗口大小变化时重新应用移动设备样式
+    window.addEventListener('resize', function() {
+      const headerPlaceholder = document.getElementById('header-placeholder');
+      if (window.innerWidth <= 768) {
+        const nav = headerPlaceholder.querySelector('nav');
+        if (nav) {
+          nav.style.overflowX = 'auto';
+          nav.style.overflowY = 'hidden';
+          nav.style.WebkitOverflowScrolling = 'touch';
+        }
+      }
     });
   </script>
 </body>
