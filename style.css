@@ -388,7 +388,7 @@ section#services {
 }
 
 
-===============
+
 .footer-menu {
     background: #222;
     color: #ccc; /* 普通文字用浅灰，避免全白 */
@@ -407,3 +407,25 @@ section#services {
     text-decoration: underline;
 }
 
+/* ------------------- 提交按钮样式 ------------------- */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background-color: #9ACD32; /* 柠檬绿色 */
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #28a428; /* 鼠标悬停时稍深的绿色 */
+}
+
+.submit-btn:disabled {
+  background-color: #90EE90; /* 禁用状态使用浅绿色 */
+  cursor: not-allowed;
+}
