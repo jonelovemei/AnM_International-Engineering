@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Market - Premium Products</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(rgba(76, 175, 80, 0.85), rgba(139, 195, 74, 0.85)), 
+                        url('AnM_International-Engineering-main/Image/23.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* 导航栏样式 */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-brand h2 {
+            color: #2e7d32;
+            margin: 0;
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: #388e3c;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: rgba(76, 175, 80, 0.1);
+        }
+        
+        .nav-user {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: #388e3c;
+        }
+        
+        .logout-btn {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .logout-btn:hover {
+            background: #388e3c;
+        }
+        
+        /* 市场内容样式 */
+        .market-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            flex: 1;
+            width: 100%;
+        }
+        
+        .market-header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            padding: 2rem 0;
+        }
+        
+        .market-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .market-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .market-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+            width: 100%;
+        }
+        
+        .market-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .market-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .market-card h3 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .market-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+        
+        .market-card ul {
+            margin: 10px 0 20px;
+            padding-left: 20px;
+            color: #555;
+        }
+        
+        .market-card li {
+            margin-bottom: 8px;
+        }
+        
+        .price {
+            font-size: 1.8rem;
+            color: #2e7d32;
+            font-weight: bold;
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .btn-buy {
+            background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .btn-buy:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+        }
+        
+        /* 页脚样式 */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 1.5rem 0;
+            margin-top: auto;
+            width: 100%;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .footer-logo h3 {
+            color: #4caf50;
+            font-size: 1.5rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #4caf50;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1rem;
+            margin-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 1200px) {
+            .market-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                margin: 1rem 0;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .market-header h1 {
+                font-size: 2rem;
+            }
+            
+            .market-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .footer-links {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .market-container {
+                padding: 10px;
+            }
+            
+            .market-card {
+                padding: 15px;
+            }
+        }
+        
+        /* 特色产品标记 */
+        .featured-badge {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: linear-gradient(135deg, #ff9800, #ff5722);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .featured-card {
+            position: relative;
+            border: 2px solid #4caf50;
+        }
+    </style>
+</head>
+<body>
+    <!-- 公共Header -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h2>Digital Market</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Market1.html" class="active">Market</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-user">
+                <span id="username-display">Welcome, User</span>
+                <button onclick="logout()" class="logout-btn">Logout</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 市场内容 -->
+    <div class="market-container">
+        <div class="market-header">
+            <h1>Welcome to Digital Market</h1>
+            <p>Discover premium digital products and solutions to boost your business efficiency</p>
+        </div>
+
+        <div class="market-grid">
+            <!-- 产品1 -->
+            <div class="market-card">
+                <h3>Premium Website Template</h3>
+                <p>Responsive design suitable for various business scenarios, providing complete website solutions.</p>
+                <ul>
+                    <li>Fully responsive design</li>
+                    <li>SEO optimized structure</li>
+                    <li>Lifetime free updates</li>
+                    <li>Detailed documentation</li>
+                </ul>
+                <div class="price">$49</div>
+                <button class="btn-buy">Buy Now</button>
+            </div>
+
+            <!-- 产品2 -->
+            <div class="market-card">
+                <h3>UI Component Library</h3>
+                <p>Rich UI components to accelerate development process and improve development efficiency.</p>
+                <ul>
+                    <li>100+ carefully designed components</li>
+                    <li>Full TypeScript support</li>
+                    <li>Detailed documentation and examples</li>
+                    <li>Regular updates and maintenance</li>
+                </ul>
+                <div class="price">$29</div>
+                <button class="btn-buy">Buy Now</button>
+            </div>
+
+            <!-- 产品3 -->
+            <div class="market-card featured-card">
+                <div class="featured-badge">Most Popular</div>
+                <h3>Data Analytics Tool</h3>
+                <p>Powerful data analysis and visualization tools to help you make better business decisions.</p>
+                <ul>
+                    <li>Real-time data monitoring</li>
+                    <li>Multiple chart types</li>
+                    <li>Data export functionality</li>
+                    <li>Custom report generation</li>
+                </ul>
+                <div class="price">$69</div>
+                <button class="btn-buy">Buy Now</button>
+            </div>
+
+            <!-- 产品4 -->
+            <div class="market-card">
+                <h3>Cloud Storage Solution</h3>
+                <p>Secure and reliable cloud storage solution to protect your data security.</p>
+                <ul>
+                    <li>99.9% service availability</li>
+                    <li>End-to-end data encryption</li>
+                    <li>Automatic backup mechanism</li>
+                    <li>Multi-device synchronization</li>
+                </ul>
+                <div class="price">$25/month</div>
+                <button class="btn-buy">Buy Now</button>
+            </div>
+
+            <!-- 产品5 -->
+            <div class="market-card">
+                <h3>API Service</h3>
+                <p>Powerful API interface services providing stable and reliable backend support for your applications.</p>
+                <ul>
+                    <li>RESTful API design</li>
+                    <li>High concurrency support</li>
+                    <li>Detailed API documentation</li>
+                    <li>24/7 technical support</li>
+                </ul>
+                <div class="price">$15/month</div>
+                <button class="btn-buy">Buy Now</button>
+            </div>
+
+            <!-- 产品6 -->
+            <div class="market-card featured-card">
+                <div class="featured-badge">Best Value</div>
+                <h3>Technical Support Package</h3>
+                <p>Professional technical support and consulting services to solve various problems you encounter.</p>
+                <ul>
+                    <li>24/7 all-day support</li>
+                    <li>Remote assistance service</li>
+                    <li>Quick problem response</li>
+                    <li>Regular health checks</li>
+                </ul>
+                <div class="price">$99/month</div>
+                <button class="btn-buy">Buy Now</button>
+            </div>
+
+            <!-- 产品7 -->
+            <div class="market-card">
+                <h3>E-commerce Platform</h3>
+                <p>Complete e-commerce solution with payment processing, inventory management and analytics.</p>
+                <ul>
+                    <li>Secure payment gateway</li>
+                    <li>Inventory tracking</li>
+                    <li>Customer management</li>
+                    <li>Sales analytics</li>
+                </ul>
+                <div class="price">$149</div>
+                <button class="btn-buy">Buy Now</button>
+            </div>
+
+            <!-- 产品8 -->
+            <div class="market-card">
+                <h3>Mobile App Template</h3>
+                <p>Cross-platform mobile app template with modern UI and seamless user experience.</p>
+                <ul>
+                    <li>iOS and Android compatible</li>
+                    <li>Modern UI components</li>
+                    <li>Push notification support</li>
+                    <li>Offline functionality</li>
+                </ul>
+                <div class="price">$79</div>
+                <button class="btn-buy">Buy Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 公共Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>Digital Market</h3>
+            </div>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Market1.html">Market</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Digital Market. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 页面加载时显示用户名
+        document.addEventListener('DOMContentLoaded', function() {
+            // 从本地存储获取用户名
+            const username = localStorage.getItem('username') || 'User';
+            document.getElementById('username-display').textContent = `Welcome, ${username}`;
+            
+            // 调整网格布局以适应屏幕
+            adjustGridLayout();
+            
+            // 窗口大小改变时重新调整布局
+            window.addEventListener('resize', adjustGridLayout);
+        });
+
+        // 调整网格布局函数
+        function adjustGridLayout() {
+            const grid = document.querySelector('.market-grid');
+            const containerWidth = grid.offsetWidth;
+            const cardWidth = 300; // 最小卡片宽度
+            const gap = 25; // 间距
+            
+            // 计算可以容纳的列数
+            const columns = Math.max(1, Math.floor(containerWidth / (cardWidth + gap)));
+            
+            // 设置grid模板列
+            grid.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
+        }
+
+        // 退出登录功能
+        function logout() {
+            if(confirm('Are you sure you want to log out?')) {
+                // 清除本地存储
+                localStorage.removeItem('username');
+                // 跳转到登录页面
+                window.location.href = 'index.html';
+            }
+        }
+
+        // 购买按钮点击事件
+        document.querySelectorAll('.btn-buy').forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.parentElement.querySelector('h3').textContent;
+                const price = this.parentElement.querySelector('.price').textContent;
+                alert(`You selected: ${productName}\nPrice: ${price}\nPurchase functionality under development...`);
+            });
+        });
+    </script>
+</body>
+</html>
