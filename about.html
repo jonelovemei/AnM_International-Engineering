@@ -1,99 +1,600 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>About - A&M INTERNATIONAL ENGINEERING</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #ffffff;
-      color: #fff;
-      line-height: 1.6;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - A&M INTERNATIONAL ENGINEERING PTE LTD</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 确保搜索下拉列表可见 */
+        .search-dropdown {
+            z-index: 10000 !important;
+        }
 
-    #header-placeholder {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+        /* 专业优化样式 - 暖绿色调设计 */
+        :root {
+            --primary-color: #2E8B57;      /* 主色调 - 海绿色 */
+            --secondary-color: #9ACD32;    /* 辅助色 - 黄绿色 */
+            --accent-color: #8FBC8F;       /* 强调色 - 暗海绿色 */
+            --light-bg: #f8f9fa;           /* 浅色背景 */
+            --dark-text: #2c3e50;          /* 深色文本 */
+            --light-text: #ffffff;         /* 浅色文本 */
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+            --transition: all 0.3s ease;   /* 过渡效果 */
+        }
 
-    section#about {
-      position: relative;
-      background: url('Image/AboutUS.jpg') no-repeat center center / cover;
-      padding: 80px 20px;
-    }
+        /* About页面专业优化样式 */
+        #about {
+            position: relative;
+            background: linear-gradient(rgba(46, 139, 87, 0.75), rgba(46, 139, 87, 0.65)), 
+                        url('Image/AboutUS.jpg') no-repeat center center / cover;
+            padding: 100px 20px 80px;
+            margin-top: 60px;
+            color: var(--light-text);
+            text-align: center;
+        }
 
-    .about-description {
-      max-width: 1000px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-    }
+        .about-description {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
 
-    .about-description p {
-      font-size: 17px;
-      font-weight: 500;
-      margin-bottom: 16px;
-      color: #fff;
-      text-align: justify;
-      text-shadow: 1px 1px 1px #000;
-    }
+        .about-description p {
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 24px;
+            color: var(--light-text);
+            text-align: justify;
+            line-height: 1.8;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
 
-    .about-description strong {
-      color: #fff;
-      font-weight: bold;
-      text-shadow: 1px 1px 1px #000;
-    }
+        .about-description strong {
+            color: var(--secondary-color);
+            font-weight: 600;
+            position: relative;
+        }
 
-    footer {
-      text-align: center;
-      padding: 20px 0;
-      background-color: #333;
-      color: white;
-    }
-  </style>
+        .about-description strong::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .about-description p:hover strong::after {
+            transform: scaleX(1);
+        }
+
+        /* 专业卡片样式 */
+        .expertise-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .expertise-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: left;
+            color: var(--dark-text);
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .expertise-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .expertise-card h3 i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+
+        .expertise-card p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--dark-text);
+            text-align: justify; /* 改为两端对齐 */
+            text-shadow: none;
+        }
+
+        /* 奖项部分样式 - 默认静态显示 */
+        #awards {
+            padding: 80px 20px;
+            background-color: var(--light-bg);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        #awards h2 {
+            color: var(--primary-color);
+            margin-bottom: 50px;
+            font-size: 36px;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        #awards h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        /* 默认静态布局 */
+        .awards-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .award-item {
+            flex: 0 1 350px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .award-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .award-item img {
+            width: 100%;
+            height: auto;
+            transition: var(--transition);
+        }
+
+        .award-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .award-caption {
+            padding: 20px;
+            background: white;
+        }
+
+        .award-caption h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .award-caption p {
+            color: var(--dark-text);
+            font-size: 14px;
+        }
+
+        /* 统计数据部分 */
+        .stats-section {
+            background: linear-gradient(135deg, var(--primary-color), #1e6b47);
+            padding: 80px 20px;
+            color: var(--light-text);
+            text-align: center;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .stat-label {
+            font-size: 18px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* 大屏幕横向滚动效果 */
+        @media (min-width: 1025px) {
+            #awards {
+                overflow: hidden;
+                position: relative;
+            }
+            
+            .awards-container {
+                display: flex;
+                overflow: hidden;
+                position: relative;
+                padding: 20px 0;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                width: 100%;
+            }
+
+            .awards-scroll {
+                display: flex;
+                animation: scroll 25s linear infinite;
+                width: max-content;
+            }
+
+            .award-item {
+                flex: 0 0 auto;
+                width: 350px;
+                margin: 0 30px;
+            }
+
+            .award-item:hover {
+                animation-play-state: paused; /* 悬停时暂停滚动 */
+            }
+
+            /* 全屏横向滚动动画 */
+            @keyframes scroll {
+                0% {
+                    transform: translateX(100vw);
+                }
+                100% {
+                    transform: translateX(calc(-350px - 30px - 100vw));
+                }
+            }
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            #about {
+                padding: 80px 15px 60px;
+                margin-top: 80px;
+            }
+            
+            .about-description p {
+                font-size: 16px;
+            }
+            
+            #awards {
+                padding: 60px 15px;
+            }
+            
+            #awards h2 {
+                font-size: 28px;
+            }
+            
+            .award-item {
+                flex: 0 1 100%;
+            }
+            
+            .expertise-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .stat-number {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Header 占位符 -->
-  <div id="header-placeholder"></div>
-  <script>
-    fetch('header.html')
-      .then(response => response.text())
-      .then(data => document.getElementById('header-placeholder').innerHTML = data)
-      .catch(error => console.error('Error loading header:', error));
-  </script>
+    <!-- 页眉占位符 -->
+    <div id="header-placeholder"></div>
 
-  <!-- About Section -->
-  <section id="about">
-    <div class="about-description">
-      <p>At A&M International Engineering, we deliver next-generation solutions for a rapidly evolving industrial world. Our expertise spans across <strong>intelligent automation, industrial metering systems</strong>, and <strong>cloud-based software platforms</strong>, enabling our clients to achieve operational excellence through technology-driven innovation.</p>
+    <!-- About Section - 暖绿色调优化版本 -->
+    <section id="about">
+        <div class="about-description">
+            <!-- 已移除主标题 -->
+            <p>At A&M International Engineering, we deliver next-generation solutions for a rapidly evolving industrial world. Our expertise spans across <strong>intelligent automation, industrial metering systems</strong>, and <strong>cloud-based software platforms</strong>, enabling our clients to achieve operational excellence through technology-driven innovation.</p>
 
-      <p>We specialize in <strong>Intelligent & Automated Integration</strong>, combining real-time data connectivity, IIoT, PLCs, SCADA, and cloud technologies to create engineering systems that are scalable, efficient, and resilient. Through smart integration and predictive analytics, we empower industries to optimize performance, reduce downtime, and prepare for future expansion.</p>
+            <p>We specialize in <strong>Intelligent & Automated Integration</strong>, combining real-time data connectivity, IIoT, PLCs, SCADA, and cloud technologies to create engineering systems that are scalable, efficient, and resilient. Through smart integration and predictive analytics, we empower industries to optimize performance, reduce downtime, and prepare for future expansion.</p>
 
-      <p>As a trusted provider of <strong>metering systems</strong>, we design and implement high-precision, regulatory-compliant measurement solutions tailored to critical energy, utility, and industrial applications. Our systems ensure accuracy, transparency, and operational reliability in every drop and every watt measured.</p>
+            <div class="expertise-cards">
+                <div class="expertise-card">
+                    <h3> Metering Systems</h3>
+                    <p>As a trusted provider of metering systems, we design and implement high-precision, regulatory-compliant measurement solutions tailored to critical energy, utility, and industrial applications. Our systems ensure accuracy, transparency, and operational reliability in every drop and every watt measured.</p>
+                </div>
+                
+                <div class="expertise-card">
+                    <h3> Digital Platforms</h3>
+                    <p>In the digital domain, we develop and operate SaaS (Software-as-a-Service) and SaaP (Software-as-a-Product) platforms that streamline industrial workflows, support remote monitoring, and deliver actionable insights in real time. These platforms are built to be secure, scalable, and fully customizable.</p>
+                </div>
+                
+                <div class="expertise-card">
+                    <h3> End-to-End Services</h3>
+                    <p>We provide end-to-end engineering services covering the full project lifecycle—from conceptual design and system engineering to commissioning, training, and long-term maintenance. Each solution is tailored to meet the specific technical, operational, and regulatory requirements of our clients.</p>
+                </div>
+                
+                <div class="expertise-card">
+                    <h3> System Automation Solution</h3>
+                    <p>Our comprehensive system automation solutions integrate cutting-edge technologies to streamline industrial processes, enhance operational efficiency, and reduce human intervention. We design and implement automated systems that optimize workflows, improve accuracy, and increase productivity across various industrial applications.</p>
+                </div>
+            </div>
 
-      <p>In the digital domain, we develop and operate <strong>SaaS (Software-as-a-Service)</strong> and <strong>SaaP (Software-as-a-Product)</strong> platforms that streamline industrial workflows, support remote monitoring, and deliver actionable insights in real time. These platforms are built to be secure, scalable, and fully customizable—enhancing agility and collaboration across distributed teams and assets.</p>
+            <p style="margin-top: 40px;">Our work adheres strictly to international standards including <strong>ASME, ATMS, AGA, and LR</strong>, ensuring security, compliance, and future-proof operations. With deep technical knowledge and a forward-thinking mindset, we help industries confidently navigate digital transformation and long-term growth.</p>
+        </div>
+    </section>
 
-      <p>We provide <strong>end-to-end engineering services</strong> covering the full project lifecycle—from conceptual design and system engineering to commissioning, training, and long-term maintenance. Each solution is tailored to meet the specific technical, operational, and regulatory requirements of our clients.</p>
+    <!-- 统计数据部分 -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number" id="years-experience">0</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="projects-completed">0</div>
+                <div class="stat-label">Related Projects Completed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="clients-worldwide">0</div>
+                <div class="stat-label">Clients Worldwide</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="client-satisfaction">0</div>
+                <div class="stat-label">Client Satisfaction</div>
+            </div>
+        </div>
+    </section>
 
-      <p>Our work adheres strictly to international standards including <strong>ASME, ATMS, AGA, and LR</strong>, ensuring security, compliance, and future-proof operations. With deep technical knowledge and a forward-thinking mindset, we help industries confidently navigate digital transformation and long-term growth.</p>
-    </div>
-   </section>
+    <!-- Awards Section - 在大屏幕上显示横向滚动，小屏幕上静态显示 -->
+    <section id="awards">
+        <h2>Awards & Certifications</h2>
+        <div class="awards-container">
+            <!-- 单张证书滚动 -->
+            <div class="awards-scroll">
+                <div class="award-item">
+                    <img src="Image/PW MARK_25201730836D_1.jpg" alt="PW MARK Certification" />
+                    <div class="award-caption">
+                        <h3>PW MARK Certification</h3>
+                        <p>Recognized for excellence in engineering solutions and industrial automation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 页脚菜单 -->
+    <section class="footer-menu">
+        <div class="footer-column">
+            <h3>Solutions</h3>
+            <ul>
+                <li><a href="Solutions.html">Supply Chain Optimization</a></li>
+                <li><a href="Solutions.html">Asset Operations and Optimization</a></li>
+                <li><a href="Solutions.html">Operational Risk Management</a></li>
+                <li><a href="Solutions.html">Connected Intelligence</a></li>
+                <li><a href="Solutions.html">CCTV Energy Management Solution</a></li>
+                <li><a href="Solutions.html">Safety Case Regime</a></li>
+            </ul>
+        </div>
 
-  <!-- Awards Section -->
-  <section id="awards" style="padding: 50px 20px; background-color: #f4f4f4; text-align: center;">
-    <h2 style="color: #222; margin-bottom: 30px;">Awards & Certifications</h2>
-    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;">
-      <div style="flex: 0 1 300px;">
-        <img src="Image/PW MARK_25201730836D_1.jpg" alt="PW MARK Certification" style="width: 100%; height: auto; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);" />
-      </div>
-      <!-- 如果以后有更多证书，可以在这里添加更多 <div> -->
-    </div>
-  </section>
+        <div class="footer-column">
+            <h3>Products & Services</h3>
+            <ul>
+                <li><a href="Solutions.html">Control</a></li>
+                <li><a href="Solutions.html">Measurement</a></li>
+                <li><a href="Solutions.html">Project Execution Services</a></li>
+                <li><a href="Solutions.html">Digital Transformation</a></li>
+            </ul>
+        </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. All rights reserved.</p>
-  </footer>
+        <div class="footer-column">
+            <h3>Library</h3>
+            <ul>
+                <li><a href="Libary.html">Documents & Downloads</a></li>
+                <li><a href="Libary.html">Resources</a></li>
+                <li><a href="Libary.html">Videos</a></li>
+                <li><a href="Libary.html">Smart Manufacturing</a></li>
+                <li><a href="Libary.html">Digital Transformation</a></li>
+                <li><a href="Libary.html">Artificial Intelligence</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Support</h3>
+            <ul>
+                <li><a href="Support.html">Technical Support</a></li>
+                <li><a href="Support.html">Product Finder</a></li>
+                <li><a href="Support.html">Customer Portal</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 页脚占位符 -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // 加载公用页眉
+        fetch('header.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                
+                // 重新执行header中的脚本
+                const scripts = document.getElementById('header-placeholder').getElementsByTagName('script');
+                for (let script of scripts) {
+                    const newScript = document.createElement('script');
+                    if (script.src) {
+                        newScript.src = script.src;
+                    } else {
+                        newScript.textContent = script.textContent;
+                    }
+                    document.head.appendChild(newScript).remove();
+                }
+            })
+            .catch(error => {
+                console.error('Error loading header:', error);
+                // 提供基本的header结构作为备用
+                document.getElementById('header-placeholder').innerHTML = `
+                    <header style="padding: 15px 20px; background-color: #2c3e50; display: flex; align-items: center; background-image: url('Image/24.jpg'); background-size: cover; background-position: center;">
+                        <img src="Image/logo.png" alt="Company Logo" style="height: 60px; margin-right: 15px;">
+                        <div>
+                            <h1 style="margin: 0; color: white; font-size: 24px;">A&M INTERNATIONAL ENGINEERING PTE LTD</h1>
+                            <p style="margin: 5px 0 0; color: white; font-size: 14px;">A professional integration solution provider</p>
+                        </div>
+                    </header>
+                    <nav style="display: flex; align-items: center; background-color: #2980b9; padding: 10px 20px; overflow-x: auto; white-space: nowrap;">
+                        <a href="index.html" style="color: white; text-decoration: none; padding: 10px 15px;">Home</a>
+                        <a href="about.html" style="color: white; text-decoration: none; padding: 10px 15px;">About Us</a>
+                        <a href="Solutions.html" style="color: white; text-decoration: none; padding: 10px 15px;">Solutions</a>
+                        <a href="services.html" style="color: white; text-decoration: none; padding: 10px 15px;">Products & Services</a>
+                        <a href="projects.html" style="color: white; text-decoration: none; padding: 10px 15px;">Projects</a>
+                        <a href="Support.html" style="color: white; text-decoration: none; padding: 10px 15px;">Support</a>
+                        <a href="Libary.html" style="color: white; text-decoration: none; padding: 10px 15px;">Library</a>
+                        <a href="contact.html" style="color: white; text-decoration: none; padding: 10px 15px;">Contact Us</a>
+                        <div class="search-container" style="display: flex; align-items: center; background: white; border-radius: 25px; padding: 2px; border: 1px solid #ccc; position: relative; margin-left: auto;">
+                            <input type="text" id="search-input" placeholder="Search..." class="search-input" autocomplete="off" style="border: none; outline: none; padding: 8px 15px; border-radius: 25px; width: 200px; font-size: 14px; background: transparent;">
+                            <div id="search-results-dropdown" class="search-dropdown" style="position: absolute; top: 100%; left: 0; right: 0; background: white; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-height: 300px; overflow-y: auto; z-index: 10000; display: none;"></div>
+                        </div>
+                    </nav>
+                `;
+            });
+
+        // 加载公用页脚
+        fetch('footer.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error loading footer:', error);
+                // 提供基本的footer结构作为备用
+                document.getElementById('footer-placeholder').innerHTML = `
+                    <footer>
+                        <p class="footer-text">&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. ALL RIGHTS RESERVED.</p>
+                    </footer>
+                `;
+            });
+
+        // 动态渐增数字效果
+        function animateValue(id, start, end, duration) {
+            const obj = document.getElementById(id);
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                if (id === 'client-satisfaction') {
+                    obj.innerHTML = value + '%';
+                } else {
+                    obj.innerHTML = value + '+';
+                }
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // 当统计部分进入视口时触发动画
+        function startCountersWhenVisible() {
+            const statsSection = document.querySelector('.stats-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateValue('years-experience', 0, 15, 2000);
+                        animateValue('projects-completed', 0, 100, 2500);
+                        animateValue('clients-worldwide', 0, 20, 2000);
+                        animateValue('client-satisfaction', 0, 98, 3000);
+                        observer.unobserve(statsSection);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            observer.observe(statsSection);
+        }
+
+        // 页面加载完成后启动观察器
+        document.addEventListener('DOMContentLoaded', startCountersWhenVisible);
+        
+        // 根据屏幕尺寸调整奖项显示
+        function adjustAwardsDisplay() {
+            const awardsContainer = document.querySelector('.awards-container');
+            const awardsScroll = document.querySelector('.awards-scroll');
+            const awardItems = document.querySelectorAll('.award-item');
+            
+            if (window.innerWidth >= 1025) {
+                // 大屏幕 - 启用滚动效果
+                awardsContainer.style.flexWrap = 'nowrap';
+                awardsContainer.style.justifyContent = 'flex-start';
+                awardsScroll.style.display = 'flex';
+                awardsScroll.style.animation = 'scroll 25s linear infinite';
+                awardsScroll.style.width = 'max-content';
+                
+                awardItems.forEach(item => {
+                    item.style.flex = '0 0 auto';
+                    item.style.width = '350px';
+                    item.style.margin = '0 30px';
+                });
+            } else {
+                // 小屏幕 - 静态显示
+                awardsContainer.style.flexWrap = 'wrap';
+                awardsContainer.style.justifyContent = 'center';
+                awardsScroll.style.display = 'flex';
+                awardsScroll.style.animation = 'none';
+                awardsScroll.style.width = 'auto';
+                
+                awardItems.forEach(item => {
+                    item.style.flex = '0 1 350px';
+                    item.style.width = 'auto';
+                    item.style.margin = '0';
+                });
+            }
+        }
+        
+        // 初始调整
+        adjustAwardsDisplay();
+        
+        // 窗口大小变化时重新调整
+        window.addEventListener('resize', adjustAwardsDisplay);
+    </script>
+</body>
+</html>
