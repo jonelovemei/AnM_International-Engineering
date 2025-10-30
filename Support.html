@@ -1,25 +1,555 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - A&M INTERNATIONAL ENGINEERING</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 支持页面自定义样式 */
+        #Support {
+            padding: 100px 20px 80px;
+            margin-top: 60px;
+            min-height: calc(100vh - 140px);
+           
+        }
+
+        /* 登录容器样式 */
+        .login-container {
+            max-width: 400px;
+            margin: 0 auto 60px;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .login-container h3 {
+            margin-bottom: 25px;
+            color: #2E8B57;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #495057;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus {
+            border-color: #2E8B57;
+            box-shadow: 0 0 0 2px rgba(46, 139, 87, 0.25);
+            outline: none;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #2E8B57;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-btn:hover {
+            background-color: #247348;
+        }
+
+        .login-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .login-links a {
+            color: #2E8B57;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .login-links a:hover {
+            color: #247348;
+            text-decoration: underline;
+        }
+
+        /* 支持服务部分样式 */
+        .support-section {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .support-item {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+        }
+
+        .support-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .support-item h3 {
+            color: #2E8B57;
+            margin-bottom: 20px;
+            font-size: 22px;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        .support-link {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #2E8B57;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            text-align: center;
+            transition: background-color 0.3s;
+            margin-top: auto;
+            align-self: center;
+            width: 80%;
+        }
+
+        .support-link:hover {
+            background-color: #247348;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            #Support {
+                padding: 80px 15px 60px;
+                margin-top: 80px;
+            }
+            
+            .login-container {
+                padding: 20px;
+                margin-bottom: 40px;
+            }
+            
+            .support-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .support-item {
+                padding: 20px;
+            }
+            
+            .support-link {
+                width: 90%;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .support-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
 <body>
-    <div id="header-placeholder"></div> <!-- 占位符 -->
-    <script>
-        // 动态加载 header.html
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('header-placeholder').innerHTML = data)
-            .catch(error => console.error('Error loading header:', error));
-    </script>
-    
+    <!-- 页眉占位符 -->
+    <div id="header-placeholder"></div>
+
+    <!-- Support Section -->
     <section id="Support">
-        <h2>Our Support</h2>
-        <p>  Technical Support
-            Documents & Downloads
-            Training Center 
-          Customer Portal 
-        </p>
+        <!-- 用户登录界面 -->
+        <div class="login-container">
+            <h3>Customer Portal Gateway</h3>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+                <div class="login-links">
+                    <a href="#">Forgot Password?</a>
+                    <a href="#">Create Account</a>
+                </div>
+            </form>
+        </div>
+
+        <!-- 支持服务部分 -->
+        <div class="support-section">
+            <div class="support-grid">
+                <!-- Technical Support -->
+                <div class="support-item">
+                    <h3>Technical Support</h3>
+                    <a href="contact.html" class="support-link">Contact Support</a>
+                </div>
+                
+                <!-- Documentation & Resources -->
+                <div class="support-item">
+                    <h3>Documentation & Resources</h3>
+                    <a href="Libary.html" class="support-link">Browse Resources</a>
+                </div>
+                
+                <!-- Training & Certification -->
+                <div class="support-item">
+                    <h3>Training & Certification</h3>
+                    <a href="contact.html" class="support-link">View Training</a>
+                </div>
+                
+                <!-- Service Requests -->
+                <div class="support-item">
+                    <h3>Service Requests</h3>
+                    <a href="contact.html" class="support-link">Submit Request</a>
+                </div>
+            </div>
+        </div>
     </section>
-    <footer>
-        <p>&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. All rights reserved.</p>
-    </footer>
+
+    <!-- 页脚占位符 -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // 处理登录表单提交
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // 验证用户名和密码
+            if (username === 'Admin' && password === '12345') {
+                alert('Login successful! Redirecting to Market page...');
+                // 跳转到Market1.html
+                window.location.href = 'Market1.html';
+            } else {
+                alert('Invalid username or password. Please try again.');
+            }
+        });
+
+        // 页面数据
+        const pages = [
+            {
+                title: "Home",
+                content: "Welcome to A&M INTERNATIONAL ENGINEERING PTE LTD. We provide professional integration solutions.",
+                url: "index.html"
+            },
+            {
+                title: "About Us",
+                content: "Learn more about our company's history, values, and mission.",
+                url: "about.html"
+            },
+            {
+                title: "Solutions",
+                content: "Our solutions include supply chain optimization, digital transformation, and operational risk management.",
+                url: "Solutions.html"
+            },
+            {
+                title: "Products & Services",
+                content: "Explore our services including control, measurement, and project execution.",
+                url: "services.html"
+            },
+            {
+                title: "Projects",
+                content: "View our completed projects and case studies.",
+                url: "projects.html"
+            },
+            {
+                title: "Support",
+                content: "Access technical support, product finder, and customer portal.",
+                url: "Support.html"
+            },
+            {
+                title: "Market",
+                content: "Browse our products and services in the market.",
+                url: "Market1.html"
+            },
+            {
+                title: "Contact Us",
+                content: "Reach out to us through our contact form or find our office location.",
+                url: "contact.html"
+            }
+        ];
+
+        // 显示下拉搜索结果
+        function showSearchResults(results, query) {
+            const dropdown = document.getElementById('search-results-dropdown');
+            if (!dropdown) {
+                console.error('Dropdown element not found');
+                return;
+            }
+
+            if (results.length === 0) {
+                // 没有结果，显示Google搜索选项
+                dropdown.innerHTML = `
+                    <div class="no-results">
+                        <p>No results found for "<strong>${query}</strong>"</p>
+                    </div>
+                    <a href="https://www.google.com/search?q=${encodeURIComponent('A&M INTERNATIONAL ENGINEERING ' + query)}" 
+                        target="_blank" class="google-search-link">
+                        Search on Google for "${query}"
+                    </a>
+                `;
+            } else {
+                // 显示搜索结果
+                dropdown.innerHTML = results.map(page => `
+                    <div class="search-result-item" onclick="window.location.href='${page.url}'">
+                        <div class="search-result-title">${page.title}</div>
+                        <div class="search-result-content">${page.content.substring(0, 100)}...</div>
+                        <div class="search-result-url">${page.url}</div>
+                    </div>
+                `).join('');
+            }
+            
+            dropdown.style.display = 'block';
+        }
+
+        // 隐藏下拉结果
+        function hideSearchResults() {
+            const dropdown = document.getElementById('search-results-dropdown');
+            if (dropdown) {
+                setTimeout(() => {
+                    dropdown.style.display = 'none';
+                }, 200);
+            }
+        }
+
+        // 执行搜索
+        function performSearch() {
+            const searchInput = document.getElementById('search-input');
+            const query = searchInput ? searchInput.value.trim() : '';
+            
+            if (!query) {
+                hideSearchResults();
+                alert('Please enter search keywords');
+                return;
+            }
+
+            // 在页面中搜索
+            const results = pages.filter(page =>
+                page.title.toLowerCase().includes(query.toLowerCase()) ||
+                page.content.toLowerCase().includes(query.toLowerCase())
+            );
+
+            showSearchResults(results, query);
+        }
+
+        // 实时搜索
+        function handleRealTimeSearch() {
+            const query = this.value.trim();
+            
+            if (query.length < 2) {
+                hideSearchResults();
+                return;
+            }
+            
+            // 在页面中搜索
+            const results = pages.filter(page =>
+                page.title.toLowerCase().includes(query.toLowerCase()) ||
+                page.content.toLowerCase().includes(query.toLowerCase())
+            );
+
+            showSearchResults(results, query);
+        }
+
+        // 初始化搜索功能
+        function initSearchFunctionality() {
+            const searchInput = document.getElementById('search-input');
+            const searchButton = document.getElementById('search-button');
+            
+            if (searchInput && searchButton) {
+                // 实时搜索
+                searchInput.addEventListener('input', handleRealTimeSearch);
+                
+                // 点击搜索按钮
+                searchButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    performSearch();
+                });
+                
+                // Enter键搜索
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        performSearch();
+                    }
+                });
+                
+                // 点击页面其他区域隐藏下拉菜单
+                document.addEventListener('click', function(e) {
+                    if (!e.target.closest('.search-container')) {
+                        hideSearchResults();
+                    }
+                });
+                
+                // 搜索框获得焦点时显示最近的结果
+                searchInput.addEventListener('focus', function() {
+                    if (this.value.trim().length >= 2) {
+                        handleRealTimeSearch.call(this);
+                    }
+                });
+                
+                console.log('Search functionality initialized successfully');
+            } else {
+                console.error('Search elements not found');
+            }
+        }
+
+        // 加载公用页眉
+        fetch('header.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                
+                // 重新执行header中的脚本
+                const scripts = document.getElementById('header-placeholder').getElementsByTagName('script');
+                for (let script of scripts) {
+                    const newScript = document.createElement('script');
+                    if (script.src) {
+                        newScript.src = script.src;
+                    } else {
+                        newScript.textContent = script.textContent;
+                    }
+                    document.head.appendChild(newScript).remove();
+                }
+            })
+            .catch(error => {
+                console.error('Error loading header:', error);
+                // 提供基本的header结构
+                document.getElementById('header-placeholder').innerHTML = `
+                    <header>
+                        <img src="Image/logo.png" alt="Company Logo">
+                        <div>
+                            <h1>A&M INTERNATIONAL ENGINEERING PTE LTD</h1>
+                            <p>A professional integration solution provider</p>
+                        </div>
+                    </header>
+                    <nav>
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About Us</a>
+                        <a href="Solutions.html">Solutions</a>
+                        <a href="services.html">Products & Services</a>
+                        <a href="projects.html">Projects</a>
+                        <a href="Support.html">Support</a>
+                        <a href="Libary.html">Library</a>
+                        <a href="Market1.html">Market</a>
+                        <a href="contact.html">Contact Us</a>
+                        <div class="search-container">
+                            <input type="text" id="search-input" placeholder="Search..." class="search-input" autocomplete="off">
+                            <button id="search-button" class="search-button" type="button">
+                                <img src="Image/search-icon.png" alt="Search" class="search-icon">
+                            </button>
+                            <div id="search-results-dropdown" class="search-dropdown"></div>
+                        </div>
+                    </nav>
+                `;
+                // 初始化搜索功能
+                setTimeout(initSearchFunctionality, 100);
+            });
+
+        // 加载公用页脚
+        fetch('footer.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error loading footer:', error);
+                // 提供基本的footer结构作为备用
+                document.getElementById('footer-placeholder').innerHTML = `
+                    <footer>
+                        <p class="footer-text">&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. ALL RIGHTS RESERVED.</p>
+                    </footer>
+                `;
+            });
+    </script>
+     <section class="footer-menu">
+        <div class="footer-column">
+            <h3>Solutions</h3>
+            <ul>
+                <li><a href="Solutions.html">Supply Chain Optimization</a></li>
+                <li><a href="Solutions.html">Asset Operations and Optimization</a></li>
+                <li><a href="Solutions.html">Operational Risk Management</a></li>
+                <li><a href="Solutions.html">Connected Intelligence</a></li>
+                <li><a href="Solutions.html">CCTV Energy Management Solution</a></li>
+                <li><a href="Solutions.html">Safety Case Regime</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Products & Services</h3>
+            <ul>
+                <li><a href="Solutions.html">Control</a></li>
+                <li><a href="Solutions.html">Measurement</a></li>
+                <li><a href="Solutions.html">Project Execution Services</a></li>
+                <li><a href="Solutions.html">Digital Transformation</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Library</h3>
+            <ul>
+                <li><a href="Libary.html">Documents & Downloads</a></li>
+                <li><a href="Libary.html">Resources</a></li>
+                <li><a href="Libary.html">Videos</a></li>
+                <li><a href="Libary.html">Smart Manufacturing</a></li>
+                <li><a href="Libary.html">Digital Transformation</a></li>
+                <li><a href="Libary.html">Artificial Intelligence</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Support</h3>
+            <ul>
+                <li><a href="Support.html">Technical Support</a></li>
+                <li><a href="Support.html">Product Finder</a></li>
+                <li><a href="Support.html">Customer Portal</a></li>
+            </ul>
+        </div>
+    </section>
 </body>
 </html>
