@@ -22,6 +22,31 @@
       padding: 0 20px;
     }
 
+    .services-intro {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(10px);
+      border-radius: 22px;
+      padding: 30px 30px 24px;
+      margin-bottom: 30px;
+      text-align: center;
+      color: #f2f9ef;
+    }
+
+    .services-intro h2 {
+      font-size: 2.4rem;
+      margin-bottom: 14px;
+      letter-spacing: 0.8px;
+    }
+
+    .services-intro p {
+      max-width: 860px;
+      margin: 0 auto;
+      line-height: 1.8;
+      color: #e9f3df;
+      font-size: 16px;
+    }
+
     .flex-container {
       display: flex;
       flex-wrap: wrap;
@@ -31,33 +56,93 @@
 
     .category {
       flex: 1 1 48%;
-      padding: 30px;
-      border-radius: 12px;
+      min-height: 520px;
+      border-radius: 20px;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      color: #fff;
-      text-shadow: 1px 1px 2px #000;
-      min-height: 500px;
-      box-sizing: border-box;
       position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+    }
+
+    .category::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.48);
+    }
+
+    .category-content {
+      position: relative;
+      z-index: 1;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
 
     .category h3 {
-      font-size: 24px;
-      border-bottom: 2px solid #ffffff;
-      margin-bottom: 20px;
-      padding-bottom: 5px;
+      font-size: 28px;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      letter-spacing: 0.4px;
+    }
+
+    .category-description {
+      margin-bottom: 18px;
+      color: #e5f1d9;
+      line-height: 1.75;
+      font-size: 16px;
+      max-width: 520px;
     }
 
     .category ul {
-      list-style-type: disc;
-      padding-left: 20px;
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      flex-grow: 1;
     }
 
     .category li {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       font-size: 16px;
+      line-height: 1.7;
+      position: relative;
+      padding-left: 22px;
+      color: #eef7e5;
+    }
+
+    .category li::before {
+      content: "\2022";
+      position: absolute;
+      left: 0;
+      top: 4px;
+      color: #b8e0a9;
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .category-btn {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 12px 24px;
+      background: rgba(255, 255, 255, 0.88);
+      color: #23552d;
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      align-self: flex-start;
+    }
+
+    .category-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 22px rgba(0, 0, 0, 0.18);
     }
 
     @media (max-width: 768px) {
@@ -80,51 +165,64 @@
   <div id="header-placeholder"></div>
 
   <section id="services">
+    <div class="services-intro">
+      <h2>贴心产品与服务，为您工程项目减轻负担</h2>
+      <p>我们把复杂的工程需求拆成简单可执行的产品与服务，用温暖可信赖的方式支持您从设备选型、项目实施到长期维护。立即查看我们如何让每个项目更好落地。</p>
+    </div>
+
     <div class="flex-container">
       <!-- 产品 -->
       <div class="category products-bg">
-        <h3>Products</h3>
-        <ul>
-          <li>Metering Skids / Flow Measurement Systems</li>
-          <li>Process Control Panels, PLC Cabinets</li>
-          <li>MCC, DCS Panels</li>
-          <li>Chemical Dosing Systems</li>
-          <li>Burner Management Systems</li>
-          <li>Skids, Valves, Manifolds</li>
-          <li>Pressure, Temperature, Flow, Level Sensors</li>
-          <li>SaaS Monitoring Platforms</li>
-          <li>Digital Twin Simulation</li>
-          <li>Dashboard / SCADA Visualization</li>
-          <li>Predictive Maintenance Platforms</li>
-          <li>Energy Management Systems (EMS)</li>
-          <li>Compliance & Audit Reporting Tools</li>
-        </ul>
+        <div class="category-content">
+          <h3>Products</h3>
+          <p class="category-description">实用、稳定、可现场交付的工程产品，帮助您快速搭建测量、控制和监测系统。</p>
+          <ul>
+            <li>Metering Skids / Flow Measurement Systems</li>
+            <li>Process Control Panels / PLC Cabinets</li>
+            <li>MCC、DCS 控制柜</li>
+            <li>Chemical Dosing Systems</li>
+            <li>Burner Management Systems</li>
+            <li>Skids、Valves、Manifolds</li>
+            <li>Pressure / Temperature / Flow / Level Sensors</li>
+            <li>SaaS Monitoring Platforms</li>
+            <li>Digital Twin Simulation</li>
+            <li>Dashboard / SCADA Visualization</li>
+            <li>Predictive Maintenance Platforms</li>
+            <li>Energy Management Systems (EMS)</li>
+            <li>Compliance & Audit Reporting Tools</li>
+          </ul>
+          <a class="category-btn" href="contact.html">咨询产品详情</a>
+        </div>
       </div>
 
       <!-- 服务 -->
       <div class="category services-bg">
-        <h3>Services</h3>
-        <ul>
-          <li>Detailed Design (P&ID, 3D, Electrical)</li>
-          <li>Project Management (PMO, PMP)</li>
-          <li>System Integration (PLC, DCS, HMI, IIoT)</li>
-          <li>Industrial Automation Implementation</li>
-          <li>Third-party Interface Integration (ERP, MES)</li>
-          <li>Feasibility Studies & Conceptual Design</li>
-          <li>Engineering Audit & Compliance Evaluation</li>
-          <li>HAZOP, SIL, Safety Case Assessments</li>
-          <li>Equipment Selection & Optimization</li>
-          <li>Smart Factory Consulting</li>
-          <li>Installation & Construction Supervision</li>
-          <li>Commissioning, SAT/FAT</li>
-          <li>Welding, Piping, Instrument Calibration</li>
-          <li>Start-up Support</li>
-          <li>Preventive Maintenance & Repairs</li>
-          <li>Remote Support & Troubleshooting</li>
-          <li>Annual Maintenance Contracts (AMC)</li>
-          <li>Spares Management & Replacement</li>
-          <li>On-site Staff Training</li>
-        </ul>
+        <div class="category-content">
+          <h3>Services</h3>
+          <p class="category-description">从前期设计到现场交付，提供透明、稳妥、可执行的工程服务，帮助您把项目交给真正懂行业的人。</p>
+          <ul>
+            <li>Detailed Design (P&ID, 3D, Electrical)</li>
+            <li>Project Management (PMO, PMP)</li>
+            <li>System Integration (PLC, DCS, HMI, IIoT)</li>
+            <li>Industrial Automation Implementation</li>
+            <li>Third-party Interface Integration (ERP, MES)</li>
+            <li>Feasibility Studies & Conceptual Design</li>
+            <li>Engineering Audit & Compliance Evaluation</li>
+            <li>HAZOP、SIL、Safety Case Assessments</li>
+            <li>Equipment Selection & Optimization</li>
+            <li>Smart Factory Consulting</li>
+            <li>Installation & Construction Supervision</li>
+            <li>Commissioning, SAT/FAT</li>
+            <li>Welding、Piping、Instrument Calibration</li>
+            <li>Start-up Support</li>
+            <li>Preventive Maintenance & Repairs</li>
+            <li>Remote Support & Troubleshooting</li>
+            <li>Annual Maintenance Contracts (AMC)</li>
+            <li>Spares Management & Replacement</li>
+            <li>On-site Staff Training</li>
+          </ul>
+          <a class="category-btn" href="contact.html">了解服务方案</a>
+        </div>
       </div>
     </div>
   </section>
