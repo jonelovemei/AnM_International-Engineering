@@ -116,7 +116,7 @@
                     } else {
                         newScript.textContent = script.textContent;
                     }
-                    document.head.appendChild(newScript).remove();
+                    document.head.appendChild(newScript);
                 }
             })
             .catch(error => {
@@ -214,7 +214,8 @@ We prioritize the highest standards of security and compliance by ensuring that 
 
     <!-- 使用公用页脚组件 -->
     <div id="footer-placeholder"></div>
-    
+
+    <script src="whatsapp-float.js"></script>
     <script>
         // 加载公用页脚
         fetch('footer.html')

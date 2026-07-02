@@ -123,6 +123,7 @@
     <p class="footer-text">&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. ALL RIGHTS RESERVED.</p>
   </footer>
 
+  <script src="whatsapp-float.js"></script>
   <script>
     // 加载header
     fetch('header.html')
@@ -144,7 +145,7 @@
           } else {
             newScript.textContent = script.textContent;
           }
-          document.head.appendChild(newScript).remove();
+          document.head.appendChild(newScript);
         }
       })
       .catch(error => {

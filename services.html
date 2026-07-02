@@ -274,6 +274,7 @@
   <!-- Footer placeholder -->
   <div id="footer-placeholder"></div>
 
+  <script src="whatsapp-float.js"></script>
   <script>
     // Load shared header
     fetch('header.html')
@@ -295,7 +296,7 @@
           } else {
             newScript.textContent = script.textContent;
           }
-          document.head.appendChild(newScript).remove();
+          document.head.appendChild(newScript);
         }
       })
       .catch(error => {

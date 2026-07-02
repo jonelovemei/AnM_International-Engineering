@@ -361,6 +361,7 @@
     <!-- 页脚占位符 -->
     <div id="footer-placeholder"></div>
 
+    <script src="whatsapp-float.js"></script>
     <script>
         // 页面数据
         const pages = [
@@ -540,7 +541,7 @@
                     } else {
                         newScript.textContent = script.textContent;
                     }
-                    document.head.appendChild(newScript).remove();
+                    document.head.appendChild(newScript);
                 }
             })
             .catch(error => {

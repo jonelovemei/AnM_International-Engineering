@@ -441,6 +441,7 @@
     <!-- 页脚占位符 -->
     <div id="footer-placeholder"></div>
 
+    <script src="whatsapp-float.js"></script>
     <script>
         // 加载公用页眉
         fetch('header.html')
@@ -462,7 +463,7 @@
                     } else {
                         newScript.textContent = script.textContent;
                     }
-                    document.head.appendChild(newScript).remove();
+                    document.head.appendChild(newScript);
                 }
             })
             .catch(error => {
