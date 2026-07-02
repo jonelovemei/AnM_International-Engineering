@@ -21,7 +21,7 @@
             flex-direction: column;
         }
         
-        /* 导航栏样式 */
+        /* Navigation bar styles */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -80,7 +80,7 @@
             background: #388e3c;
         }
         
-        /* 页面主体 */
+        /* Main page content */
         .market-container {
             max-width: 1200px;
             margin: 50px auto 30px;
@@ -188,7 +188,7 @@
             box-shadow: 0 10px 20px rgba(76, 175, 80, 0.35);
         }
         
-        /* 页脚样式 */
+        /* Footer styles */
         footer {
             background: rgba(0, 0, 0, 0.8);
             color: white;
@@ -284,46 +284,7 @@
             }
         }
         
-        /* 特色产品标记 */
-        .featured-badge {
-            position: absolute;
-            top: -10px;
-            right: 20px;
-            background: linear-gradient(135deg, #ff9800, #ff5722);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        
-        .featured-card {
-            position: relative;
-            border: 2px solid #4caf50;
-        }
-    </style>
-                text-align: center;
-                gap: 1rem;
-            }
-            
-            .footer-links {
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .market-container {
-                padding: 10px;
-            }
-            
-            .market-card {
-                padding: 15px;
-            }
-        }
-        
-        /* 特色产品标记 */
+        /* Featured badge styles */
         .featured-badge {
             position: absolute;
             top: -10px;
@@ -344,7 +305,7 @@
     </style>
 </head>
 <body>
-    <!-- 公共Header -->
+    <!-- Shared Header -->
     <header>
         <nav class="navbar">
             <div class="nav-brand">
@@ -363,123 +324,123 @@
         </nav>
     </header>
 
-    <!-- 市场内容 -->
+    <!-- Market content -->
     <div class="market-container">
         <div class="market-header">
-            <h1>更亲民的产品页面，工程更容易看懂</h1>
-            <p>我们将工程产品与服务简单化，让客户快速找到适合的方案。每个卡片都用浅显语言说明价值，帮助您更快做出决策。</p>
+            <h1>A More Accessible Product Page for Engineering Decision Makers</h1>
+            <p>We present engineering products and services in a clear, professional manner so clients can quickly identify the right solution. Each card conveys value concisely to support faster and more confident decision-making.</p>
         </div>
 
         <div class="market-grid">
-            <!-- 产品1 -->
+            <!-- Product 1 -->
             <div class="market-card">
-                <h3>计量系统整套交付</h3>
-                <p>从流量计到计量柜，一站式交付，减少沟通成本，让现场安装更顺畅。</p>
+                <h3>Integrated Metering System Delivery</h3>
+                <p>From flow meters to metering skids, we offer turnkey delivery to streamline communication and accelerate on-site commissioning.</p>
                 <ul>
-                    <li>流量计、计量桌</li>
-                    <li>完整管线与阀门配套</li>
-                    <li>现场调试支持</li>
+                    <li>Flow meters and metering skids</li>
+                    <li>Complete piping and valve packages</li>
+                    <li>On-site commissioning support</li>
                 </ul>
-                <div class="price">咨询报价</div>
-                <button class="btn-buy">马上咨询</button>
+                <div class="price">Contact for Quotation</div>
+                <button class="btn-buy">Request Consultation</button>
             </div>
 
-            <!-- 产品2 -->
+            <!-- Product 2 -->
             <div class="market-card">
-                <h3>控制柜 & PLC 面板</h3>
-                <p>按工厂标准定制控制柜，支持 PLC、DCS、HMI，避免二次改造。</p>
+                <h3>Control Panel & PLC Systems</h3>
+                <p>Custom control panels engineered to facility standards, supporting PLC, DCS and HMI integration to minimize rework.</p>
                 <ul>
-                    <li>现场调试无缝对接</li>
-                    <li>模块化布线设计</li>
-                    <li>后期扩展更容易</li>
+                    <li>Seamless on-site commissioning</li>
+                    <li>Modular wiring architecture</li>
+                    <li>Scalable for future expansion</li>
                 </ul>
-                <div class="price">咨询报价</div>
-                <button class="btn-buy">了解详情</button>
+                <div class="price">Contact for Quotation</div>
+                <button class="btn-buy">Learn More</button>
             </div>
 
-            <!-- 产品3 -->
+            <!-- Product 3 -->
             <div class="market-card featured-card">
-                <div class="featured-badge">热门推荐</div>
-                <h3>数字化监控平台</h3>
-                <p>集中看板让你一眼掌握现场状况，报警、报表、能效数据一键呈现。</p>
+                <div class="featured-badge">Featured</div>
+                <h3>Digital Monitoring Platform</h3>
+                <p>A centralized dashboard provides complete site visibility with alarms, reports and energy performance metrics at a glance.</p>
                 <ul>
-                    <li>实时数据监测</li>
-                    <li>可视化报表</li>
-                    <li>历史数据查询</li>
+                    <li>Real-time data monitoring</li>
+                    <li>Visual performance reporting</li>
+                    <li>Historical trend analysis</li>
                 </ul>
-                <div class="price">按需定制</div>
-                <button class="btn-buy">免费演示</button>
+                <div class="price">Custom Quotation</div>
+                <button class="btn-buy">Request Demo</button>
             </div>
 
-            <!-- 产品4 -->
+            <!-- Product 4 -->
             <div class="market-card">
-                <h3>仪表传感器套件</h3>
-                <p>可靠的温度、压力、流量、液位传感器，适配各类工业现场。</p>
+                <h3>Instrumentation and Sensor Packages</h3>
+                <p>Reliable temperature, pressure, flow and level sensors engineered for industrial applications.</p>
                 <ul>
-                    <li>稳定精准</li>
-                    <li>兼容主流系统</li>
-                    <li>快速交付</li>
+                    <li>Accurate and stable performance</li>
+                    <li>Compatible with standard control systems</li>
+                    <li>Fast delivery</li>
                 </ul>
-                <div class="price">咨询报价</div>
-                <button class="btn-buy">查看选型</button>
+                <div class="price">Contact for Quotation</div>
+                <button class="btn-buy">View Selection</button>
             </div>
 
-            <!-- 产品5 -->
+            <!-- Product 5 -->
             <div class="market-card">
-                <h3>安装与调试服务</h3>
-                <p>现场安装、布线、调试一体化服务，减少项目中间环节和责任盲区。</p>
+                <h3>Installation and Commissioning Services</h3>
+                <p>Integrated installation, cabling and commissioning services reduce project handover risks and scope gaps.</p>
                 <ul>
-                    <li>专业施工团队</li>
-                    <li>现场测试</li>
-                    <li>交付验收支持</li>
+                    <li>Experienced field teams</li>
+                    <li>On-site testing</li>
+                    <li>Delivery acceptance support</li>
                 </ul>
-                <div class="price">按日计费</div>
-                <button class="btn-buy">预约服务</button>
+                <div class="price">Daily Rate</div>
+                <button class="btn-buy">Schedule Service</button>
             </div>
 
-            <!-- 产品6 -->
+            <!-- Product 6 -->
             <div class="market-card featured-card">
-                <div class="featured-badge">最优方案</div>
-                <h3>维护与备品管理</h3>
-                <p>提供定期保养、故障排查与备件管理，让设备稳定运行更轻松。</p>
+                <div class="featured-badge">Preferred Solution</div>
+                <h3>Maintenance & Spare Parts Management</h3>
+                <p>We provide preventive maintenance, troubleshooting and spare parts management to keep equipment operating reliably.</p>
                 <ul>
-                    <li>周期保养计划</li>
-                    <li>备件库存建议</li>
-                    <li>远程与现场支持</li>
+                    <li>Scheduled maintenance plans</li>
+                    <li>Spare inventory recommendations</li>
+                    <li>Remote and field support</li>
                 </ul>
-                <div class="price">按合同报价</div>
-                <button class="btn-buy">联系维护</button>
+                <div class="price">Contract Pricing</div>
+                <button class="btn-buy">Request Support</button>
             </div>
 
-            <!-- 产品7 -->
+            <!-- Product 7 -->
             <div class="market-card">
-                <h3>经济型控制解决方案</h3>
-                <p>为中小型项目提供成本可控、快速实施的控制系统方案。</p>
+                <h3>Cost-Efficient Control Solutions</h3>
+                <p>Control systems tailored for small to mid-sized projects, offering predictable costs and rapid deployment.</p>
                 <ul>
-                    <li>标准化配置</li>
-                    <li>性价比优选</li>
-                    <li>易于维护</li>
+                    <li>Standardized configurations</li>
+                    <li>High value alternatives</li>
+                    <li>Easy maintenance</li>
                 </ul>
-                <div class="price">成本可预估</div>
-                <button class="btn-buy">获取方案</button>
+                <div class="price">Estimate Available</div>
+                <button class="btn-buy">Get Proposal</button>
             </div>
 
-            <!-- 产品8 -->
+            <!-- Product 8 -->
             <div class="market-card">
-                <h3>工程咨询与升级评估</h3>
-                <p>为您提供现况评估与升级建议，帮助项目用更少成本获得更好效果。</p>
+                <h3>Engineering Advisory & Upgrade Assessments</h3>
+                <p>We deliver on-site evaluations and upgrade recommendations that improve project outcomes with lower total cost.</p>
                 <ul>
-                    <li>现场诊断</li>
-                    <li>方案优化</li>
-                    <li>预算建议</li>
+                    <li>Field diagnostics</li>
+                    <li>Solution optimization</li>
+                    <li>Budget planning</li>
                 </ul>
-                <div class="price">咨询报价</div>
-                <button class="btn-buy">开始咨询</button>
+                <div class="price">Quotation Available</div>
+                <button class="btn-buy">Begin Consultation</button>
             </div>
         </div>
     </div>
 
-    <!-- 公共Footer -->
+    <!-- Shared Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
@@ -499,44 +460,44 @@
     </footer>
 
     <script>
-        // 页面加载时显示用户名
+        // Display username on page load
         document.addEventListener('DOMContentLoaded', function() {
-            // 从本地存储获取用户名
+            // Retrieve username from local storage
             const username = localStorage.getItem('username') || 'User';
             document.getElementById('username-display').textContent = `Welcome, ${username}`;
             
-            // 调整网格布局以适应屏幕
+            // Adjust grid layout for screen size
             adjustGridLayout();
             
-            // 窗口大小改变时重新调整布局
+            // Recalculate layout on window resize
             window.addEventListener('resize', adjustGridLayout);
         });
 
-        // 调整网格布局函数
+        // Function to adjust grid layout
         function adjustGridLayout() {
             const grid = document.querySelector('.market-grid');
             const containerWidth = grid.offsetWidth;
-            const cardWidth = 300; // 最小卡片宽度
-            const gap = 25; // 间距
+            const cardWidth = 300; // Minimum card width
+            const gap = 25; // Gap between cards
             
-            // 计算可以容纳的列数
+            // Calculate number of columns that fit
             const columns = Math.max(1, Math.floor(containerWidth / (cardWidth + gap)));
             
-            // 设置grid模板列
+            // Set grid template columns
             grid.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
         }
 
-        // 退出登录功能
+        // Logout function
         function logout() {
             if(confirm('Are you sure you want to log out?')) {
-                // 清除本地存储
+                // Clear local storage
                 localStorage.removeItem('username');
-                // 跳转到登录页面
+                // Redirect to login page
                 window.location.href = 'index.html';
             }
         }
 
-        // 购买按钮点击事件
+        // Buy button click handler
         document.querySelectorAll('.btn-buy').forEach(button => {
             button.addEventListener('click', function() {
                 const productName = this.parentElement.querySelector('h3').textContent;
