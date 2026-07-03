@@ -60,7 +60,7 @@
 
     const image = document.createElement('img');
     image.alt = 'WhatsApp';
-    image.src = 'Image/whatsapp-icon.png';
+    image.src = 'Image/whatsapp-100.png';
     image.loading = 'lazy';
 
     const setSvgFallback = () => {
