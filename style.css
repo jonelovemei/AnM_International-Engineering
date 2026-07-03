@@ -165,96 +165,141 @@ footer {
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.services-overview-section {
-    padding: 60px 0;
-    display: flex;
-    justify-content: center;
+.am-rich-section {
+    padding: 60px 20px;
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
-.custom-grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+.am-rich-wrapper {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(320px, 400px)) !important;
+    gap: 35px !important;
+    width: 100% !important;
+    max-width: 1280px !important;
+    margin: 0 auto !important;
+    justify-content: center !important;
 }
 
-.modern-tech-card {
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 16px;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    position: relative;
+.am-enhanced-card {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+    border-radius: 20px !important;
+    padding: 40px 35px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06) !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    position: relative !important;
+    overflow: hidden !important;
 }
 
-.modern-tech-card:hover {
-    transform: translateY(-8px);
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 15px 35px rgba(33, 136, 56, 0.15);
-    border-color: #79c942;
+.am-enhanced-card::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 4px !important;
+    background: linear-gradient(90deg, #79c942, #28a745) !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
 }
 
-.card-badge {
-    background-color: #122b49;
-    color: #ffffff;
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 5px 12px;
-    border-radius: 20px;
-    margin-bottom: 15px;
-    letter-spacing: 0.5px;
+.am-enhanced-card:hover {
+    transform: translateY(-12px) !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+    border-color: rgba(121, 201, 66, 0.5) !important;
+    box-shadow: 0 22px 45px rgba(121, 201, 66, 0.2) !important;
 }
 
-.modern-tech-card h3 {
-    color: #122b49;
-    font-size: 20px;
-    margin-bottom: 12px;
-    font-weight: 600;
+.am-enhanced-card:hover::before {
+    opacity: 1 !important;
 }
 
-.modern-tech-card p {
-    color: #4a5568;
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 25px;
-    flex-grow: 1;
+.am-icon-box {
+    width: 60px !important;
+    height: 60px !important;
+    background: rgba(18, 43, 73, 0.06) !important;
+    border-radius: 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-bottom: 25px !important;
+    transition: all 0.3s ease !important;
 }
 
-.modern-cta-link {
-    color: #0066cc !important;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    transition: color 0.2s ease;
+.am-icon-box svg {
+    width: 32px !important;
+    height: 32px !important;
+    fill: #122b49 !important;
+    transition: all 0.3s ease !important;
 }
 
-.modern-cta-link .arrow {
-    margin-left: 6px;
-    transition: transform 0.2s ease;
+.am-enhanced-card:hover .am-icon-box {
+    background: rgba(121, 201, 66, 0.15) !important;
 }
 
-.modern-cta-link:hover {
-    color: #004499 !important;
+.am-enhanced-card:hover .am-icon-box svg {
+    fill: #28a745 !important;
+    transform: scale(1.1) !important;
 }
 
-.modern-cta-link:hover .arrow {
-    transform: translateX(4px);
+.am-rich-tag {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    color: #79c942 !important;
+    margin-bottom: 10px !important;
+    letter-spacing: 1.5px !important;
+}
+
+.am-enhanced-card h3 {
+    color: #122b49 !important;
+    font-size: 23px !important;
+    margin: 0 0 15px 0 !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+}
+
+.am-enhanced-card p {
+    color: #4a5568 !important;
+    font-size: 14.5px !important;
+    line-height: 1.65 !important;
+    margin: 0 0 30px 0 !important;
+    flex-grow: 1 !important;
+}
+
+.am-rich-btn {
+    width: 100% !important;
+    text-align: center !important;
+    background-color: #122b49 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    padding: 12px 0 !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    box-shadow: 0 4px 10px rgba(18, 43, 73, 0.15) !important;
+}
+
+.am-enhanced-card:hover .am-rich-btn {
+    background-color: #28a745 !important;
+    box-shadow: 0 6px 15px rgba(40, 167, 69, 0.3) !important;
 }
 
 @media (max-width: 1024px) {
-    .custom-grid-container {
-        grid-template-columns: 1fr;
+    .am-rich-wrapper {
+        grid-template-columns: 1fr !important;
+        max-width: 500px !important;
     }
 }
 
