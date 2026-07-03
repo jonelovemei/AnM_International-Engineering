@@ -13,22 +13,20 @@
             position: fixed;
             right: 24px;
             bottom: 24px;
-            width: 60px;
-            height: 60px;
+            width: 72px;
+            height: 72px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             background: transparent;
-            border-radius: 50%;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+            border-radius: 0;
+            box-shadow: none;
             z-index: 2147483647;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
             text-decoration: none;
             overflow: hidden;
         }
         .whatsapp-float:hover {
-            transform: translateY(-2px) scale(1.04);
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+            transform: translateY(-2px) scale(1.02);
         }
         .whatsapp-float img {
             width: 100%;
@@ -57,7 +55,7 @@
 
     const image = document.createElement('img');
     image.alt = 'WhatsApp';
-    image.src = 'Image/whatsapp-100.png';
+    image.src = 'Image/whatsapp-100.png?v=2';
     image.loading = 'lazy';
 
     const setSvgFallback = () => {
