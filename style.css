@@ -47,9 +47,10 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1px 20px;
+    padding: 8px 20px;
+    min-height: 56px;
     color: white;
-    font-size: 19px;
+    font-size: 18px;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
     position: sticky;
     top: 0;
@@ -163,6 +164,23 @@ footer {
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* 添加轻微阴影增加层次感 */
 }
 
+@media (min-width: 1025px) {
+    .contact-section {
+        justify-content: center;
+    }
+    .contact-info, .qr-section {
+        max-width: 45%;
+    }
+    .qr-section {
+        align-items: center;
+        justify-content: center;
+    }
+    .feedback-container {
+        margin: 0 auto 80px;
+        max-width: 900px;
+    }
+}
+
 .footer-text {
     text-transform: uppercase;
     font-weight: bold;
@@ -206,19 +224,20 @@ footer {
     align-items: center;
     width: 90%;
     max-width: 1200px;
-    margin-top: 60px;
-    gap: 60px;
+    margin-top: 40px;
+    gap: 40px;
 }
 
 #contact section {
-    background-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    padding: 30px;
     width: 100%;
-    max-width: 400px;
+    max-width: 900px;
     box-sizing: border-box;
     color: #000;
+    margin: 0 auto;
 }
 
 #contact section h2 {
@@ -574,7 +593,7 @@ section#services {
     }
     
     .contact-info {
-        padding-left: 20px;
+        padding-left: 0;
     }
     
     .feedback-container {
