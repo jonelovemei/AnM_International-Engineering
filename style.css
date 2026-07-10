@@ -305,8 +305,11 @@ footer {
     .contact-section {
         justify-content: center;
     }
-    .contact-info, .qr-section {
-        max-width: 45%;
+    .contact-info {
+        max-width: 40%;
+    }
+    .qr-section {
+        max-width: 55%;
     }
     .qr-section {
         align-items: center;
@@ -736,7 +739,7 @@ section#services {
     }
     
     .contact-info, .qr-section {
-        
+        max-width: 100%;
         text-align: center;
         padding: 0 20px;
     }
