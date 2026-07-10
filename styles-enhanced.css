@@ -278,3 +278,8 @@
  }
 
 
+
+/* ─── SVG 防溢出全局保护 ─── */
+svg { max-width: 100%; max-height: 100%; overflow: hidden; }
+.am-top-bar-icon svg { width: 14px; height: 14px; }
+.am-footer-social svg { width: 18px; height: 18px; }
