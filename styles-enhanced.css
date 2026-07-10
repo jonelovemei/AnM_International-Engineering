@@ -1,0 +1,429 @@
+ /* ════════════════════════════════════════════════════════════════
+    A&M International Engineering — Enhanced Styles v2.0
+    现代设计增强 - 动画、渐变、交互效果
+    ════════════════════════════════════════════════════════════════ */
+ 
+ /* ─── 自定义属性 ─── */
+ :root {
+   --am-primary: #1a6b3c;
+   --am-primary-light: #2e8b57;
+   --am-accent: #79c942;
+   --am-accent-light: #9ACD32;
+   --am-dark: #0d2135;
+   --am-text: #2c3e50;
+   --am-text-light: #6b7280;
+   --am-bg: #f0f4f8;
+   --am-white: #ffffff;
+   --am-shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+   --am-shadow-md: 0 8px 24px rgba(0,0,0,0.12);
+   --am-shadow-lg: 0 16px 48px rgba(0,0,0,0.15);
+   --am-radius: 12px;
+   --am-radius-lg: 20px;
+   --am-transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+   --am-gradient-green: linear-gradient(135deg, #1a6b3c, #2e8b57);
+   --am-gradient-blue: linear-gradient(135deg, #0d2135, #1a4a6b);
+   --am-gradient-accent: linear-gradient(135deg, #79c942, #9ACD32);
+ }
+ 
+ /* ─── 页面入场动画 ─── */
+ @keyframes amFadeIn {
+   from { opacity: 0; transform: translateY(20px); }
+   to   { opacity: 1; transform: translateY(0); }
+ }
+ 
+ @keyframes amSlideUp {
+   from { opacity: 0; transform: translateY(40px); }
+   to   { opacity: 1; transform: translateY(0); }
+ }
+ 
+ @keyframes amPulse {
+   0%, 100% { transform: scale(1); }
+   50%      { transform: scale(1.05); }
+ }
+ 
+ @keyframes amShimmer {
+   0%   { background-position: -200% 0; }
+   100% { background-position: 200% 0; }
+ }
+ 
+ @keyframes amFloat {
+   0%, 100% { transform: translateY(0); }
+   50%      { transform: translateY(-8px); }
+ }
+ 
+ @keyframes amCountUp {
+   from { opacity: 0; transform: scale(0.5); }
+   to   { opacity: 1; transform: scale(1); }
+ }
+ 
+ /* ─── WhatsApp 脉冲动画 ─── */
+ @keyframes waPulse {
+   0%   { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+   70%  { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+   100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+ }
+ 
+ @keyframes waRing {
+   0%   { transform: rotate(0) scale(1); }
+   10%  { transform: rotate(-15deg) scale(1.1); }
+   20%  { transform: rotate(15deg) scale(1.1); }
+   30%  { transform: rotate(-10deg) scale(1.05); }
+   40%  { transform: rotate(10deg) scale(1.05); }
+   50%  { transform: rotate(0) scale(1); }
+   100% { transform: rotate(0) scale(1); }
+ }
+ 
+ /* ─── 绿色条纹装饰线 ─── */
+ .am-accent-stripe {
+   height: 4px;
+   background: var(--am-gradient-accent);
+   width: 100%;
+ }
+ 
+ /* ─── 顶部联系栏 ─── */
+ .am-top-bar {
+   background: var(--am-dark);
+   color: #e0e7ef;
+   font-size: 13px;
+   padding: 6px 24px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 8px;
+ }
+ 
+ .am-top-bar a {
+   color: #79c942;
+   text-decoration: none;
+   transition: color var(--am-transition);
+ }
+ .am-top-bar a:hover { color: #a8e063; }
+ 
+ .am-top-bar-left,
+ .am-top-bar-right {
+   display: flex;
+   align-items: center;
+   gap: 16px;
+   flex-wrap: wrap;
+ }
+ 
+ .am-top-bar-icon {
+   width: 14px; height: 14px;
+   margin-right: 4px;
+   vertical-align: middle;
+   fill: #79c942;
+ }
+ 
+ /* ─── 头部增强 ─── */
+ .am-header-logo {
+   height: 56px;
+   transition: transform var(--am-transition);
+ }
+ .am-header-logo:hover { transform: scale(1.05); }
+ 
+ /* ─── 导航增强 ─── */
+ nav a.am-nav-active {
+   background: rgba(255,255,255,0.2);
+   font-weight: 600;
+ }
+ 
+ /* ─── 英雄区域（首页用） ─── */
+ .am-hero {
+   position: relative;
+   min-height: 420px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   background: var(--am-gradient-blue);
+   overflow: hidden;
+   padding: 60px 20px;
+ }
+ 
+ .am-hero::before {
+   content: '';
+   position: absolute;
+   inset: 0;
+   background:
+     radial-gradient(ellipse at 20% 50%, rgba(121,201,66,0.15) 0%, transparent 60%),
+     radial-gradient(ellipse at 80% 50%, rgba(46,139,87,0.1) 0%, transparent 60%);
+   z-index: 1;
+ }
+ 
+ .am-hero-content {
+   position: relative;
+   z-index: 2;
+   max-width: 800px;
+   animation: amFadeIn 0.8s ease-out;
+ }
+ 
+ .am-hero h1 {
+   font-size: 2.8rem;
+   font-weight: 800;
+   color: #fff;
+   margin-bottom: 16px;
+   text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+ }
+ 
+ .am-hero p {
+   font-size: 1.2rem;
+   color: #cbd5e1;
+   margin-bottom: 32px;
+   line-height: 1.7;
+ }
+ 
+ .am-hero-btn {
+   display: inline-block;
+   padding: 14px 36px;
+   border-radius: 50px;
+   font-weight: 700;
+   font-size: 1rem;
+   text-decoration: none;
+   transition: all var(--am-transition);
+   cursor: pointer;
+ }
+ 
+ .am-hero-btn-primary {
+   background: var(--am-gradient-accent);
+   color: #0d2135;
+   box-shadow: 0 4px 16px rgba(121,201,66,0.35);
+ }
+ .am-hero-btn-primary:hover {
+   transform: translateY(-2px);
+   box-shadow: 0 8px 28px rgba(121,201,66,0.5);
+ }
+ 
+ .am-hero-btn-secondary {
+   background: transparent;
+   color: #fff;
+   border: 2px solid rgba(255,255,255,0.4);
+   margin-left: 12px;
+ }
+ .am-hero-btn-secondary:hover {
+   border-color: #79c942;
+   background: rgba(121,201,66,0.1);
+ }
+ 
+ /* ─── 核心价值卡片增强 ─── */
+ .am-enhanced-card {
+   position: relative;
+   overflow: hidden;
+ }
+ 
+ .am-enhanced-card::after {
+   content: '';
+   position: absolute;
+   bottom: 0; left: 0; right: 0;
+   height: 3px;
+   background: var(--am-gradient-accent);
+   transform: scaleX(0);
+   transform-origin: left;
+   transition: transform 0.4s ease;
+ }
+ 
+ .am-enhanced-card:hover::after {
+   transform: scaleX(1);
+ }
+ 
+ .am-enhanced-card:hover {
+   transform: translateY(-6px);
+   box-shadow: var(--am-shadow-lg);
+ }
+ 
+ /* ─── 统计数字动画 ─── */
+ .stat-item {
+   opacity: 0;
+   transform: translateY(20px);
+   transition: all 0.6s ease;
+ }
+ .stat-item.am-visible {
+   opacity: 1;
+   transform: translateY(0);
+ }
+ 
+ .stat-number {
+   display: inline-block;
+   font-size: 3rem;
+   font-weight: 800;
+   color: var(--am-accent);
+   position: relative;
+ }
+ 
+ .stat-number::after {
+   content: '+';
+   font-size: 1.5rem;
+   position: relative;
+   top: -0.5rem;
+ }
+ 
+ /* ─── 页脚增强 ─── */
+ .am-footer {
+   background: linear-gradient(135deg, #0d2135 0%, #1a4a6b 100%) !important;
+   padding: 28px 20px !important;
+   position: relative !important;
+ }
+ 
+ .am-footer-inner {
+   max-width: 1200px;
+   margin: 0 auto;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 16px;
+ }
+ 
+ .am-footer-social a {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   width: 36px; height: 36px;
+   border-radius: 50%;
+   background: rgba(255,255,255,0.1);
+   transition: all var(--am-transition);
+   margin: 0 4px;
+ }
+ .am-footer-social a:hover {
+   background: var(--am-accent);
+   transform: translateY(-3px);
+ }
+ 
+ .am-footer-social svg {
+   width: 18px; height: 18px;
+   fill: #fff;
+ }
+ 
+ /* ─── WhatsApp 浮动按钮 ─── */
+ .am-wa-float {
+   position: fixed;
+   bottom: 70px;
+   right: 24px;
+   z-index: 9999;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 6px;
+ }
+ 
+ .am-wa-btn {
+   width: 56px;
+   height: 56px;
+   border-radius: 50%;
+   background: #25d366;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   box-shadow: 0 4px 16px rgba(37,211,102,0.4);
+   transition: all 0.3s ease;
+   animation: waPulse 2s infinite;
+   cursor: pointer;
+   border: none;
+   text-decoration: none;
+   position: relative;
+ }
+ 
+ .am-wa-btn:hover {
+   transform: scale(1.1);
+   animation: none;
+   box-shadow: 0 6px 20px rgba(37,211,102,0.5);
+ }
+ 
+ .am-wa-btn svg {
+   width: 28px; height: 28px;
+   fill: #fff;
+ }
+ 
+ .am-wa-tooltip {
+   background: #fff;
+   color: #333;
+   font-size: 12px;
+   font-weight: 600;
+   padding: 6px 14px;
+   border-radius: 20px;
+   box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+   white-space: nowrap;
+   opacity: 0;
+   transform: translateY(4px);
+   transition: all 0.3s ease;
+   pointer-events: none;
+ }
+ 
+ .am-wa-float:hover .am-wa-tooltip {
+   opacity: 1;
+   transform: translateY(0);
+ }
+ 
+ /* ─── 轮播/闪烁通知条 ─── */
+ .am-notification-bar {
+   background: var(--am-gradient-accent);
+   color: #0d2135;
+   font-weight: 700;
+   text-align: center;
+   padding: 10px 20px;
+   font-size: 14px;
+   animation: amPulse 2s ease-in-out infinite;
+ }
+ 
+ .am-notification-bar a {
+   color: #0d2135;
+   text-decoration: underline;
+ }
+ 
+ /* ─── 滚动动画 ─── */
+ .am-reveal {
+   opacity: 0;
+   transform: translateY(30px);
+   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+ }
+ 
+ .am-reveal.am-visible {
+   opacity: 1;
+   transform: translateY(0);
+ }
+ 
+ /* ─── CTA 区块 ─── */
+ .am-cta-banner {
+   background: var(--am-gradient-green);
+   padding: 40px 20px;
+   text-align: center;
+   color: #fff;
+   margin-top: 40px;
+ }
+ 
+ .am-cta-banner h2 {
+   font-size: 1.8rem;
+   margin-bottom: 12px;
+ }
+ 
+ .am-cta-banner p {
+   font-size: 1rem;
+   opacity: 0.9;
+   margin-bottom: 24px;
+ }
+ 
+ /* ─── 响应式 ─── */
+ @media (max-width: 768px) {
+   .am-top-bar {
+     font-size: 11px;
+     padding: 4px 12px;
+     justify-content: center;
+   }
+   .am-top-bar-left, .am-top-bar-right {
+     gap: 10px;
+   }
+   .am-hero h1 { font-size: 1.8rem; }
+   .am-hero p { font-size: 1rem; }
+   .am-hero-btn { padding: 10px 24px; font-size: 0.9rem; }
+   .am-wa-btn { width: 48px; height: 48px; }
+   .am-wa-btn svg { width: 22px; height: 22px; }
+ }
+ 
+ @media (max-width: 480px) {
+   .am-top-bar {
+     flex-direction: column;
+     gap: 4px;
+   }
+   .am-hero h1 { font-size: 1.5rem; }
+   .am-hero { min-height: 300px; padding: 40px 16px; }
+ }

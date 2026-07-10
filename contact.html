@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -65,7 +65,7 @@
       </div>
     </div>
 
-    <form class="feedback-container" id="feedbackForm">
+    <form action="https://formspree.io/f/xbldbkrp" method="POST" class="feedback-container" id="feedbackForm">
       <h3>Feedback</h3>
       
       <div id="successMessage" class="message success">Thank you! Your feedback has been sent successfully.</div>
@@ -115,7 +115,36 @@
       </div>
       
       <button class="submit-btn" type="submit" id="submitBtn">Submit Feedback</button>
-    </form>
+        <div id="form-status" style="margin-top:16px;padding:12px;border-radius:8px;display:none;font-weight:600;text-align:center;"></div>
+</form>
+<script>
+document.querySelector("form").addEventListener("submit", function(e) {
+    var btn = this.querySelector("button[type=submit]");
+    var status = document.getElementById("form-status");
+    btn.disabled = true;
+    btn.textContent = "Sending...";
+    status.style.display = "none";
+    fetch(this.action, { method: "POST", body: new FormData(this), headers: { "Accept": "application/json" } })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+        status.style.display = "block";
+        status.style.background = "#d4edda";
+        status.style.color = "#155724";
+        status.textContent = "Thank you! We will get back to you within 24 hours.";
+        btn.disabled = false;
+        btn.textContent = "Submit Feedback";
+        document.querySelector("form").reset();
+    })
+    .catch(function(err) {
+        status.style.display = "block";
+        status.style.background = "#f8d7da";
+        status.style.color = "#721c24";
+        status.textContent = "Oops! Something went wrong. Please email us directly at anm_info@anmie.com.sg";
+        btn.disabled = false;
+        btn.textContent = "Submit Feedback";
+    });
+});
+</script>
   </main>
 
   <!-- 页脚组件 -->
@@ -166,7 +195,7 @@
             <a href="services.html" style="color: white; text-decoration: none; padding: 10px 15px;">Products & Services</a>
             <a href="projects.html" style="color: white; text-decoration: none; padding: 10px 15px;">Projects</a>
             <a href="Support.html" style="color: white; text-decoration: none; padding: 10px 15px;">Support</a>
-            <a href="Libary.html" style="color: white; text-decoration: none; padding: 10px 15px;">Library</a>
+            <a href="Library.html" style="color: white; text-decoration: none; padding: 10px 15px;">Library</a>
             <a href="contact.html" style="color: white; text-decoration: none; padding: 10px 15px;">Contact Us</a>
             <div class="search-container" style="display: flex; align-items: center; background: white; border-radius: 25px; padding: 2px; border: 1px solid #ccc; position: relative; margin-left: auto;">
               <input type="text" id="search-input" placeholder="Search..." class="search-input" autocomplete="off" style="border: none; outline: none; padding: 8px 15px; border-radius: 25px; width: 200px; font-size: 14px; background: transparent;">
@@ -256,12 +285,12 @@
         <div class="footer-column">
             <h3>Library</h3>
             <ul>
-                <li><a href="Libary.html">Documents & Downloads</a></li>
-                <li><a href="Libary.html">Resources</a></li>
-                <li><a href="Libary.html">Videos</a></li>
-                <li><a href="Libary.html">Smart Manufacturing</a></li>
-                <li><a href="Libary.html">Digital Transformation</a></li>
-                <li><a href="Libary.html">Artificial Intelligence</a></li>
+                <li><a href="Library.html">Documents & Downloads</a></li>
+                <li><a href="Library.html">Resources</a></li>
+                <li><a href="Library.html">Videos</a></li>
+                <li><a href="Library.html">Smart Manufacturing</a></li>
+                <li><a href="Library.html">Digital Transformation</a></li>
+                <li><a href="Library.html">Artificial Intelligence</a></li>
             </ul>
         </div>
 
@@ -276,3 +305,6 @@
     </section>
 </body>
 </html>
+
+
+
