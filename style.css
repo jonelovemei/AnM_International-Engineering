@@ -8,15 +8,15 @@
 /* ------------------- 页面主体样式 ------------------- */
 body {
     margin: 0;
-    padding: 210px 0 130px 0; /* 顶部为header留空间，底部为footer留空间 */
-    
-    
-    
-    
+    padding: 210px 0 130px 0;
+    background-image: url('./Image/bagroud.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     font-family: Arial, sans-serif;
     color: #333;
-    background-color: #f0f4f8;
-    
+    background-color: rgba(255,255,255,0.35);
+    background-blend-mode: overlay;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -49,8 +49,6 @@ header {
     justify-content: space-between;
     padding: 8px 20px;
     min-height: 56px;
-    max-height: 220px;
-    overflow: hidden;
     color: white;
     font-size: 18px;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
@@ -81,14 +79,12 @@ header p {
 #header-placeholder {
     position: fixed;
     top: 0;
-    
-    
+    left: 0;
+    width: 100%;
     z-index: 999;
-    background-color: #333;
+    background-color: #fff;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     min-height: 56px;
-    max-height: 220px;
-    overflow: hidden;
 }
 
 /* ------------------- 导航栏样式 ------------------- */
@@ -336,7 +332,10 @@ footer {
     background-image: url('Image/background-about.jpg');
     
     
+    font-family: Arial, sans-serif;
     color: #333;
+    background-color: rgba(255,255,255,0.35);
+    background-blend-mode: overlay;
     padding: 40px 20px;
     text-align: center;
 }
@@ -408,7 +407,10 @@ footer {
 
 #contact section button {
     background-color: #007BFF;
+    font-family: Arial, sans-serif;
     color: #333;
+    background-color: rgba(255,255,255,0.35);
+    background-blend-mode: overlay;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -514,7 +516,10 @@ footer {
 .form-group label {
     display: block;
     margin-bottom: 8px;
+    font-family: Arial, sans-serif;
     color: #333;
+    background-color: rgba(255,255,255,0.35);
+    background-blend-mode: overlay;
     font-weight: bold;
 }
 
@@ -534,7 +539,10 @@ footer {
     border-radius: 4px;
     border: 1px solid #ddd;
     font-size: 16px;
+    font-family: Arial, sans-serif;
     color: #333;
+    background-color: rgba(255,255,255,0.35);
+    background-blend-mode: overlay;
     resize: none;
     margin-bottom: 15px;
     box-sizing: border-box;
@@ -616,7 +624,10 @@ footer {
     padding: 2.5rem;
     border-radius: 15px;
     overflow: hidden;
+    font-family: Arial, sans-serif;
     color: #333;
+    background-color: rgba(255,255,255,0.35);
+    background-blend-mode: overlay;
     min-height: 300px;
     display: flex;
     flex-direction: column;
@@ -684,7 +695,10 @@ section#services {
     gap: 2rem;
     padding: 3rem 2rem;
     background-color: #f2f2f2; /* 浅灰色背景 */
-    color: #333; /* 深色文字 */
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: rgba(255,255,255,0.35);
+    background-blend-mode: overlay; /* 深色文字 */
     flex-wrap: wrap;
 }
 
@@ -709,11 +723,17 @@ section#services {
     margin-bottom: 0.5rem;
     text-align: left;
     font-size: 0.95rem;
-    color: #333; /* 改为深色文字 */
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: rgba(255,255,255,0.35);
+    background-blend-mode: overlay; /* 改为深色文字 */
 }
 
 .footer-column ul li a {
-    color: #333; /* 深色链接 */
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: rgba(255,255,255,0.35);
+    background-blend-mode: overlay; /* 深色链接 */
     text-decoration: none;
 }
 
@@ -1188,6 +1208,11 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: #ccc;
 }
+
+
+
+
+
 
 
 
