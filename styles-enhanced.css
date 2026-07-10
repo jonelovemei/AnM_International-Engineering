@@ -1,4 +1,4 @@
- /* ════════════════════════════════════════════════════════════════
+﻿ /* ════════════════════════════════════════════════════════════════
     A&M International Engineering — Enhanced Styles v2.0
     现代设计增强 - 动画、渐变、交互效果
     ════════════════════════════════════════════════════════════════ */
@@ -231,157 +231,6 @@
    box-shadow: var(--am-shadow-lg);
  }
  
- /* ─── 统计数字动画 ─── */
- .stat-item {
-   opacity: 0;
-   transform: translateY(20px);
-   transition: all 0.6s ease;
- }
- .stat-item.am-visible {
-   opacity: 1;
-   transform: translateY(0);
- }
- 
- .stat-number {
-   display: inline-block;
-   font-size: 3rem;
-   font-weight: 800;
-   color: var(--am-accent);
-   position: relative;
- }
- 
- .stat-number::after {
-   content: '+';
-   font-size: 1.5rem;
-   position: relative;
-   top: -0.5rem;
- }
- 
- /* ─── 页脚增强 ─── */
- .am-footer {
-   background: linear-gradient(135deg, #0d2135 0%, #1a4a6b 100%) !important;
-   padding: 28px 20px !important;
-   position: relative !important;
- }
- 
- .am-footer-inner {
-   max-width: 1200px;
-   margin: 0 auto;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   flex-wrap: wrap;
-   gap: 16px;
- }
- 
- .am-footer-social a {
-   display: inline-flex;
-   align-items: center;
-   justify-content: center;
-   width: 36px; height: 36px;
-   border-radius: 50%;
-   background: rgba(255,255,255,0.1);
-   transition: all var(--am-transition);
-   margin: 0 4px;
- }
- .am-footer-social a:hover {
-   background: var(--am-accent);
-   transform: translateY(-3px);
- }
- 
- .am-footer-social svg {
-   width: 18px; height: 18px;
-   fill: #fff;
- }
- 
- /* ─── WhatsApp 浮动按钮 ─── */
- .am-wa-float {
-   position: fixed;
-   bottom: 70px;
-   right: 24px;
-   z-index: 9999;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   gap: 6px;
- }
- 
- .am-wa-btn {
-   width: 56px;
-   height: 56px;
-   border-radius: 50%;
-   background: #25d366;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   box-shadow: 0 4px 16px rgba(37,211,102,0.4);
-   transition: all 0.3s ease;
-   animation: waPulse 2s infinite;
-   cursor: pointer;
-   border: none;
-   text-decoration: none;
-   position: relative;
- }
- 
- .am-wa-btn:hover {
-   transform: scale(1.1);
-   animation: none;
-   box-shadow: 0 6px 20px rgba(37,211,102,0.5);
- }
- 
- .am-wa-btn svg {
-   width: 28px; height: 28px;
-   fill: #fff;
- }
- 
- .am-wa-tooltip {
-   background: #fff;
-   color: #333;
-   font-size: 12px;
-   font-weight: 600;
-   padding: 6px 14px;
-   border-radius: 20px;
-   box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-   white-space: nowrap;
-   opacity: 0;
-   transform: translateY(4px);
-   transition: all 0.3s ease;
-   pointer-events: none;
- }
- 
- .am-wa-float:hover .am-wa-tooltip {
-   opacity: 1;
-   transform: translateY(0);
- }
- 
- /* ─── 轮播/闪烁通知条 ─── */
- .am-notification-bar {
-   background: var(--am-gradient-accent);
-   color: #0d2135;
-   font-weight: 700;
-   text-align: center;
-   padding: 10px 20px;
-   font-size: 14px;
-   animation: amPulse 2s ease-in-out infinite;
- }
- 
- .am-notification-bar a {
-   color: #0d2135;
-   text-decoration: underline;
- }
- 
- /* ─── 滚动动画 ─── */
- .am-reveal {
-   opacity: 0;
-   transform: translateY(30px);
-   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
- }
- 
- .am-reveal.am-visible {
-   opacity: 1;
-   transform: translateY(0);
- }
- 
  /* ─── CTA 区块 ─── */
  .am-cta-banner {
    background: var(--am-gradient-green);
@@ -427,3 +276,4 @@
    .am-hero h1 { font-size: 1.5rem; }
    .am-hero { min-height: 300px; padding: 40px 16px; }
  }
+
