@@ -9,14 +9,14 @@
 body {
     margin: 0;
     padding: 140px 0 50px 0; /* 顶部为header留空间，底部为footer留空间 */
-    background-image: url('./Image/bagroud.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    
+    
+    
+    
     font-family: Arial, sans-serif;
-    color: #fff;
-    background-color: transparent;
-    background-blend-mode: normal;
+    color: #333;
+    background-color: #f0f4f8;
+    
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -41,9 +41,9 @@ section {
 /* ------------------- 头部样式 ------------------- */
 header {
     background-image: url('Image/24_01.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    
+    
+    
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -82,7 +82,7 @@ header p {
     left: 0;
     width: 100%;
     z-index: 999;
-    background-color: #fff;
+    background-color: #333;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     min-height: 56px;
 }
@@ -330,9 +330,9 @@ footer {
 /* ------------------- 关于我们页面样式 ------------------- */
 #about {
     background-image: url('Image/background-about.jpg');
-    background-size: cover;
-    background-position: center;
-    color: #fff;
+    
+    
+    color: #333;
     padding: 40px 20px;
     text-align: center;
 }
@@ -404,7 +404,7 @@ footer {
 
 #contact section button {
     background-color: #007BFF;
-    color: #fff;
+    color: #333;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -612,14 +612,14 @@ footer {
     padding: 2.5rem;
     border-radius: 15px;
     overflow: hidden;
-    color: #fff;
+    color: #333;
     min-height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     transition: transform 0.3s ease;
-    background-size: cover;
-    background-position: center;
+    
+    
 }
 
 .concept-card h2 {
@@ -641,8 +641,8 @@ footer {
 .solutions-bg,
 .security-bg {
     background-size: 101% auto;
-    background-position: center;
-    background-repeat: no-repeat;
+    
+    
 }
 
 /* 服务区块样式 */
@@ -1184,5 +1184,7 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: #ccc;
 }
+
+
 
 
