@@ -66,10 +66,10 @@
     </div>
 
     <form action="https://formspree.io/f/xbldbkrp" method="POST" class="feedback-container" id="feedbackForm">
-      <h3>Feedback</h3>
+      <h3>Request a Project Quote</h3>
       
-      <div id="successMessage" class="message success">Thank you! Your feedback has been sent successfully.</div>
-      <div id="errorMessage" class="message error">Sorry, there was an error sending your feedback. Please try again.</div>
+      <div id="successMessage" class="message success">Thank you! Your quote request has been submitted successfully.</div>
+      <div id="errorMessage" class="message error">Sorry, there was an error sending your request. Please try again.</div>
       
       <div class="form-row">
         <div class="form-group">
@@ -111,10 +111,10 @@
       
       <div class="form-group">
         <label for="message">Your Message</label>
-        <textarea class="feedback-textarea" id="message" name="message" placeholder="Write your feedback here... (Max 500 characters)" maxlength="500" required></textarea>
+        <textarea class="feedback-textarea" id="message" name="message" placeholder="Briefly describe your project requirements... (Max 500 chars)" maxlength="500" required></textarea>
       </div>
       
-      <button class="submit-btn" type="submit" id="submitBtn">Submit Feedback</button>
+      <button class="submit-btn" type="submit" id="submitBtn">Submit Request</button>
         <div id="form-status" style="margin-top:16px;padding:12px;border-radius:8px;display:none;font-weight:600;text-align:center;"></div>
 </form>
 <script>
@@ -132,7 +132,7 @@ document.querySelector("form").addEventListener("submit", function(e) {
         status.style.color = "#155724";
         status.textContent = "Thank you! We will get back to you within 24 hours.";
         btn.disabled = false;
-        btn.textContent = "Submit Feedback";
+        btn.textContent = "Submit Request";
         document.querySelector("form").reset();
     })
     .catch(function(err) {
@@ -141,7 +141,7 @@ document.querySelector("form").addEventListener("submit", function(e) {
         status.style.color = "#721c24";
         status.textContent = "Oops! Something went wrong. Please email us directly at anm_info@anmie.com.sg";
         btn.disabled = false;
-        btn.textContent = "Submit Feedback";
+        btn.textContent = "Submit Request";
     });
 });
 </script>
@@ -314,7 +314,7 @@ document.querySelector("form").addEventListener("submit", function(e) {
       })
       .finally(function() {
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Submit Feedback';
+        submitBtn.textContent = 'Submit Request';
       });
     });
   </script>
@@ -322,6 +322,7 @@ document.querySelector("form").addEventListener("submit", function(e) {
    
 </body>
 </html>
+
 
 
 
