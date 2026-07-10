@@ -283,3 +283,115 @@
 svg { max-width: 100%; max-height: 100%; overflow: hidden; }
 .am-top-bar-icon svg { width: 14px; height: 14px; }
 .am-footer-social svg { width: 18px; height: 18px; }
+
+/* ════════════════════════════════════════════════════════
+   新加坡B2B风格优化 — Trust Bar + Card Effects + Typography
+   ════════════════════════════════════════════════════════ */
+
+/* ─── Trust Stats Bar ─── */
+.trust-stats {
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f8fafc 0%, #f0f4f8 100%);
+    border-top: 1px solid rgba(0,0,0,0.04);
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+.trust-stats-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+.trust-stat {
+    text-align: center;
+    padding: 16px 32px;
+    min-width: 140px;
+}
+.trust-stat-number {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: #122b49;
+    line-height: 1.2;
+    position: relative;
+    display: inline-block;
+}
+.trust-stat-number::after {
+    content: '+';
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #79c942;
+    position: absolute;
+    top: 0;
+    right: -16px;
+}
+.trust-stat:last-child .trust-stat-number::after {
+    content: '%';
+}
+.trust-stat-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 6px;
+}
+
+/* ─── Enhanced Card Hover (新加坡B2B感) ─── */
+.am-enhanced-card {
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    border-left: 3px solid transparent !important;
+}
+.am-enhanced-card:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.1) !important;
+    border-left: 3px solid #79c942 !important;
+}
+.am-enhanced-card:hover .am-icon-box {
+    background: rgba(121,201,66,0.12) !important;
+}
+.am-enhanced-card:hover .am-icon-box svg {
+    fill: #28a745 !important;
+}
+
+/* ─── Improved Rich Button ─── */
+.am-rich-btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: #122b49;
+    background: rgba(121,201,66,0.12);
+    transition: all 0.3s ease;
+    margin-top: 12px;
+}
+.am-rich-btn:hover {
+    background: #79c942;
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(121,201,66,0.25);
+}
+
+/* ─── Section Spacing ─── */
+.am-rich-section { padding: 60px 20px 40px !important; }
+.footer-menu { padding: 50px 20px 30px !important; }
+
+/* ─── Notification Bar (subtle B2B style) ─── */
+.notification {
+    background: linear-gradient(90deg, #e8f5e9, #f1f8e9) !important;
+    color: #2e7d32 !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    animation: none !important;
+    border-bottom: 1px solid #c8e6c9;
+}
+.notification a {
+    color: #1b5e20 !important;
+}
+
+@media (max-width: 768px) {
+    .trust-stat { padding: 12px 20px; min-width: 100px; }
+    .trust-stat-number { font-size: 2rem; }
+}
