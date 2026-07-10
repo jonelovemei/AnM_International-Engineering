@@ -1,4 +1,4 @@
-/* ------------------- 全局样式重置 ------------------- */
+﻿/* ------------------- 全局样式重置 ------------------- */
 * {
     margin: 0;
     padding: 0;
@@ -15,7 +15,7 @@ body {
     background-position: center;
     font-family: Arial, sans-serif;
     color: #fff;
-    background-color: rgba(255,255,255,0.45);
+    background-color: rgba(255,255,255,0.12);
     background-blend-mode: overlay;
     min-height: 100vh;
     display: flex;
@@ -1184,3 +1184,4 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: #ccc;
 }
+

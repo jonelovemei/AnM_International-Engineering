@@ -147,11 +147,28 @@ document.querySelector("form").addEventListener("submit", function(e) {
 </script>
   </main>
 
-  <!-- 页脚组件 -->
-  <footer>
-    <p class="footer-text">&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. ALL RIGHTS RESERVED.</p>
-  </footer>
+    <script src="whatsapp-float.js?v=3"></script>
 
+  <!-- 页脚组件 (通过 footer.html 加载) -->
+  <div id="footer-placeholder"></div>
+
+  <script>
+    // 加载公用页脚
+    fetch('footer.html')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Error loading footer:', error);
+        document.getElementById('footer-placeholder').innerHTML = '<footer style="background: linear-gradient(135deg, #0d2135 0%, #1a4a6b 100%); color: #fff; padding: 20px 0; font-size: 12px; text-align: center; position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000;"><p class="footer-text" style="text-transform: uppercase; font-weight: bold; letter-spacing: 0.5px; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);">&copy; 2025 A&M INTERNATIONAL ENGINEERING PTE LTD. ALL RIGHTS RESERVED.</p></footer>';
+      });
+  </script>
   <script src="whatsapp-float.js?v=3"></script>
   <script>
     // 加载header
@@ -305,6 +322,9 @@ document.querySelector("form").addEventListener("submit", function(e) {
     </section>
 </body>
 </html>
+
+
+
 
 
 
