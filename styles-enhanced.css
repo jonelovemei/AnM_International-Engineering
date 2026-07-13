@@ -537,15 +537,12 @@ svg { max-width: 100%; max-height: 100%; overflow: hidden; }
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 40px;
-    height: 40px;
-    background: url('Image/logo.png') center/contain no-repeat;
-    background-color: #fff;
-    border-radius: 6px;
-    padding: 3px;
+    width: 36px;
+    height: 36px;
+    background: url("Image/logo.png") center/contain no-repeat;
+    background-color: transparent;
+    border-radius: 4px;
     pointer-events: none;
 }
-.qr-item:first-child::after {
-    /* First QR already has logo in the image, hide overlay */
-    display: none;
-}
+.qr-item:first-child::after { display: none; }
+
