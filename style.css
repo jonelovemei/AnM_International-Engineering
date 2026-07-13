@@ -310,6 +310,9 @@ footer {
     }
     .qr-section {
         max-width: 55%;
+        flex-direction: row;
+        gap: 40px;
+        flex-wrap: nowrap;
         align-items: center;
         justify-content: center;
     }
@@ -1188,6 +1191,7 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: #ccc;
 }
+
 
 
 
