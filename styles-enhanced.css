@@ -395,3 +395,71 @@ svg { max-width: 100%; max-height: 100%; overflow: hidden; }
     .trust-stat { padding: 12px 20px; min-width: 100px; }
     .trust-stat-number { font-size: 2rem; }
 }
+
+/* ════════════════════════════════════════════════════════
+   About Page — Mission/Vision/Values
+   ════════════════════════════════════════════════════════ */
+.about-mission {
+    padding: 50px 20px;
+    background: rgba(18,43,73,0.03);
+    border-top: 1px solid rgba(0,0,0,0.04);
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+.about-mission-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.mission-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 32px 28px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.mission-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #1a6b3c, #79c942);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+.mission-card:hover::after {
+    transform: scaleX(1);
+}
+.mission-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+.mission-icon {
+    width: 48px; height: 48px;
+    margin: 0 auto 16px;
+    background: rgba(18,43,73,0.06);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mission-icon svg { width: 24px; height: 24px; fill: #122b49; }
+.mission-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #122b49;
+    margin-bottom: 10px;
+}
+.mission-card p {
+    font-size: 0.9rem;
+    color: #4a5568;
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .about-mission-inner { grid-template-columns: 1fr; gap: 20px; }
+}
