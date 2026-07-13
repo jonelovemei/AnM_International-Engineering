@@ -221,97 +221,17 @@
             <li>Spares management and replacement</li>
             <li>On-site staff training</li>
           </ul>
-          <a class="category-btn" href="contact.html">Explore Service Solutions</a>
-        </div>
+          <a class="category-btn" <!-- ─── Professional CTA Banner (新加坡B2B标配) ─── -->
+    <div class="svc-cta-banner">
+      <h3>Ready to Discuss Your Project?</h3>
+      <p>Our engineering team provides free initial consultations. Tell us your requirements and we will propose a tailored solution within 48 hours.</p>
+      <div class="svc-cta-buttons">
+        <a href="contact.html" class="svc-cta-btn svc-cta-primary">Request a Quote</a>
+        <a href="tel:+6585889506" class="svc-cta-btn svc-cta-secondary">Call +65 8588 9506</a>
       </div>
     </div>
-  </section>
-   <section class="footer-menu">
-        <div class="footer-column">
-            <h3>Solutions</h3>
-            <ul>
-                <li><a href="Solutions.html">Supply Chain Optimization</a></li>
-                <li><a href="Solutions.html">Asset Operations and Optimization</a></li>
-                <li><a href="Solutions.html">Operational Risk Management</a></li>
-                <li><a href="Solutions.html">Connected Intelligence</a></li>
-                <li><a href="Solutions.html">CCTV Energy Management Solution</a></li>
-                <li><a href="Solutions.html">Safety Case Regime</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-column">
-            <h3>Products & Services</h3>
-            <ul>
-                <li><a href="Solutions.html">Control</a></li>
-                <li><a href="Solutions.html">Measurement</a></li>
-                <li><a href="Solutions.html">Project Execution Services</a></li>
-                <li><a href="Solutions.html">Digital Transformation</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-column">
-            <h3>Library</h3>
-            <ul>
-                <li><a href="Library.html">Documents & Downloads</a></li>
-                <li><a href="Library.html">Resources</a></li>
-                <li><a href="Library.html">Videos</a></li>
-                <li><a href="Library.html">Smart Manufacturing</a></li>
-                <li><a href="Library.html">Digital Transformation</a></li>
-                <li><a href="Library.html">Artificial Intelligence</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-column">
-            <h3>Support</h3>
-            <ul>
-                <li><a href="Support.html">Technical Support</a></li>
-                <li><a href="Support.html">Product Finder</a></li>
-                <li><a href="Support.html">Customer Portal</a></li>
-            </ul>
-        </div>
-    </section>
     
-  <!-- Footer placeholder -->
-  <div id="footer-placeholder"></div>
-
-  <script src="whatsapp-float.js?v=3"></script>
-  <script>
-    // Load shared header
-    fetch('header.html')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.text();
-      })
-      .then(data => {
-        document.getElementById('header-placeholder').innerHTML = data;
-        
-        // Re-execute scripts from the header
-        const scripts = document.getElementById('header-placeholder').getElementsByTagName('script');
-        for (let script of scripts) {
-          const newScript = document.createElement('script');
-          if (script.src) {
-            newScript.src = script.src;
-          } else {
-            newScript.textContent = script.textContent;
-          }
-          document.head.appendChild(newScript);
-        }
-      })
-      .catch(error => {
-        console.error('Error loading header:', error);
-        // Provide fallback header structure
-        document.getElementById('header-placeholder').innerHTML = `
-          <header>
-            <img src="Image/logo.png" alt="Company Logo">
-            <div>
-              <h1>A&M INTERNATIONAL ENGINEERING PTE LTD</h1>
-              <p>A professional integration solution provider</p>
-            </div>
-          </header>
-          <nav>
-            <a href="index.html">Home</a>
+    <p style="text-align:center;margin:0;font-size:0.9rem;color:#666;">
             <a href="about.html">About Us</a>
             <a href="Solutions.html">Solutions</a>
             <a href="services.html">Products & Services</a>
