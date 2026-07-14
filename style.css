@@ -435,8 +435,10 @@ footer {
 .contact-info {
     flex: 0 1 45%;
     text-align: left;
-    padding: 0;
+    padding: 20px;
     min-width: 300px;
+    background: rgba(255, 255, 255, 0.88);
+    border-radius: 8px;
 }
 
 .contact-info h2 {
