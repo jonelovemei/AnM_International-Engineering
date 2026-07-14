@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support - A&M INTERNATIONAL ENGINEERING</title>
-    <link rel="canonical" href="https://anmie.com.sg/Support.html" />
     <link rel="stylesheet" href="style.css">
     <style>
         /* 支持页面自定义样式 */
@@ -193,14 +192,22 @@
     <section id="Support">
         <!-- 用户登录界面 -->
         <div class="login-container">
-            <h3>Customer Support Gateway</h3>
-            <p style="text-align:center;margin-bottom:20px;color:#4a5568;">Select a service option below to reach the right team. We typically respond within 4 business hours.</p>
-            <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:10px;">
-              <a href="contact.html" style="display:inline-block;background:#2E8B57;color:#fff;padding:12px 24px;border-radius:6px;font-weight:600;text-decoration:none;transition:all 0.3s">Submit Service Request</a>
-              <a href="mailto:anm_info@anmie.com.sg" style="display:inline-block;background:#122b49;color:#fff;padding:12px 24px;border-radius:6px;font-weight:600;text-decoration:none;transition:all 0.3s">Email Technical Support</a>
-              <a href="tel:+6585889506" style="display:inline-block;border:2px solid #2E8B57;color:#2E8B57;padding:12px 24px;border-radius:6px;font-weight:600;text-decoration:none">Call +65 8588 9506</a>
-            </div>
-            <p style="text-align:center;font-size:0.85rem;color:#6b7280;">Existing customers: <a href="contact.html" style="color:#005577;">contact us</a> for your dedicated portal access.</p>
+            <h3>Customer Portal Gateway</h3>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+                <div class="login-links">
+                    <a href="#">Forgot Password?</a>
+                    <a href="#">Create Account</a>
+                </div>
+            </form>
         </div>
 
         <!-- 支持服务部分 -->
@@ -451,7 +458,7 @@
                 // 提供基本的header结构
                 document.getElementById('header-placeholder').innerHTML = `
                     <header>
-                        <img src="Image/logo.png" alt="Company Logo" loading="lazy">
+                        <img src="Image/logo.png" alt="Company Logo">
                         <div>
                             <h1>A&M INTERNATIONAL ENGINEERING PTE LTD</h1>
                             <p>A professional integration solution provider</p>
@@ -470,7 +477,7 @@
                         <div class="search-container">
                             <input type="text" id="search-input" placeholder="Search..." class="search-input" autocomplete="off">
                             <button id="search-button" class="search-button" type="button">
-                                <img src="Image/search-icon.png" alt="Search" class="search-icon" loading="lazy">
+                                <img src="Image/search-icon.png" alt="Search" class="search-icon">
                             </button>
                             <div id="search-results-dropdown" class="search-dropdown"></div>
                         </div>
@@ -547,6 +554,4 @@
     </section>
 </body>
 </html>
-
-
 

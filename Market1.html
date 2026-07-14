@@ -303,8 +303,32 @@
             border: 2px solid #4caf50;
         }
     </style>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles-enhanced.css">
 </head>
 <body>
+    <div id="header-placeholder"></div>
+
+    <script src="whatsapp-float.js?v=3"></script>
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                const scripts = document.getElementById('header-placeholder').getElementsByTagName('script');
+                for (let script of scripts) {
+                    const newScript = document.createElement('script');
+                    if (script.src) newScript.src = script.src;
+                    else newScript.textContent = script.textContent;
+                    document.head.appendChild(newScript);
+                }
+            })
+            .catch(error => {
+                console.error('Error loading header:', error);
+            });
+    </script>
+
     <!-- Shared Header -->
     <header>
         <nav class="navbar">
@@ -505,6 +529,18 @@
                 alert(`You selected: ${productName}\nPrice: ${price}\nPurchase functionality under development...`);
             });
         });
+    </script>
+
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error loading footer:', error);
+            });
     </script>
 </body>
 </html>
